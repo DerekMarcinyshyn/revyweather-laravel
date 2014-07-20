@@ -7,7 +7,7 @@ php:
   - hhvm
 
 before_script:
-  - travis_retry composer self-update
-  - travis_retry composer install --prefer-source --no-interaction --dev
+  - wget http://getcomposer.org/composer.phar
+  - php composer.phar install --prefer-source --no-interaction --dev
 
 script: vendor/bin/phpunit --verbose
