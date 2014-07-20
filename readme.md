@@ -2,7 +2,9 @@
 
 This web application is a work in progress experimenting with the latest available technologies in both hardware and software.
 
-The hardware is a Netduino and a RaspberryPi connected to a local server which then feeds to this app. It is built using Laravel and AngularJS and hosted on AWS.
+The hardware is a Netduino Plus 2 and a RaspberryPi connected to a local server at my home. Then this application server collects the data.
+
+The software stack includes HHVM, nginx, Laravel and AngularJS.
 
 More on [http://revyweather/about](http://revyweather/about)
 
