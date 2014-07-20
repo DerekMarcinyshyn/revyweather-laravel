@@ -10,7 +10,6 @@ The software stack includes HHVM, nginx, Laravel and AngularJS.
 
 More on [http://revyweather/about](http://revyweather/about)
 
-
 ### License
 
 The MIT License (MIT)
