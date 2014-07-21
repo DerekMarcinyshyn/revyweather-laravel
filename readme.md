@@ -8,7 +8,7 @@ The hardware is a Netduino Plus 2 and a RaspberryPi connected to a local server 
 
 The software stack includes HHVM, nginx, Laravel and AngularJS.
 
-More on [http://revyweather/about](http://revyweather/about)
+More on [http://revyweather.com/about](http://revyweather.com/about)
 
 
 ### License
