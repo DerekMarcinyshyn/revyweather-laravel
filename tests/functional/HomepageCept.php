@@ -5,4 +5,4 @@ $I->am('a human');
 $I->wantTo('make sure the homepage works.');
 
 $I->amOnPage('/');
-$I->canSee('You have arrived');
+$I->canSee('Revy Weather');
