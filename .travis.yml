@@ -7,7 +7,6 @@ php:
   - hhvm
 
 before_script:
-  - phpenv config-add travisphpconfig.ini
   - composer install --prefer-source --no-interaction --dev
 
 script: vendor/bin/codecept run --verbose
