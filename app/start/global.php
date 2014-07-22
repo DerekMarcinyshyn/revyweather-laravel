@@ -50,7 +50,7 @@ App::error(function(Exception $exception, $code)
 {
 	Log::error($exception);
 
-    if (!Config::get('app.debug')) {
+    if (Config::get('app.debug')) {
         switch ($code) {
             case 403:
                 return Response::view('errors.403', array(), 403);
