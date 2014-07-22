@@ -3,14 +3,12 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <!-- Main component for a primary marketing message or call to action -->
-            <div class="jumbotron">
-                <h1>Revy Weather</h1>
-                <p>This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-                <p>
-                    <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
-                </p>
-            </div>
+            @include('angular.index')
         </div>
     </div>
+@stop
+
+@section('body_js')
+    <script src="assets/js/angular.min.js"></script>
+    <script src="assets/js/index.js"></script>
 @stop
