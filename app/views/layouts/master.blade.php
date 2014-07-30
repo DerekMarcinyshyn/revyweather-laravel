@@ -7,6 +7,7 @@
     <title>Revelstoke Weather</title>
 
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/app.css" rel="stylesheet">
     @yield('css')
 
     <!--[if lt IE 9]>

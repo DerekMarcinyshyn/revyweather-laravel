@@ -10,5 +10,7 @@
 
 @section('body_js')
     <script src="assets/js/angular.min.js"></script>
+    <script src="assets/js/skycons.js"></script>
+    <script src="assets/js/angular.skycons.js"></script>
     <script src="assets/js/index.js"></script>
 @stop

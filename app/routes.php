@@ -11,7 +11,10 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('content.index');
-});
+require_once 'routes/api.php';
+
+Route::get('/', array(
+    'before'    => '',
+    'after'     => '',
+    'uses'      => 'HomeController@index'
+));

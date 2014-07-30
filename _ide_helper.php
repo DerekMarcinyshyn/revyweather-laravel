@@ -13,7 +13,7 @@ namespace {
 		/**
 		 * Create a new Illuminate application instance.
 		 *
-		 * @param \Illuminate\Http\Request
+		 * @param \Illuminate\Http\Request  $request
 		 * @return void
 		 * @static 
 		 */
@@ -204,9 +204,39 @@ namespace {
 		 }
 
 		/**
+		 * Determine if the given abstract type has been bound.
+		 * 
+		 * (Overriding Container::bound)
+		 *
+		 * @param string  $abstract
+		 * @return bool
+		 * @static 
+		 */
+		 public static function bound($abstract){
+			//Method inherited from \Illuminate\Foundation\Application
+			return \Illuminate\Foundation\Application::bound($abstract);
+		 }
+
+		/**
+		 * "Extend" an abstract type in the container.
+		 * 
+		 * (Overriding Container::extend)
+		 *
+		 * @param string   $abstract
+		 * @param Closure  $closure
+		 * @return void
+		 * @throws \InvalidArgumentException
+		 * @static 
+		 */
+		 public static function extend($abstract, $closure){
+			//Method inherited from \Illuminate\Foundation\Application
+			 \Illuminate\Foundation\Application::extend($abstract, $closure);
+		 }
+
+		/**
 		 * Register a "before" application filter.
 		 *
-		 * @param Closure|string  $callback
+		 * @param \Closure|string  $callback
 		 * @return void
 		 * @static 
 		 */
@@ -218,7 +248,7 @@ namespace {
 		/**
 		 * Register an "after" application filter.
 		 *
-		 * @param Closure|string  $callback
+		 * @param \Closure|string  $callback
 		 * @return void
 		 * @static 
 		 */
@@ -230,7 +260,7 @@ namespace {
 		/**
 		 * Register a "finish" application filter.
 		 *
-		 * @param Closure|string  $callback
+		 * @param \Closure|string  $callback
 		 * @return void
 		 * @static 
 		 */
@@ -356,6 +386,7 @@ namespace {
 		 * @param int   $type
 		 * @param bool  $catch
 		 * @return \Symfony\Component\HttpFoundation\Response
+		 * @throws \Exception
 		 * @static 
 		 */
 		 public static function handle($request, $type = 1, $catch = true){
@@ -478,7 +509,7 @@ namespace {
 		/**
 		 * Register a 404 error handler.
 		 *
-		 * @param Closure  $callback
+		 * @param \Closure  $callback
 		 * @return void
 		 * @static 
 		 */
@@ -514,7 +545,7 @@ namespace {
 		/**
 		 * Register an error handler for fatal errors.
 		 *
-		 * @param Closure  $callback
+		 * @param \Closure  $callback
 		 * @return void
 		 * @static 
 		 */
@@ -687,15 +718,15 @@ namespace {
 		 }
 
 		/**
-		 * Determine if the given abstract type has been bound.
+		 * Determine if the given abstract type has been resolved.
 		 *
-		 * @param string  $abstract
+		 * @param string $abstract
 		 * @return bool
 		 * @static 
 		 */
-		 public static function bound($abstract){
+		 public static function resolved($abstract){
 			//Method inherited from \Illuminate\Container\Container
-			return \Illuminate\Foundation\Application::bound($abstract);
+			return \Illuminate\Foundation\Application::resolved($abstract);
 		 }
 
 		/**
@@ -713,9 +744,9 @@ namespace {
 		/**
 		 * Register a binding with the container.
 		 *
-		 * @param string               $abstract
-		 * @param Closure|string|null  $concrete
-		 * @param bool                 $shared
+		 * @param string  $abstract
+		 * @param \Closure|string|null  $concrete
+		 * @param bool  $shared
 		 * @return void
 		 * @static 
 		 */
@@ -727,9 +758,9 @@ namespace {
 		/**
 		 * Register a binding if it hasn't already been registered.
 		 *
-		 * @param string               $abstract
-		 * @param Closure|string|null  $concrete
-		 * @param bool                 $shared
+		 * @param string  $abstract
+		 * @param \Closure|string|null  $concrete
+		 * @param bool  $shared
 		 * @return void
 		 * @static 
 		 */
@@ -741,8 +772,8 @@ namespace {
 		/**
 		 * Register a shared binding in the container.
 		 *
-		 * @param string               $abstract
-		 * @param Closure|string|null  $concrete
+		 * @param string  $abstract
+		 * @param \Closure|string|null  $concrete
 		 * @return void
 		 * @static 
 		 */
@@ -754,7 +785,7 @@ namespace {
 		/**
 		 * Wrap a Closure such that it is shared.
 		 *
-		 * @param Closure  $closure
+		 * @param \Closure  $closure
 		 * @return Closure
 		 * @static 
 		 */
@@ -766,7 +797,7 @@ namespace {
 		/**
 		 * Bind a shared Closure into the container.
 		 *
-		 * @param string  $abstract
+		 * @param string    $abstract
 		 * @param \Closure  $closure
 		 * @return void
 		 * @static 
@@ -774,20 +805,6 @@ namespace {
 		 public static function bindShared($abstract, $closure){
 			//Method inherited from \Illuminate\Container\Container
 			 \Illuminate\Foundation\Application::bindShared($abstract, $closure);
-		 }
-
-		/**
-		 * "Extend" an abstract type in the container.
-		 *
-		 * @param string   $abstract
-		 * @param Closure  $closure
-		 * @return void
-		 * @throws \InvalidArgumentException
-		 * @static 
-		 */
-		 public static function extend($abstract, $closure){
-			//Method inherited from \Illuminate\Container\Container
-			 \Illuminate\Foundation\Application::extend($abstract, $closure);
 		 }
 
 		/**
@@ -819,7 +836,7 @@ namespace {
 		/**
 		 * Bind a new callback to an abstract's rebind event.
 		 *
-		 * @param string  $abstract
+		 * @param string    $abstract
 		 * @param \Closure  $callback
 		 * @return mixed
 		 * @static 
@@ -833,7 +850,7 @@ namespace {
 		 * Refresh an instance on the given target and method.
 		 *
 		 * @param string  $abstract
-		 * @param mixed  $target
+		 * @param mixed   $target
 		 * @param string  $method
 		 * @return mixed
 		 * @static 
@@ -860,7 +877,7 @@ namespace {
 		/**
 		 * Register a new resolving callback.
 		 *
-		 * @param string  $abstract
+		 * @param string    $abstract
 		 * @param \Closure  $callback
 		 * @return void
 		 * @static 
@@ -1583,8 +1600,8 @@ namespace {
 		/**
 		 * Register a custom driver creator Closure.
 		 *
-		 * @param string   $driver
-		 * @param Closure  $callback
+		 * @param string    $driver
+		 * @param \Closure  $callback
 		 * @return \Illuminate\Support\Manager|static
 		 * @static 
 		 */
@@ -1984,7 +2001,7 @@ namespace {
 		/**
 		 * Set the path currently being compiled.
 		 *
-		 * @param string $path
+		 * @param string  $path
 		 * @return void
 		 * @static 
 		 */
@@ -2020,7 +2037,7 @@ namespace {
 		/**
 		 * Register a custom Blade compiler.
 		 *
-		 * @param Closure  $compiler
+		 * @param \Closure  $compiler
 		 * @return void
 		 * @static 
 		 */
@@ -2226,8 +2243,8 @@ namespace {
 		/**
 		 * Register a custom driver creator Closure.
 		 *
-		 * @param string   $driver
-		 * @param Closure  $callback
+		 * @param string    $driver
+		 * @param \Closure  $callback
 		 * @return \Illuminate\Support\Manager|static
 		 * @static 
 		 */
@@ -2331,7 +2348,7 @@ namespace {
 		 *
 		 * @param string  $key
 		 * @param \DateTime|int  $minutes
-		 * @param Closure  $callback
+		 * @param \Closure  $callback
 		 * @return mixed
 		 * @static 
 		 */
@@ -2344,7 +2361,7 @@ namespace {
 		 * Get an item from the cache, or store the default value forever.
 		 *
 		 * @param string   $key
-		 * @param Closure  $callback
+		 * @param \Closure  $callback
 		 * @return mixed
 		 * @static 
 		 */
@@ -2357,7 +2374,7 @@ namespace {
 		 * Get an item from the cache, or store the default value forever.
 		 *
 		 * @param string   $key
-		 * @param Closure  $callback
+		 * @param \Closure  $callback
 		 * @return mixed
 		 * @static 
 		 */
@@ -2489,7 +2506,7 @@ namespace {
 		 }
 
 		/**
-		 * Dynamically handle calls to the form builder.
+		 * Dynamically handle calls to the class.
 		 *
 		 * @param string  $method
 		 * @param array   $parameters
@@ -2579,7 +2596,7 @@ namespace {
 		/**
 		 * Get the Redis connection instance.
 		 *
-		 * @return \Predis\Connection\SingleConnectionInterface
+		 * @return \Predis\ClientInterface
 		 * @static 
 		 */
 		 public static function connection(){
@@ -2964,7 +2981,7 @@ namespace {
 		/**
 		 * Remove a cookie from the queue.
 		 *
-		 * @param string $name
+		 * @param string  $name
 		 * @static 
 		 */
 		 public static function unqueue($name){
@@ -3289,7 +3306,6 @@ namespace {
 		 * 
 		 * This is more efficient on larger data-sets, etc.
 		 *
-		 * @param \Illuminate\Pagination\Factory  $paginator
 		 * @param int    $perPage
 		 * @param array  $columns
 		 * @return \Illuminate\Pagination\Paginator
@@ -3621,11 +3637,11 @@ namespace {
 		 * Add a join clause to the query.
 		 *
 		 * @param string  $table
-		 * @param string  $first
+		 * @param string  $one
 		 * @param string  $operator
 		 * @param string  $two
 		 * @param string  $type
-		 * @param bool  $where
+		 * @param bool    $where
 		 * @return \Illuminate\Database\Query\Builder|static
 		 * @static 
 		 */
@@ -3638,7 +3654,7 @@ namespace {
 		 * Add a "join where" clause to the query.
 		 *
 		 * @param string  $table
-		 * @param string  $first
+		 * @param string  $one
 		 * @param string  $operator
 		 * @param string  $two
 		 * @param string  $type
@@ -3669,7 +3685,7 @@ namespace {
 		 * Add a "join where" clause to the query.
 		 *
 		 * @param string  $table
-		 * @param string  $first
+		 * @param string  $one
 		 * @param string  $operator
 		 * @param string  $two
 		 * @return \Illuminate\Database\Query\Builder|static
@@ -3699,7 +3715,7 @@ namespace {
 		 * Add a "right join where" clause to the query.
 		 *
 		 * @param string  $table
-		 * @param string  $first
+		 * @param string  $one
 		 * @param string  $operator
 		 * @param string  $two
 		 * @return \Illuminate\Database\Query\Builder|static
@@ -4589,6 +4605,7 @@ namespace {
 		 * @param array   $bindings
 		 * @param string  $type
 		 * @return \Illuminate\Database\Query\Builder
+		 * @throws \InvalidArgumentException
 		 * @static 
 		 */
 		 public static function setBindings($bindings, $type = 'where'){
@@ -4602,6 +4619,7 @@ namespace {
 		 * @param mixed   $value
 		 * @param string  $type
 		 * @return \Illuminate\Database\Query\Builder
+		 * @throws \InvalidArgumentException
 		 * @static 
 		 */
 		 public static function addBinding($value, $type = 'where'){
@@ -5595,7 +5613,7 @@ namespace {
 		 }
 
 		/**
-		 * Dynamically handle calls to the form builder.
+		 * Dynamically handle calls to the class.
 		 *
 		 * @param string  $method
 		 * @param array   $parameters
@@ -5936,7 +5954,7 @@ namespace {
 		 }
 
 		/**
-		 * Dynamically handle calls to the form builder.
+		 * Dynamically handle calls to the class.
 		 *
 		 * @param string  $method
 		 * @param array   $parameters
@@ -6370,6 +6388,7 @@ namespace {
 		/**
 		 * Get the data format expected in the response.
 		 *
+		 * @param string  $default
 		 * @return string
 		 * @static 
 		 */
@@ -7622,7 +7641,7 @@ namespace {
 		 * Register a new callback handler for when
 		 * a log event is triggered.
 		 *
-		 * @param Closure  $callback
+		 * @param \Closure  $callback
 		 * @return void
 		 * @throws \RuntimeException
 		 * @static 
@@ -7803,6 +7822,7 @@ namespace {
 		 *
 		 * @param \Illuminate\View\Factory  $views
 		 * @param \Swift_Mailer  $swift
+		 * @param \Illuminate\Events\Dispatcher  $events
 		 * @return void
 		 * @static 
 		 */
@@ -7843,7 +7863,7 @@ namespace {
 		 *
 		 * @param string|array  $view
 		 * @param array  $data
-		 * @param Closure|string  $callback
+		 * @param \Closure|string  $callback
 		 * @return void
 		 * @static 
 		 */
@@ -7857,7 +7877,7 @@ namespace {
 		 *
 		 * @param string|array  $view
 		 * @param array   $data
-		 * @param Closure|string  $callback
+		 * @param \Closure|string  $callback
 		 * @param string  $queue
 		 * @return void
 		 * @static 
@@ -7873,7 +7893,7 @@ namespace {
 		 * @param string  $queue
 		 * @param string|array  $view
 		 * @param array   $data
-		 * @param Closure|string  $callback
+		 * @param \Closure|string  $callback
 		 * @return void
 		 * @static 
 		 */
@@ -7888,7 +7908,7 @@ namespace {
 		 * @param int  $delay
 		 * @param string|array  $view
 		 * @param array  $data
-		 * @param Closure|string  $callback
+		 * @param \Closure|string  $callback
 		 * @param string  $queue
 		 * @return void
 		 * @static 
@@ -7905,7 +7925,7 @@ namespace {
 		 * @param int  $delay
 		 * @param string|array  $view
 		 * @param array  $data
-		 * @param Closure|string  $callback
+		 * @param \Closure|string  $callback
 		 * @return void
 		 * @static 
 		 */
@@ -8325,8 +8345,8 @@ namespace {
 		/**
 		 * Add a queue connection resolver.
 		 *
-		 * @param string   $driver
-		 * @param Closure  $resolver
+		 * @param string    $driver
+		 * @param \Closure  $resolver
 		 * @return void
 		 * @static 
 		 */
@@ -8338,8 +8358,8 @@ namespace {
 		/**
 		 * Add a queue connection resolver.
 		 *
-		 * @param string   $driver
-		 * @param Closure  $resolver
+		 * @param string    $driver
+		 * @param \Closure  $resolver
 		 * @return void
 		 * @static 
 		 */
@@ -8707,7 +8727,7 @@ namespace {
 		 * Get a specific Redis connection instance.
 		 *
 		 * @param string  $name
-		 * @return \Predis\Connection\SingleConnectionInterface
+		 * @return \Predis\ClientInterface
 		 * @static 
 		 */
 		 public static function connection($name = 'default'){
@@ -9162,6 +9182,7 @@ namespace {
 		/**
 		 * Get the data format expected in the response.
 		 *
+		 * @param string  $default
 		 * @return string
 		 * @static 
 		 */
@@ -10313,8 +10334,8 @@ namespace {
 		/**
 		 * Create a route group with shared attributes.
 		 *
-		 * @param array    $attributes
-		 * @param Closure  $callback
+		 * @param array     $attributes
+		 * @param \Closure  $callback
 		 * @return void
 		 * @static 
 		 */
@@ -10375,7 +10396,7 @@ namespace {
 		/**
 		 * Register a route matched event listener.
 		 *
-		 * @param callable  $callback
+		 * @param string|callable  $callback
 		 * @return void
 		 * @static 
 		 */
@@ -10387,7 +10408,7 @@ namespace {
 		/**
 		 * Register a new "before" filter with the router.
 		 *
-		 * @param mixed  $callback
+		 * @param string|callable  $callback
 		 * @return void
 		 * @static 
 		 */
@@ -10399,7 +10420,7 @@ namespace {
 		/**
 		 * Register a new "after" filter with the router.
 		 *
-		 * @param mixed  $callback
+		 * @param string|callable  $callback
 		 * @return void
 		 * @static 
 		 */
@@ -10412,7 +10433,7 @@ namespace {
 		 * Register a new filter with the router.
 		 *
 		 * @param string  $name
-		 * @param mixed  $callback
+		 * @param string|callable  $callback
 		 * @return void
 		 * @static 
 		 */
@@ -10467,13 +10488,25 @@ namespace {
 		 * Add a new route parameter binder.
 		 *
 		 * @param string  $key
-		 * @param callable  $binder
+		 * @param string|callable  $binder
 		 * @return void
 		 * @static 
 		 */
 		 public static function bind($key, $binder){
 			//Method inherited from \Illuminate\Routing\Router
 			 \Illuminate\Routing\Router::bind($key, $binder);
+		 }
+
+		/**
+		 * Create a class based binding using the IoC container.
+		 *
+		 * @param string    $binding
+		 * @return \Closure
+		 * @static 
+		 */
+		 public static function createClassBinding($binding){
+			//Method inherited from \Illuminate\Routing\Router
+			return \Illuminate\Routing\Router::createClassBinding($binding);
 		 }
 
 		/**
@@ -10778,6 +10811,8 @@ namespace {
 		 * Get the response for a given request.
 		 *
 		 * @param \Symfony\Component\HttpFoundation\Request  $request
+		 * @param int   $type
+		 * @param bool  $catch
 		 * @return \Symfony\Component\HttpFoundation\Response
 		 * @static 
 		 */
@@ -10851,8 +10886,8 @@ namespace {
 		/**
 		 * Register a custom driver creator Closure.
 		 *
-		 * @param string   $driver
-		 * @param Closure  $callback
+		 * @param string    $driver
+		 * @param \Closure  $callback
 		 * @return \Illuminate\Support\Manager|static
 		 * @static 
 		 */
@@ -11106,7 +11141,7 @@ namespace {
 		 * @return void
 		 * @static 
 		 */
-		 public static function put($key, $value){
+		 public static function put($key, $value = null){
 			//Method inherited from \Illuminate\Session\Store
 			 \Illuminate\Session\Store::put($key, $value);
 		 }
@@ -11670,7 +11705,7 @@ namespace {
 		/**
 		 * Set the current request instance.
 		 *
-		 * @param \Symfony\Component\HttpFoundation\Request  $request
+		 * @param \Illuminate\Http\Request  $request
 		 * @return void
 		 * @static 
 		 */
@@ -11753,7 +11788,7 @@ namespace {
 		/**
 		 * Set the Validator instance resolver.
 		 *
-		 * @param Closure  $resolver
+		 * @param \Closure  $resolver
 		 * @return void
 		 * @static 
 		 */
@@ -11829,8 +11864,8 @@ namespace {
 		/**
 		 * Get the evaluated view contents for a named view.
 		 *
-		 * @param string $view
-		 * @param mixed $data
+		 * @param string  $view
+		 * @param mixed   $data
 		 * @return \Illuminate\View\View
 		 * @static 
 		 */
@@ -11842,8 +11877,8 @@ namespace {
 		/**
 		 * Register a named view.
 		 *
-		 * @param string $view
-		 * @param string $name
+		 * @param string  $view
+		 * @param string  $name
 		 * @return void
 		 * @static 
 		 */
@@ -11897,6 +11932,7 @@ namespace {
 		 *
 		 * @param string  $path
 		 * @return \Illuminate\View\Engines\EngineInterface
+		 * @throws \InvalidArgumentException
 		 * @static 
 		 */
 		 public static function getEngineFromPath($path){
@@ -11920,7 +11956,7 @@ namespace {
 		/**
 		 * Register a view creator event.
 		 *
-		 * @param array|string  $views
+		 * @param array|string     $views
 		 * @param \Closure|string  $callback
 		 * @return array
 		 * @static 
@@ -11947,6 +11983,7 @@ namespace {
 		 *
 		 * @param array|string  $views
 		 * @param \Closure|string  $callback
+		 * @param int|null  $priority
 		 * @return array
 		 * @static 
 		 */
@@ -12148,9 +12185,9 @@ namespace {
 		/**
 		 * Register a valid view extension and its engine.
 		 *
-		 * @param string   $extension
-		 * @param string   $engine
-		 * @param Closure  $resolver
+		 * @param string    $extension
+		 * @param string    $engine
+		 * @param \Closure  $resolver
 		 * @return void
 		 * @static 
 		 */
@@ -12195,6 +12232,7 @@ namespace {
 		/**
 		 * Set the view finder instance.
 		 *
+		 * @param \Illuminate\View\ViewFinderInterface  $finder
 		 * @return void
 		 * @static 
 		 */
