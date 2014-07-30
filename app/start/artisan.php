@@ -11,4 +11,5 @@
 |
 */
 
-Artisan::add(new ForecastioRevelstoke);
+Artisan::add(new ForecastioRevelstokeCommand);
+Artisan::add(new GetCourthouseCommand);

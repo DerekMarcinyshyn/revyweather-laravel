@@ -8,7 +8,7 @@ use Indatus\Dispatcher\Scheduling\ScheduledCommand;
 use Indatus\Dispatcher\Scheduling\Schedulable;
 use Indatus\Dispatcher\Drivers\Cron\Scheduler;
 
-class ForecastioRevelstoke extends \Indatus\Dispatcher\Scheduling\ScheduledCommand {
+class ForecastioRevelstokeCommand extends \Indatus\Dispatcher\Scheduling\ScheduledCommand {
 
 	/**
 	 * The console command name.

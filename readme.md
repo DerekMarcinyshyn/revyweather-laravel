@@ -26,6 +26,19 @@ A RaspberryPi uses [RPi.GPIO](https://pypi.python.org/pypi/RPi.GPIO) for the bar
 
 Both are connected to a local server that creates the timelapse videos, syncs with AWS S3 and web server.
 
+## Environment variables
+
+You need to create a .env.php and .env.local.php
+
+```php
+<?php
+
+return [
+    'FORECAST_IO_KEY'   => 'forecast-io-key',
+    'LOCAL_SERVER_URL'  => 'http://example.com',
+];
+```
+
 ### License
 
 The MIT License (MIT)
