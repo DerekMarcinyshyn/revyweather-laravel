@@ -6,17 +6,10 @@ var rightNowApp = angular.module('rightNowApp', [
 
 rightNowApp.controller('RightNowController', function($scope, $http) {
 
-    $http.get('http://192.168.1.34/weather-station/data.php')
-        .success(function(data) {
-
-            $scope.courthouseTimestamp = data.timestamp;
-            $scope.courthousePressure = data.barometer + 'kPa';
-            $scope.courthouseHumidity = data.relativehumidity + '%';
-            $scope.courthouseWind = data.direction + ' ' + data.speed + 'km/h';
-
-            console.log(data);
-        });
-
+    $http.get('api/local.json').success(function(data) {
+        $scope.courthouse = data;
+        console.log(data);
+    });
 
     $http.get('api/revelstoke.json').success(function(data){
         $scope.forecastio = data;
