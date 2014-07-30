@@ -8,14 +8,14 @@ use Indatus\Dispatcher\Scheduling\ScheduledCommand;
 use Indatus\Dispatcher\Scheduling\Schedulable;
 use Indatus\Dispatcher\Drivers\Cron\Scheduler;
 
-class ForecastioRevelstokeCommand extends \Indatus\Dispatcher\Scheduling\ScheduledCommand {
+class ForecastioRevelstokeCommand extends ScheduledCommand {
 
 	/**
 	 * The console command name.
 	 *
 	 * @var string
 	 */
-	protected $name = 'forecastio:revelstoke';
+	protected $name = 'revyweather:revelstoke';
 
 	/**
 	 * The console command description.
@@ -45,7 +45,7 @@ class ForecastioRevelstokeCommand extends \Indatus\Dispatcher\Scheduling\Schedul
 	{
         $this->info('Get Revelstoke Forecast.io');
         $this->revelstoke = new Revelstoke;
-		$this->revelstoke->start();
+		$this->revelstoke->revelstoke();
         $this->info('all done.');
 	}
 

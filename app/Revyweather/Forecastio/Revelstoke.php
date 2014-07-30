@@ -8,40 +8,39 @@
  */
 
 use Illuminate\Filesystem\Filesystem;
+use GuzzleHttp\Client;
 
 class Revelstoke {
 
     protected $key;
     protected $filename;
+    protected $filesystem;
+    protected $client;
 
     public function __construct() {
         $this->key = getenv('FORECAST_IO_KEY');
+        $this->filesystem = new Filesystem;
         $this->filename = storage_path('data/forecasts/revelstoke.json');
+        $this->client = new Client;
     }
 
     /**
-     * Get and save json file
+     * Get Revelstoke Forecast.io and save json file
      *
      * @return bool
      */
-    public function start() {
-
+    public function revelstoke() {
         $gps = '51.0104,-118.2135';
+        $url = 'https://api.forecast.io/forecast/' . $this->key . '/' . $gps . '?units=ca';
+        $response = $this->client->get($url);
 
-        try {
-            $json = file_get_contents('https://api.forecast.io/forecast/' . $this->key . '/' . $gps . '?units=ca');
-
-            $fs = new Filesystem();
-            $fs->put($this->filename, $json);
+        if ($response->getStatusCode() == '200') {
+            $body = $response->getBody();
+            $this->filesystem->put($this->filename, $body);
 
             return true;
-        } catch (\Exception $e) {
-
+        } else {
             return false;
         }
-
     }
-
-
-
 } 
