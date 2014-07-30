@@ -10,6 +10,19 @@ The software stack includes HHVM, nginx, Laravel and AngularJS.
 
 More on [http://revyweather.com/about](http://revyweather.com/about)
 
+## Hardware
+
+[Netduino Plus 2](https://github.com/DerekMarcinyshyn/MonasheeWeatherStation)
+Weather Station drivers for real-time data.
+* Temperature
+* Humidity
+* Wind speed
+* Wind direction
+* Rain gauge
+
+A RaspberryPi uses [RPi.GPIO](https://pypi.python.org/pypi/RPi.GPIO) for the barometer and second temperature sensors. The RaspberryPi also has a RaspberryPi camera attached.
+
+Both are connected to a local server that creates the timelapse videos, syncs with AWS S3 and web server.
 
 ### License
 
