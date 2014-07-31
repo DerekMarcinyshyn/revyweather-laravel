@@ -8,6 +8,58 @@ rightNowApp.controller('RightNowController', function($scope, $http) {
 
     $http.get('api/local.json').success(function(data) {
         $scope.courthouse = data;
+
+        // gauges
+        var g = new JustGage({
+            id: "gauge-speed",
+            value: 0,
+            min: 0,
+            max: 20,
+            title: "Wind km/h"
+        });
+
+        var windSpeed = data.speed * 1.60934;
+        windSpeed = Math.ceil(windSpeed * 10) / 10;
+        g.refresh(windSpeed);
+
+        var degrees = 0;
+
+        switch (data.direction) {
+            case "N":
+                degrees = 270;
+                break;
+            case "NE":
+                degrees = 315;
+                break;
+            case "E":
+                degrees = 0;
+                break;
+            case "SE":
+                degrees = 45;
+                break;
+            case "S":
+                degrees = 90;
+                break;
+            case "SW":
+                degrees = 135;
+                break;
+            case "W":
+                degrees = 180;
+                break;
+            case "NW":
+                degrees = 225;
+                break;
+        }
+
+
+        $scope.arrowRotate = {
+            '-webkit-transform': 'rotate(' + degrees + 'deg)',
+            '-moz-transform': 'rotate(' + degrees + 'deg)',
+            '-o-transform': 'rotate(' + degrees + 'deg)',
+            '-ms-transform': 'rotate(' + degrees + 'deg)',
+            'transform': 'rotate(' + degrees + 'deg)'
+        };
+
         console.log(data);
     });
 
@@ -17,7 +69,7 @@ rightNowApp.controller('RightNowController', function($scope, $http) {
         $scope.currentWeather = {
             forecast: {
                 icon: data.currently.icon,
-                iconSize: 120
+                iconSize: 160
             }
         };
 

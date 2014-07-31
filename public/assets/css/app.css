@@ -3,8 +3,100 @@
 }
 
 .current-temperature {
-    float:right;
-    margin: 40px 0 0 0;
-    font-size: 44px;
+    margin: 10px 0 0 0;
+    /*text-align: center;*/
+    font-size: 60px;
     font-weight: bold;
+}
+
+.conditions {
+    margin: 70px 0 0 0;
+}
+
+.conditions p {
+    font-size: 20px;
+}
+
+/** COMPASS */
+.compass {
+    width: 240px;
+    height: 240px;
+    background-color: #F3F3F3;
+    border-radius: 100%;
+    background-image: -webkit-linear-gradient(top, #F7F7F7, #ECECEC);
+    position: relative;
+    margin: 0 auto;
+}
+
+.compass-inner {
+    width: 180px;
+    height: 180px;
+    background-color: #3D3D3D;
+    border-radius: 100%;
+    position: relative;
+    left: 30px;
+    top: 30px;
+    border: 2px solid #C5C5C5;
+}
+
+.main-arrow {
+    height: 100%;
+    width: 30px;
+    left: 80px;
+    position: relative;
+    padding-top: 3px;
+    box-sizing:border-box;
+}
+
+.arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 88px solid #DDDDDD;
+    position: relative;
+}
+
+.arrow-down {
+    -webkit-transform: rotate(180deg); /* Safari and Chrome */
+    width: 0;
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 88px solid #EF5052;
+    position: relative;
+}
+
+.north {
+    font-size: 28px;
+    color: #FFF;
+    position: absolute;
+    left: 80px;
+    top: 0;
+}
+
+.east {
+    font-size: 22px;
+    color: #999;
+    position: absolute;
+    left: 150px;
+    top: 68px;
+}
+
+.west {
+    font-size: 22px;
+    color: #999;
+    position: absolute;
+    left: 10px;
+    top: 68px;
+}
+
+.south {
+    font-size: 22px;
+    color: #999;
+    position: absolute;
+    left: 82px;
+    top: 144px;
 }
