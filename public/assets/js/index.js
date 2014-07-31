@@ -22,34 +22,34 @@ rightNowApp.controller('RightNowController', function($scope, $http) {
         windSpeed = Math.ceil(windSpeed * 10) / 10;
         g.refresh(windSpeed);
 
-        var degrees = 0;
+        var degrees = 45;
 
-        switch (data.direction) {
-            case "N":
-                degrees = 270;
-                break;
-            case "NE":
-                degrees = 315;
-                break;
-            case "E":
-                degrees = 0;
-                break;
-            case "SE":
-                degrees = 45;
-                break;
-            case "S":
-                degrees = 90;
-                break;
-            case "SW":
-                degrees = 135;
-                break;
-            case "W":
-                degrees = 180;
-                break;
-            case "NW":
-                degrees = 225;
-                break;
-        }
+//        switch (data.direction) {
+//            case "N":
+//                degrees = 0;
+//                break;
+//            case "NE":
+//                degrees = 45;
+//                break;
+//            case "E":
+//                degrees = 90;
+//                break;
+//            case "SE":
+//                degrees = 135;
+//                break;
+//            case "S":
+//                degrees = 180;
+//                break;
+//            case "SW":
+//                degrees = 225;
+//                break;
+//            case "W":
+//                degrees = 270;
+//                break;
+//            case "NW":
+//                degrees = 315;
+//                break;
+//        }
 
 
         $scope.arrowRotate = {

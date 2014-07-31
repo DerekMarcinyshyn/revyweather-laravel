@@ -19,8 +19,8 @@
 
 /** COMPASS */
 .compass {
-    width: 240px;
-    height: 240px;
+    width: 210px;
+    height: 210px;
     background-color: #F3F3F3;
     border-radius: 100%;
     background-image: -webkit-linear-gradient(top, #F7F7F7, #ECECEC);
@@ -34,26 +34,27 @@
     background-color: #3D3D3D;
     border-radius: 100%;
     position: relative;
-    left: 30px;
-    top: 30px;
+    left: 15px;
+    top: 15px;
     border: 2px solid #C5C5C5;
 }
 
 .main-arrow {
     height: 100%;
-    width: 30px;
-    left: 80px;
-    position: relative;
+    width: 15px;
+    left: 78px;
     padding-top: 3px;
     box-sizing:border-box;
+    position: relative;
 }
 
 .arrow-up {
+    margin:0;
     width: 0;
     height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 88px solid #DDDDDD;
+    border-left: 7.5px solid transparent;
+    border-right: 7.5px solid transparent;
+    border-bottom: 82.5px solid #EF5052;
     position: relative;
 }
 
@@ -63,9 +64,9 @@
     transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 88px solid #EF5052;
+    border-left: 7.5px solid transparent;
+    border-right: 7.5px solid transparent;
+    border-bottom: 82.5px solid #e6e6e6;
     position: relative;
 }
 
@@ -73,7 +74,7 @@
     font-size: 28px;
     color: #FFF;
     position: absolute;
-    left: 80px;
+    left: 76px;
     top: 0;
 }
 
@@ -82,21 +83,21 @@
     color: #999;
     position: absolute;
     left: 150px;
-    top: 68px;
+    top: 70px;
 }
 
 .west {
     font-size: 22px;
     color: #999;
     position: absolute;
-    left: 10px;
-    top: 68px;
+    left: 12px;
+    top: 70px;
 }
 
 .south {
     font-size: 22px;
     color: #999;
     position: absolute;
-    left: 82px;
-    top: 144px;
+    left: 78px;
+    top: 140px;
 }
