@@ -30,7 +30,7 @@ class Revelstoke {
      * @return bool
      */
     public function revelstoke() {
-        $gps = '51.0104,-118.2135';
+        $gps = '50.9987,-118.1950';
         $url = 'https://api.forecast.io/forecast/' . $this->key . '/' . $gps . '?units=ca';
         $response = $this->client->get($url);
 

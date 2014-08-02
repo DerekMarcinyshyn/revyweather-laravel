@@ -10,8 +10,8 @@ rightNowApp.controller('RightNowController', function($scope, $http) {
         $scope.courthouse = data;
 
         // gauges
-        var g = new JustGage({
-            id: "gauge-speed",
+        var gc = new JustGage({
+            id: "gauge-courthouse",
             value: 0,
             min: 0,
             max: 20,
@@ -20,10 +20,9 @@ rightNowApp.controller('RightNowController', function($scope, $http) {
 
         var windSpeed = data.speed * 1.60934;
         windSpeed = Math.ceil(windSpeed * 10) / 10;
-        g.refresh(windSpeed);
+        gc.refresh(windSpeed);
 
-        var degrees = 45;
-
+        var degrees = 0;
         switch (data.direction) {
             case "N":
                 degrees = 0;
@@ -51,8 +50,7 @@ rightNowApp.controller('RightNowController', function($scope, $http) {
                 break;
         }
 
-
-        $scope.arrowRotate = {
+        $scope.arrowCourthouse = {
             '-webkit-transform': 'rotate(' + degrees + 'deg)',
             '-moz-transform': 'rotate(' + degrees + 'deg)',
             '-o-transform': 'rotate(' + degrees + 'deg)',
@@ -73,7 +71,35 @@ rightNowApp.controller('RightNowController', function($scope, $http) {
             }
         };
 
+        var gd = new JustGage({
+            id: "gauge-downtown",
+            value: 0,
+            min: 0,
+            max: 20,
+            title: "Wind km/h"
+        });
+
+        var windSpeed = data.currently.windSpeed;
+        windSpeed = Math.ceil(windSpeed * 10) / 10;
+        gd.refresh(windSpeed);
+
+        var degrees = data.currently.windBearing;
+
+        $scope.arrowDowntown = {
+            '-webkit-transform': 'rotate(' + degrees + 'deg)',
+            '-moz-transform': 'rotate(' + degrees + 'deg)',
+            '-o-transform': 'rotate(' + degrees + 'deg)',
+            '-ms-transform': 'rotate(' + degrees + 'deg)',
+            'transform': 'rotate(' + degrees + 'deg)'
+        };
+
         console.log(data);
     });
 
+})
+    .filter('windDirection', function() {
+    return function(input) {
+        var directions = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW', 'N'];
+        return directions[Math.round(input/45)];
+    }
 });
