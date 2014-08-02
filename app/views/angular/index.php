@@ -6,29 +6,37 @@
             <p class="text-muted timestamp">{{ courthouse.timestamp }}</p>
         </div>
         <!-- split into 4 columns -->
-        <div class="col-md-3">
-            <skycon icon="currentWeather.forecast.icon" color="black" size="currentWeather.forecast.iconSize"></skycon>
-            <div class="current-temperature">{{ courthouse.bmp_temperature | number:1 }}&deg;C</div>
+        <div class="col-md-3 conditions">
+            <div class="bottom">
+                <skycon icon="currentWeather.forecast.icon" color="black" size="currentWeather.forecast.iconSize"></skycon>
+                <div class="current-temperature">{{ courthouse.bmp_temperature | number:1 }}&deg;C</div>
+            </div>
         </div>
         <div class="col-md-3 conditions">
-            <p class="right-now"><span class="text-muted">Condition:</span> {{ forecastio.currently.summary }}</p>
-            <p class="right-now"><span class="text-muted">Pressure:</span> {{ courthouse.barometer }} kPa</p>
-            <p class="right-now"><span class="text-muted">Humidity:</span> {{ courthouse.relativehumidity | number:0 }}%</p>
-            <p class="right-now"><span class="text-muted">Wind:</span> {{ courthouse.direction }} {{ courthouse.speed }}km/h</p>
+            <div class="bottom">
+                <p class="right-now"><span class="text-muted">Condition:</span> {{ forecastio.currently.summary }}</p>
+                <p class="right-now"><span class="text-muted">Pressure:</span> {{ courthouse.barometer }} kPa</p>
+                <p class="right-now"><span class="text-muted">Humidity:</span> {{ courthouse.relativehumidity | number:0 }}%</p>
+                <p class="right-now"><span class="text-muted">Wind:</span> {{ courthouse.direction }} {{ courthouse.speed }}km/h</p>
+            </div>
         </div>
-        <div class="col-md-3">
-            <div id="gauge-speed" style="width:290px; height: 240px;"></div>
+        <div class="col-md-3 conditions">
+            <div class="bottom">
+                <div id="gauge-speed" style="width:290px; height: 200px;"></div>
+            </div>
         </div>
-        <div class="col-md-3">
-            <div class="compass">
-                <div class="compass-inner">
-                    <div class="north">N</div>
-                    <div class="east">E</div>
-                    <div class="west">W</div>
-                    <div class="south">S</div>
-                    <div data-ng-style="arrowRotate" class="main-arrow">
-                        <div class="arrow-up"></div>
-                        <div class="arrow-down"></div>
+        <div class="col-md-3 conditions">
+            <div class="bottom">
+                <div class="compass">
+                    <div class="compass-inner">
+                        <div class="north">N</div>
+                        <div class="east">E</div>
+                        <div class="west">W</div>
+                        <div class="south">S</div>
+                        <div data-ng-style="arrowRotate" class="main-arrow">
+                            <div class="arrow-up"></div>
+                            <div class="arrow-down"></div>
+                        </div>
                     </div>
                 </div>
             </div>

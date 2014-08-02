@@ -24,32 +24,32 @@ rightNowApp.controller('RightNowController', function($scope, $http) {
 
         var degrees = 45;
 
-//        switch (data.direction) {
-//            case "N":
-//                degrees = 0;
-//                break;
-//            case "NE":
-//                degrees = 45;
-//                break;
-//            case "E":
-//                degrees = 90;
-//                break;
-//            case "SE":
-//                degrees = 135;
-//                break;
-//            case "S":
-//                degrees = 180;
-//                break;
-//            case "SW":
-//                degrees = 225;
-//                break;
-//            case "W":
-//                degrees = 270;
-//                break;
-//            case "NW":
-//                degrees = 315;
-//                break;
-//        }
+        switch (data.direction) {
+            case "N":
+                degrees = 0;
+                break;
+            case "NE":
+                degrees = 45;
+                break;
+            case "E":
+                degrees = 90;
+                break;
+            case "SE":
+                degrees = 135;
+                break;
+            case "S":
+                degrees = 180;
+                break;
+            case "SW":
+                degrees = 225;
+                break;
+            case "W":
+                degrees = 270;
+                break;
+            case "NW":
+                degrees = 315;
+                break;
+        }
 
 
         $scope.arrowRotate = {
