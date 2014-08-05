@@ -5,7 +5,8 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.2.*",
-        "indatus/dispatcher": "dev-master"
+        "indatus/dispatcher": "dev-master",
+        "soapbox/laravel-formatter": "dev-master"
 	},
     "require-dev": {
         "barryvdh/laravel-ide-helper": "1.*",

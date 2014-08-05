@@ -17,9 +17,17 @@
     @yield('head_js')
 </head>
 <body>
-    @include('layouts.nav')
+    <header>
+        @include('layouts.nav')
+    </header>
 
-    @yield('content')
+    <section>
+        @yield('content')
+    </section>
+
+    <footer>
+        @include('layouts.footer')
+    </footer>
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>

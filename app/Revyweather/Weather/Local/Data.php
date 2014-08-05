@@ -1,12 +1,10 @@
-<?php
+<?php namespace Revyweather\Weather\Local;
 /**
  * Get the local weather data
  *
  * @author  Derek Marcinyshyn <derek@marcinyshyn.com>
  * @date    July 29, 2014
  */
-
-namespace Revyweather\Local;
 
 use GuzzleHttp\Client;
 use Illuminate\Filesystem\Filesystem;

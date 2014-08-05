@@ -123,6 +123,7 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
         'Indatus\Dispatcher\ServiceProvider',
+        'SoapBox\Formatter\FormatterServiceProvider',
 
 	),
 

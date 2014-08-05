@@ -12334,5 +12334,148 @@ namespace {
 		 }
 
 	}
+	class Formatter extends \SoapBox\Formatter\Facades\Formatter{
+		/**
+		 * Returns an instance of the Formatter Bundle
+		 *
+		 * @param mixex  $data      the data we are converting
+		 * @param [type] $from_type what we want to convert to
+		 * @return Formatter
+		 * @static 
+		 */
+		 public static function make($data = null, $from_type = null, $attributes = array()){
+			//Method inherited from \SoapBox\Formatter\Formatter
+			return \SoapBox\Formatter\Formatter::make($data, $from_type, $attributes);
+		 }
+
+		/**
+		 * Should not be called directly. You should be using Formatter::make()
+		 * 
+		 * Constructs our class and sets up some vars we will be using throughout
+		 * the conversion process.
+		 *
+		 * @param mixed  $data        data we will be converting
+		 * @param string $from_type  what we are converting form
+		 * @static 
+		 */
+		 public static function __construct($data = null, $from_type = null, $attributes = array()){
+			//Method inherited from \SoapBox\Formatter\Formatter
+			 \SoapBox\Formatter\Formatter::__construct($data, $from_type, $attributes);
+		 }
+
+		/**
+		 * To array conversion
+		 * 
+		 * Goes through the input and makes sure everything is either a scalar value or array
+		 *
+		 * @param mixed  $data
+		 * @return array
+		 * @static 
+		 */
+		 public static function to_array($data = null){
+			//Method inherited from \SoapBox\Formatter\Formatter
+			return \SoapBox\Formatter\Formatter::to_array($data);
+		 }
+
+		/**
+		 * To CSV conversion
+		 *
+		 * @param mixed   $data
+		 * @param mixed   $delimiter
+		 * @return string
+		 * @static 
+		 */
+		 public static function to_csv($data = null, $attributes = null){
+			//Method inherited from \SoapBox\Formatter\Formatter
+			return \SoapBox\Formatter\Formatter::to_csv($data, $attributes);
+		 }
+
+		/**
+		 * Serialize
+		 *
+		 * @param mixed  $data
+		 * @return string
+		 * @static 
+		 */
+		 public static function to_serialized($data = null){
+			//Method inherited from \SoapBox\Formatter\Formatter
+			return \SoapBox\Formatter\Formatter::to_serialized($data);
+		 }
+
+		/**
+		 * To JSON conversion
+		 *
+		 * @param mixed  $data
+		 * @param bool   wether to make the json pretty
+		 * @return string
+		 * @static 
+		 */
+		 public static function to_json($data = null, $pretty = false){
+			//Method inherited from \SoapBox\Formatter\Formatter
+			return \SoapBox\Formatter\Formatter::to_json($data, $pretty);
+		 }
+
+		/**
+		 * Return as a string representing the PHP structure
+		 *
+		 * @param mixed  $data
+		 * @return string
+		 * @static 
+		 */
+		 public static function to_php($data = null){
+			//Method inherited from \SoapBox\Formatter\Formatter
+			return \SoapBox\Formatter\Formatter::to_php($data);
+		 }
+
+		/**
+		 * Convert to YAML
+		 *
+		 * @param mixed   $data
+		 * @return string
+		 * @static 
+		 */
+		 public static function to_yaml($data = null){
+			//Method inherited from \SoapBox\Formatter\Formatter
+			return \SoapBox\Formatter\Formatter::to_yaml($data);
+		 }
+
+		/**
+		 * To XML conversion
+		 *
+		 * @param mixed        $data
+		 * @param null         $structure
+		 * @param null|string  $basenode
+		 * @return string
+		 * @static 
+		 */
+		 public static function to_xml($data = null, $structure = null, $basenode = 'xml'){
+			//Method inherited from \SoapBox\Formatter\Formatter
+			return \SoapBox\Formatter\Formatter::to_xml($data, $structure, $basenode);
+		 }
+
+		/**
+		 * Checks if the given array is an assoc array.
+		 *
+		 * @param array  $arr  the array to check
+		 * @return bool   true if its an assoc array, false if not
+		 * @static 
+		 */
+		 public static function is_assoc($arr){
+			//Method inherited from \SoapBox\Formatter\Formatter
+			return \SoapBox\Formatter\Formatter::is_assoc($arr);
+		 }
+
+		/**
+		 * Returns with errors
+		 *
+		 * @return array
+		 * @static 
+		 */
+		 public static function errors(){
+			//Method inherited from \SoapBox\Formatter\Formatter
+			return \SoapBox\Formatter\Formatter::errors();
+		 }
+
+	}
 }
 

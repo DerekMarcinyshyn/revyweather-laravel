@@ -5,23 +5,23 @@ use Indatus\Dispatcher\Scheduling\Schedulable;
 use Indatus\Dispatcher\Drivers\Cron\Scheduler;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
-use Revyweather\Weather\Local\Data;
+use Revyweather\Weather\EnvironmentCanada\Forecast;
 
-class GetCourthouseCommand extends ScheduledCommand {
+class EnvironmentCanadaRevelstokeCommand extends ScheduledCommand {
 
 	/**
 	 * The console command name.
 	 *
 	 * @var string
 	 */
-	protected $name = 'revyweather:courthouse';
+	protected $name = 'revyweather:ec';
 
 	/**
 	 * The console command description.
 	 *
 	 * @var string
 	 */
-	protected $description = 'Get the local weather data.';
+	protected $description = 'Gets the Environment Canada Revelstoke weather.';
 
 	/**
 	 * Create a new command instance.
@@ -51,11 +51,8 @@ class GetCourthouseCommand extends ScheduledCommand {
 	 */
 	public function fire()
 	{
-		$this->info('Revy Weather get the local weather data.');
-
-        $data = new Data();
-        $data->getWeatherData();
-
+		$forecast = new Forecast;
+        $forecast->getRevelstokeWeather();
 	}
 
 	/**

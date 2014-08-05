@@ -13,3 +13,4 @@
 
 Artisan::add(new ForecastioRevelstokeCommand);
 Artisan::add(new GetCourthouseCommand);
+Artisan::add(new EnvironmentCanadaRevelstokeCommand);

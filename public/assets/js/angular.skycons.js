@@ -47,7 +47,7 @@ angularSkycons.directive( 'skycon', function () {
                 skycons.add( canvas, scope.icon );
             }, true );
 
-            skycons.play();
+//            skycons.play();
 
             if ( element[0].nodeType === 8 ) {
                 element.replaceWith( canvas );

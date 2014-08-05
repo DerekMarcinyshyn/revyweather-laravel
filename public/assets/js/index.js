@@ -5,7 +5,10 @@ var rightNowApp = angular.module('rightNowApp', [
 ]);
 
 rightNowApp.controller('RightNowController', function($scope, $http, $interval) {
-    // Current weather
+    /**
+     * Local current weather
+     */
+
     var gc = new JustGage({
         id: "gauge-courthouse",
         value: 0,
@@ -63,13 +66,17 @@ rightNowApp.controller('RightNowController', function($scope, $http, $interval) 
         });
     }
 
-    setInterval(function() {
-        $scope.$apply(function() {
-           getCurrent();
-        });
-    }, 5000);
+//    setInterval(function() {
+//        $scope.$apply(function() {
+//           getCurrent();
+//        });
+//    }, 5000);
     getCurrent();
 
+
+    /**
+     * Forecast.io
+     */
 
     var gd = new JustGage({
         id: "gauge-downtown",
@@ -105,10 +112,53 @@ rightNowApp.controller('RightNowController', function($scope, $http, $interval) 
         };
     });
 
-})
-    .filter('windDirection', function() {
+    /**
+     * Environment Canada
+     */
+    var ga = new JustGage({
+        id: "gauge-airport",
+        value: 0,
+        min: 0,
+        max: 20,
+        title: "Wind km/h"
+    });
+
+    $http.get('api/revelstoke-ec.json').success(function(data) {
+        $scope.airport = data;
+
+        var windSpeed = data.currentConditions.wind.speed;
+        ga.refresh(windSpeed);
+
+        var degrees = data.currentConditions.wind.bearing;
+
+        $scope.arrowAirport = {
+            '-webkit-transform': 'rotate(' + degrees + 'deg)',
+            '-moz-transform': 'rotate(' + degrees + 'deg)',
+            '-o-transform': 'rotate(' + degrees + 'deg)',
+            '-ms-transform': 'rotate(' + degrees + 'deg)',
+            'transform': 'rotate(' + degrees + 'deg)'
+        };
+
+        console.log(data);
+    });
+
+
+
+
+});
+
+rightNowApp.filter('windDirection', function() {
     return function(input) {
         var directions = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW', 'N'];
         return directions[Math.round(input/45)];
+    }
+});
+
+rightNowApp.filter('ecDirection', function() {
+    return function(input) {
+        if (input == "" || input == undefined)
+            return '';
+        else
+            return input;
     }
 });

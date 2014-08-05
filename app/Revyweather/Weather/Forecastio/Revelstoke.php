@@ -1,5 +1,4 @@
-<?php namespace Revyweather\Forecastio;
-
+<?php namespace Revyweather\Weather\Forecastio;
 /**
  * Revelstoke Forecast.io
  *
