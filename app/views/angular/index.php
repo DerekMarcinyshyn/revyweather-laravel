@@ -9,7 +9,7 @@
         <div class="col-md-3 conditions">
             <div class="bottom">
                 <skycon icon="currentWeather.forecast.icon" color="black" size="currentWeather.forecast.iconSize"></skycon>
-                <div class="current-temperature">{{ courthouse.bmp_temperature | number:1 }}&deg;C</div>
+                <div class="current-temperature">{{ courthouse.temperature | number:1 }}&deg;C</div>
             </div>
         </div>
         <div class="col-md-3 conditions">
@@ -17,7 +17,7 @@
                 <p class="right-now"><span class="text-muted">Condition:</span> {{ forecastio.currently.summary }}</p>
                 <p class="right-now"><span class="text-muted">Pressure:</span> {{ courthouse.barometer }} kPa</p>
                 <p class="right-now"><span class="text-muted">Humidity:</span> {{ courthouse.relativehumidity | number:0 }}%</p>
-                <p class="right-now"><span class="text-muted">Wind:</span> {{ courthouse.direction }} &nbsp; {{ courthouse.speed }}km/h</p>
+                <p class="right-now"><span class="text-muted">Wind:</span> {{ courthouse.direction }} &nbsp; {{ windSpeed }}km/h</p>
             </div>
         </div>
         <div class="col-md-3 conditions">

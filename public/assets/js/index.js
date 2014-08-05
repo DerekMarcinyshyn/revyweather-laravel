@@ -4,61 +4,79 @@ var rightNowApp = angular.module('rightNowApp', [
     'angular-skycons'
 ]);
 
-rightNowApp.controller('RightNowController', function($scope, $http) {
+rightNowApp.controller('RightNowController', function($scope, $http, $interval) {
+    // Current weather
+    var gc = new JustGage({
+        id: "gauge-courthouse",
+        value: 0,
+        min: 0,
+        max: 20,
+        title: "Wind km/h"
+    });
 
-    $http.get('api/local.json').success(function(data) {
-        $scope.courthouse = data;
 
-        // gauges
-        var gc = new JustGage({
-            id: "gauge-courthouse",
-            value: 0,
-            min: 0,
-            max: 20,
-            title: "Wind km/h"
+    function getCurrent() {
+        $http.get('api/local.json').success(function(data) {
+            $scope.courthouse = data;
+
+            var windSpeed = data.speed * 1.60934;
+            $scope.windSpeed = Math.ceil(windSpeed * 10) / 10;
+            gc.refresh($scope.windSpeed);
+
+            var degrees = 0;
+            switch (data.direction) {
+                case "N":
+                    degrees = 0;
+                    break;
+                case "NE":
+                    degrees = 45;
+                    break;
+                case "E":
+                    degrees = 90;
+                    break;
+                case "SE":
+                    degrees = 135;
+                    break;
+                case "S":
+                    degrees = 180;
+                    break;
+                case "SW":
+                    degrees = 225;
+                    break;
+                case "W":
+                    degrees = 270;
+                    break;
+                case "NW":
+                    degrees = 315;
+                    break;
+            }
+
+            $scope.arrowCourthouse = {
+                '-webkit-transform': 'rotate(' + degrees + 'deg)',
+                '-moz-transform': 'rotate(' + degrees + 'deg)',
+                '-o-transform': 'rotate(' + degrees + 'deg)',
+                '-ms-transform': 'rotate(' + degrees + 'deg)',
+                'transform': 'rotate(' + degrees + 'deg)'
+            };
+//
+//            console.log(data);
         });
+    }
 
-        var windSpeed = data.speed * 1.60934;
-        windSpeed = Math.ceil(windSpeed * 10) / 10;
-        gc.refresh(windSpeed);
+    setInterval(function() {
+        $scope.$apply(function() {
+           getCurrent();
+        });
+    }, 5000);
+    getCurrent();
 
-        var degrees = 0;
-        switch (data.direction) {
-            case "N":
-                degrees = 0;
-                break;
-            case "NE":
-                degrees = 45;
-                break;
-            case "E":
-                degrees = 90;
-                break;
-            case "SE":
-                degrees = 135;
-                break;
-            case "S":
-                degrees = 180;
-                break;
-            case "SW":
-                degrees = 225;
-                break;
-            case "W":
-                degrees = 270;
-                break;
-            case "NW":
-                degrees = 315;
-                break;
-        }
 
-        $scope.arrowCourthouse = {
-            '-webkit-transform': 'rotate(' + degrees + 'deg)',
-            '-moz-transform': 'rotate(' + degrees + 'deg)',
-            '-o-transform': 'rotate(' + degrees + 'deg)',
-            '-ms-transform': 'rotate(' + degrees + 'deg)',
-            'transform': 'rotate(' + degrees + 'deg)'
-        };
-
-        console.log(data);
+    var gd = new JustGage({
+        id: "gauge-downtown",
+        value: 0,
+        min: 0,
+        max: 20,
+        title: "Wind km/h"
     });
 
     $http.get('api/revelstoke.json').success(function(data){
@@ -71,13 +89,6 @@ rightNowApp.controller('RightNowController', function($scope, $http) {
             }
         };
 
-        var gd = new JustGage({
-            id: "gauge-downtown",
-            value: 0,
-            min: 0,
-            max: 20,
-            title: "Wind km/h"
-        });
 
         var windSpeed = data.currently.windSpeed;
         windSpeed = Math.ceil(windSpeed * 10) / 10;
@@ -92,8 +103,6 @@ rightNowApp.controller('RightNowController', function($scope, $http) {
             '-ms-transform': 'rotate(' + degrees + 'deg)',
             'transform': 'rotate(' + degrees + 'deg)'
         };
-
-        console.log(data);
     });
 
 })
