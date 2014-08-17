@@ -11,6 +11,6 @@
 |
 */
 
-Artisan::add(new ForecastioRevelstokeCommand);
-Artisan::add(new GetCourthouseCommand);
-Artisan::add(new EnvironmentCanadaRevelstokeCommand);
+Artisan::resolve('ForecastioRevelstokeCommand');
+Artisan::resolve('GetCourthouseCommand');
+Artisan::resolve('EnvironmentCanadaRevelstokeCommand');

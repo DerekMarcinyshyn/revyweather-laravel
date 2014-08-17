@@ -1,7 +1,8 @@
 'use strict';
 
 var rightNowApp = angular.module('rightNowApp', [
-    'angular-skycons'
+    'angular-skycons',
+    'ui.bootstrap'
 ]);
 
 rightNowApp.controller('RightNowController', function($scope, $http, $interval) {
@@ -138,6 +139,34 @@ rightNowApp.controller('RightNowController', function($scope, $http, $interval) 
             '-ms-transform': 'rotate(' + degrees + 'deg)',
             'transform': 'rotate(' + degrees + 'deg)'
         };
+
+        if (data.warnings.event) {
+            switch (data.warnings.event['@attributes'].type) {
+                case 'watch':
+                    $scope.alertClass = 'alert-danger';
+                    break;
+
+                case 'advisory':
+                    $scope.alertClass = 'alert-warning';
+                    break;
+
+                case 'warning':
+                    $scope.alertClass = 'alert-warning';
+                    break;
+
+                case 'ended':
+                    $scope.alertClass = 'alert-success';
+                    break;
+
+                case 'statement':
+                    $scope.alertClass = 'alert-info';
+                    break;
+
+                default:
+                    $scope.alertClass = 'alert-info';
+                    break;
+            }
+        }
 
         console.log(data);
     });

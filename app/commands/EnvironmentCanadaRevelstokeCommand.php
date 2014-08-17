@@ -3,8 +3,7 @@
 use Indatus\Dispatcher\Scheduling\ScheduledCommand;
 use Indatus\Dispatcher\Scheduling\Schedulable;
 use Indatus\Dispatcher\Drivers\Cron\Scheduler;
-use Symfony\Component\Console\Input\InputOption;
-use Symfony\Component\Console\Input\InputArgument;
+use Revyweather\Weather\EnvironmentCanada\EnvironmentCanadaException;
 use Revyweather\Weather\EnvironmentCanada\Forecast;
 
 class EnvironmentCanadaRevelstokeCommand extends ScheduledCommand {
@@ -23,13 +22,16 @@ class EnvironmentCanadaRevelstokeCommand extends ScheduledCommand {
 	 */
 	protected $description = 'Gets the Environment Canada Revelstoke weather.';
 
+    protected $forecast;
+
 	/**
 	 * Create a new command instance.
 	 *
 	 * @return void
 	 */
-	public function __construct()
+	public function __construct(Forecast $forecast)
 	{
+        $this->forecast = $forecast;
 		parent::__construct();
 	}
 
@@ -51,28 +53,10 @@ class EnvironmentCanadaRevelstokeCommand extends ScheduledCommand {
 	 */
 	public function fire()
 	{
-		$forecast = new Forecast;
-        $forecast->getRevelstokeWeather();
+        try {
+            $this->forecast->getRevelstokeWeather();
+        } catch (EnvironmentCanadaException $e) {
+            Event::fire('environment.canada.fail', $e);
+        }
 	}
-
-	/**
-	 * Get the console command arguments.
-	 *
-	 * @return array
-	 */
-	protected function getArguments()
-	{
-		return array();
-	}
-
-	/**
-	 * Get the console command options.
-	 *
-	 * @return array
-	 */
-	protected function getOptions()
-	{
-		return array();
-	}
-
 }

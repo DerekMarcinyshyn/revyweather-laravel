@@ -1,5 +1,13 @@
 <div data-ng-app="rightNowApp">
     <div data-ng-controller="RightNowController">
+        <div data-ng-show="airport.warnings.event" class="col-md-12">
+            <div class="alert {{ alertClass }}">
+                <p><a href="{{ airport.warnings['@attributes'].url }}" target="_blank">
+                       <strong>{{ airport.warnings.event["@attributes"].description }}</strong>
+                    </a></p>
+                <p>{{ airport.warnings.event.dateTime[1].textSummary }}</p>
+            </div>
+        </div>
         <div class="col-md-12">
             <h3>Courthouse Area Revelstoke</h3>
             <p class="powered-by">Powered by <a href="http://netduino.com/netduinoplus2/specs.htm" target="_blank">Netduino Plus 2</a> and <a href="http://www.raspberrypi.org/" target="_blank">RaspberryPi</a> updated every 5 seconds.</p>

@@ -22,6 +22,10 @@
     </header>
 
     <section>
+        @yield('flash')
+    </section>
+
+    <section>
         @yield('content')
     </section>
 
