@@ -45,14 +45,11 @@ class ForecastioRevelstokeCommand extends ScheduledCommand {
 	 */
 	public function fire()
 	{
-        $this->info('Get Revelstoke Forecast.io');
         try {
             $this->revelstoke->revelstoke();
         } catch (ForecastioException $e) {
             Event::fire('forecastio.fail', $e);
         }
-
-        $this->info('all done.');
 	}
 
     /**

@@ -7,3 +7,4 @@
  */
 
 Event::listen('environment.canada.fail', 'Revyweather\Notifications\ExceptionHandler');
+Event::listen('forecastio.fail', 'Revyweather\Notifications\ExceptionHandler');
