@@ -3,9 +3,8 @@
 use Indatus\Dispatcher\Scheduling\ScheduledCommand;
 use Indatus\Dispatcher\Scheduling\Schedulable;
 use Indatus\Dispatcher\Drivers\Cron\Scheduler;
-use Symfony\Component\Console\Input\InputOption;
-use Symfony\Component\Console\Input\InputArgument;
 use Revyweather\Weather\Local\Data;
+use Revyweather\Weather\Local\LocalDataException;
 
 class GetCourthouseCommand extends ScheduledCommand {
 
@@ -23,13 +22,19 @@ class GetCourthouseCommand extends ScheduledCommand {
 	 */
 	protected $description = 'Get the local weather data.';
 
+    /**
+     * @var \Revyweather\Weather\Local\Data
+     */
+    protected $data;
+
 	/**
 	 * Create a new command instance.
 	 *
 	 * @return void
 	 */
-	public function __construct()
+	public function __construct(Data $data)
 	{
+        $this->data = $data;
 		parent::__construct();
 	}
 
@@ -51,31 +56,10 @@ class GetCourthouseCommand extends ScheduledCommand {
 	 */
 	public function fire()
 	{
-		$this->info('Revy Weather get the local weather data.');
-
-        $data = new Data();
-        $data->getWeatherData();
-
+        try {
+            $this->data->getWeatherData();
+        } catch (LocalDataException $e) {
+            Event::fire('local.data.fail', $e);
+        }
 	}
-
-	/**
-	 * Get the console command arguments.
-	 *
-	 * @return array
-	 */
-	protected function getArguments()
-	{
-		return array();
-	}
-
-	/**
-	 * Get the console command options.
-	 *
-	 * @return array
-	 */
-	protected function getOptions()
-	{
-		return array();
-	}
-
 }

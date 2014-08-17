@@ -8,18 +8,40 @@
 
 use GuzzleHttp\Client;
 use Illuminate\Filesystem\Filesystem;
+use Revyweather\Exception\RevyweatherException;
+
+class LocalDataException extends RevyweatherException {}
 
 class Data {
 
+    /**
+     * @var string
+     */
     protected $url;
-    protected $client;
-    protected $filesystem;
+
+    /**
+     * @var string
+     */
     protected $filename;
 
-    public function __construct() {
+    /**
+     * @var \GuzzleHttp\Client
+     */
+    protected $client;
+
+    /**
+     * @var \Illuminate\Filesystem\Filesystem
+     */
+    protected $filesystem;
+
+    /**
+     * @param Client $client
+     * @param Filesystem $filesystem
+     */
+    public function __construct(Client $client, Filesystem $filesystem) {
+        $this->client = $client;
+        $this->filesystem = $filesystem;
         $this->url = getenv('LOCAL_SERVER_URL');
-        $this->client = new Client;
-        $this->filesystem = new Filesystem;
         $this->filename = storage_path('data/forecasts/local.json');
     }
 
@@ -29,16 +51,16 @@ class Data {
      * @return bool
      */
     public function getWeatherData() {
-        $response = $this->client->get($this->url);
+        try {
+            $response = $this->client->get($this->url);
 
-        if ($response->getStatusCode() == '200') {
-            $body = $response->getBody();
+            if ($response->getStatusCode() == '200') {
+                $body = $response->getBody();
 
-            $this->filesystem->put($this->filename, $body);
-
-            return true;
-        } else {
-            return false;
+                $this->filesystem->put($this->filename, $body);
+            }
+        } catch (\Exception $e) {
+            throw new LocalDataException($e);
         }
     }
 } 
