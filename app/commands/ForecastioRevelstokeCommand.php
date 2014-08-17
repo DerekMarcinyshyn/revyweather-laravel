@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Console\Command;
+use Revyweather\Weather\Forecastio\ForecastioException;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 use Revyweather\Weather\Forecastio\Revelstoke;
@@ -31,8 +32,9 @@ class ForecastioRevelstokeCommand extends ScheduledCommand {
 	 *
 	 * @return void
 	 */
-	public function __construct()
+	public function __construct(Revelstoke $revelstoke)
 	{
+        $this->revelstoke = $revelstoke;
 		parent::__construct();
 	}
 
@@ -44,8 +46,12 @@ class ForecastioRevelstokeCommand extends ScheduledCommand {
 	public function fire()
 	{
         $this->info('Get Revelstoke Forecast.io');
-        $this->revelstoke = new Revelstoke;
-		$this->revelstoke->revelstoke();
+        try {
+            $this->revelstoke->revelstoke();
+        } catch (ForecastioException $e) {
+            Event::fire('forecastio.fail', $e);
+        }
+
         $this->info('all done.');
 	}
 
@@ -59,26 +65,4 @@ class ForecastioRevelstokeCommand extends ScheduledCommand {
     public function schedule(Schedulable $scheduler) {
         return $scheduler;
     }
-
-
-	/**
-	 * Get the console command arguments.
-	 *
-	 * @return array
-	 */
-	protected function getArguments()
-	{
-		return array();
-	}
-
-	/**
-	 * Get the console command options.
-	 *
-	 * @return array
-	 */
-	protected function getOptions()
-	{
-		return array();
-	}
-
 }
