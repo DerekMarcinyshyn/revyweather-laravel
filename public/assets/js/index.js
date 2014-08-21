@@ -87,16 +87,19 @@ rightNowApp.controller('RightNowController', function($scope, $http, $interval) 
         title: "Wind km/h"
     });
 
+    $scope.isForecastCollapsed = true;
+
     $http.get('api/revelstoke.json').success(function(data){
         $scope.forecastio = data;
 
         $scope.currentWeather = {
             forecast: {
                 icon: data.currently.icon,
-                iconSize: 160
+                iconSize: 80
             }
         };
 
+        console.log(data);
 
         var windSpeed = data.currently.windSpeed;
         windSpeed = Math.ceil(windSpeed * 10) / 10;
@@ -174,6 +177,12 @@ rightNowApp.controller('RightNowController', function($scope, $http, $interval) 
 
 
 
+});
+
+rightNowApp.filter('climacons', function() {
+    return function(input) {
+        return input.replace(/-/g, " ");
+    }
 });
 
 rightNowApp.filter('windDirection', function() {
