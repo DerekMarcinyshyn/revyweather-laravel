@@ -127,6 +127,8 @@ rightNowApp.controller('RightNowController', function($scope, $http, $interval) 
         title: "Wind km/h"
     });
 
+    $scope.isEcForecastCollapsed = true;
+
     $http.get('api/revelstoke-ec.json').success(function(data) {
         $scope.airport = data;
 

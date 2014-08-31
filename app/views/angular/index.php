@@ -98,9 +98,11 @@
         </div>
 
         <div class="col-md-12">
+            <h4>Forecast Summary</h4>
+            <p>{{ forecastio.daily.summary }}</p>
+
             <button class="btn btn-sm show-forecastio" data-ng-click="isForecastCollapsed = !isForecastCollapsed">
-                <i class="fa {{ isForecastCollapsed ? 'fa-caret-right' : 'fa-caret-down' }}"></i> &nbsp; Forecast</button>
-            {{ forecast.daily.summary }}
+                <i class="fa {{ isForecastCollapsed ? 'fa-caret-right' : 'fa-caret-down' }}"></i> &nbsp; Daily Forecast</button>
             <div collapse="isForecastCollapsed">
                 <div class="forecastio-forecast-container">
                     <div class="forecastio" data-ng-repeat="forecast in forecastio.daily.data | limitTo:5">
@@ -128,7 +130,7 @@
         <!-- split into 4 columns -->
         <div class="col-md-3 col-xs-6 conditions">
             <div class="bottom">
-                <skycon icon="currentWeather.forecast.icon" color="black" size="currentWeather.forecast.iconSize"></skycon>
+                <img src="assets/img/ec/icons-large/{{ airport.currentConditions.iconCode }}.png" alt="{{ airport.currentConditions.condition }}" width="80" height="80" />
                 <div class="current-temperature">{{ airport.currentConditions.temperature | number:1 }}&deg;C</div>
             </div>
         </div>
@@ -161,6 +163,26 @@
                 </div>
             </div>
         </div>
+
+        <div class="col-md-12">
+            <h4>Today</h4>
+            <p>{{ airport.forecastGroup.regionalNormals.textSummary }}</p>
+            <button class="btn btn-sm show-forecastio" data-ng-click="isEcForecastCollapsed = !isEcForecastCollapsed">
+                <i class="fa {{ isEcForecastCollapsed ? 'fa-caret-right' : 'fa-caret-down' }}"></i> &nbsp;  Daily Forecast</button>
+            <div collapse="isEcForecastCollapsed">
+                <div class="forecastio-forecast-container">
+                    <div class="forecastio" data-ng-repeat="forecast in airport.forecastGroup.forecast | limitTo:5">
+                        <div class="ec-forecast-image"><img src="assets/img/ec/icons-large/{{ forecast.abbreviatedForecast.iconCode }}.png" alt="" width="70" height="70" /></div>
+                        <div class="forecast-summary">
+                            <h4>{{ forecast.period }}</h4>
+                            <p class="ec-temperature">{{ forecast.temperatures.temperature | number:1 }}&deg;C</p>
+                            <p>{{ forecast.textSummary }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <div class="col-md-12">
             <p class="powered-by">Powered by <a href="http://weather.gc.ca/canada_e.html" target="_blank">Environment Canada</a> updated every hour.</p>
