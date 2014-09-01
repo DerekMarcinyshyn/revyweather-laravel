@@ -1,38 +1,39 @@
 <?php namespace Revyweather\Weather\Local;
 /**
- * Get the local weather data
+ * Image.php
  *
  * @author  Derek Marcinyshyn <derek@marcinyshyn.com>
- * @date    July 29, 2014
+ * @date    31/08/14
  */
 
-use GuzzleHttp\Client;
-use Illuminate\Filesystem\Filesystem;
 use Revyweather\Exception\RevyweatherException;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\RequestException;
+use Illuminate\Filesystem\Filesystem;
 
-class LocalDataException extends RevyweatherException {}
+class ImageException extends RevyweatherException {}
 
-class Data {
-
-    /**
-     * @var string
-     */
-    protected $url;
+class Image {
 
     /**
      * @var string
      */
-    protected $filename;
-
-    /**
-     * @var \GuzzleHttp\Client
-     */
-    protected $client;
+    private $filename;
 
     /**
      * @var \Illuminate\Filesystem\Filesystem
      */
-    protected $filesystem;
+    private $filesystem;
+
+    /**
+     * @var string
+     */
+    private $url;
+
+    /**
+     * @var \GuzzleHttp\Client
+     */
+    private $client;
 
     /**
      * @param Client $client
@@ -41,24 +42,23 @@ class Data {
     public function __construct(Client $client, Filesystem $filesystem) {
         $this->client = $client;
         $this->filesystem = $filesystem;
-        $this->url = getenv('LOCAL_SERVER_URL');
-        $this->filename = storage_path('data/forecasts/local.json');
+        $this->filename = storage_path('data/images/latest-image.jpg');
+        $this->url = getenv('LOCAL_IMAGE_URL');
     }
 
     /**
-     * Get the local weather data from local server
+     * Get latest image from local server
      *
-     * @return bool
+     * @throws ImageException
      */
-    public function getWeatherData() {
+    public function getLatestImage() {
         try {
             $response = $this->client->get($this->url);
-
             if ($response->getStatusCode() == '200') {
                 $this->filesystem->put($this->filename, $response->getBody());
             }
-        } catch (\Exception $e) {
-            throw new LocalDataException($e);
+        } catch (RequestException $e) {
+            throw new ImageException($e);
         }
     }
 } 

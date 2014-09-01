@@ -36,6 +36,9 @@ You need to create a .env.php and .env.local.php
 return [
     'FORECAST_IO_KEY'   => 'forecast-io-key',
     'LOCAL_SERVER_URL'  => 'http://example.com',
+    'GMAIL_USERNAME'    => 'username',
+    'GMAIL_PASSWORD'    => 'password',
+    'LOCAL_IMAGE_URL'   => 'http://example.com/image.jpg'
 ];
 ```
 
