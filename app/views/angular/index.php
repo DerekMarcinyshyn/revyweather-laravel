@@ -1,4 +1,4 @@
-<div data-ng-app="rightNowApp">
+<div data-ng-app="rightNowApp" ng-cloak>
     <div data-ng-controller="RightNowController">
         <div data-ng-show="airport.warnings.event" class="col-md-12">
             <div class="alert {{ alertClass }}">
@@ -123,6 +123,8 @@
 
         <hr class="col-md-12">
 
+<!--        <div data-ng-include src="'assets/partials/airport.html'" ></div>-->
+
         <div class="col-md-12">
             <h3>Revelstoke Airport</h3>
             <p class="text-muted timestamp">{{ airport.currentConditions.dateTime[1].textSummary }}</p>
@@ -130,7 +132,7 @@
         <!-- split into 4 columns -->
         <div class="col-md-3 col-xs-6 conditions">
             <div class="bottom">
-                <img src="assets/img/ec/icons-large/{{ airport.currentConditions.iconCode }}.png" alt="{{ airport.currentConditions.condition }}" width="80" height="80" />
+                <img data-ng-src="assets/img/ec/icons-large/{{ airport.currentConditions.iconCode }}.png" alt="{{ airport.currentConditions.condition }}" width="80" height="80" />
                 <div class="current-temperature">{{ airport.currentConditions.temperature | number:1 }}&deg;C</div>
             </div>
         </div>
@@ -172,7 +174,9 @@
             <div collapse="isEcForecastCollapsed">
                 <div class="forecastio-forecast-container">
                     <div class="forecastio" data-ng-repeat="forecast in airport.forecastGroup.forecast | limitTo:5">
-                        <div class="ec-forecast-image"><img src="assets/img/ec/icons-large/{{ forecast.abbreviatedForecast.iconCode }}.png" alt="" width="70" height="70" /></div>
+                        <div class="ec-forecast-image">
+                            <img data-ng-src="assets/img/ec/icons-large/{{ forecast.abbreviatedForecast.iconCode }}.png" alt="" width="70" height="70" />
+                        </div>
                         <div class="forecast-summary">
                             <h4>{{ forecast.period }}</h4>
                             <p class="ec-temperature">{{ forecast.temperatures.temperature | number:1 }}&deg;C</p>
@@ -187,5 +191,6 @@
         <div class="col-md-12">
             <p class="powered-by">Powered by <a href="http://weather.gc.ca/canada_e.html" target="_blank">Environment Canada</a> updated every hour.</p>
         </div>
+
     </div>
 </div>

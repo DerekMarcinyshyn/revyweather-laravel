@@ -124,6 +124,7 @@ return array(
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
         'Indatus\Dispatcher\ServiceProvider',
         'SoapBox\Formatter\FormatterServiceProvider',
+        'Bootstrapper\BootstrapperServiceProvider',
 
 	),
 

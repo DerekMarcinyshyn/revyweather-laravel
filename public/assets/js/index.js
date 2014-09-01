@@ -99,8 +99,6 @@ rightNowApp.controller('RightNowController', function($scope, $http, $interval) 
             }
         };
 
-        console.log(data);
-
         var windSpeed = data.currently.windSpeed;
         windSpeed = Math.ceil(windSpeed * 10) / 10;
         gd.refresh(windSpeed);
@@ -119,6 +117,8 @@ rightNowApp.controller('RightNowController', function($scope, $http, $interval) 
     /**
      * Environment Canada
      */
+    $scope.isEcForecastCollapsed = true;
+
     var ga = new JustGage({
         id: "gauge-airport",
         value: 0,
@@ -127,23 +127,8 @@ rightNowApp.controller('RightNowController', function($scope, $http, $interval) 
         title: "Wind km/h"
     });
 
-    $scope.isEcForecastCollapsed = true;
-
     $http.get('api/revelstoke-ec.json').success(function(data) {
         $scope.airport = data;
-
-        var windSpeed = data.currentConditions.wind.speed;
-        ga.refresh(windSpeed);
-
-        var degrees = data.currentConditions.wind.bearing;
-
-        $scope.arrowAirport = {
-            '-webkit-transform': 'rotate(' + degrees + 'deg)',
-            '-moz-transform': 'rotate(' + degrees + 'deg)',
-            '-o-transform': 'rotate(' + degrees + 'deg)',
-            '-ms-transform': 'rotate(' + degrees + 'deg)',
-            'transform': 'rotate(' + degrees + 'deg)'
-        };
 
         if (data.warnings.event) {
             switch (data.warnings.event['@attributes'].type) {
@@ -173,12 +158,21 @@ rightNowApp.controller('RightNowController', function($scope, $http, $interval) 
             }
         }
 
+        var windSpeed = data.currentConditions.wind.speed;
+        ga.refresh(windSpeed);
+
+        var degrees = data.currentConditions.wind.bearing;
+
+        $scope.arrowAirport = {
+            '-webkit-transform': 'rotate(' + degrees + 'deg)',
+            '-moz-transform': 'rotate(' + degrees + 'deg)',
+            '-o-transform': 'rotate(' + degrees + 'deg)',
+            '-ms-transform': 'rotate(' + degrees + 'deg)',
+            'transform': 'rotate(' + degrees + 'deg)'
+        };
+
         console.log(data);
     });
-
-
-
-
 });
 
 rightNowApp.filter('climacons', function() {
