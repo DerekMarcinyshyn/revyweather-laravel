@@ -1,5 +1,5 @@
 body {
-    background: url('/assets/img/brushed.png') fixed repeat;
+    background: url('assets/img/brushed.png') fixed repeat;
 }
 
 
@@ -11,6 +11,13 @@ hr {
     margin-bottom: 10px;
     border-top:1px solid #ddd;
 }
+
+
+.navbar {
+    margin-bottom: 0;
+}
+
+
 
 
 .alert a {
@@ -204,7 +211,6 @@ hr {
 footer {
     margin: 200px 0 0 0;
     padding: 20px 0 0 0;
-    background: #e6e6e6;
 }
 
 .site,

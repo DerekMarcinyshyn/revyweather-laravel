@@ -7,7 +7,7 @@
 		"laravel/framework": "4.2.*",
         "indatus/dispatcher": "dev-master",
         "soapbox/laravel-formatter": "dev-master",
-        "patricktalmadge/bootstrapper": "4.1.*"
+        "patricktalmadge/bootstrapper": "~5"
 	},
     "require-dev": {
         "barryvdh/laravel-ide-helper": "1.*",

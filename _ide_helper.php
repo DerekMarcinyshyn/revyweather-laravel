@@ -12154,6 +12154,200 @@ namespace {
     }
 
 
+    class Navbar extends \Bootstrapper\Facades\Navbar{
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function render(){
+            return \Bootstrapper\Navbar::render();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function withBrand($brand, $link = null){
+            return \Bootstrapper\Navbar::withBrand($brand, $link);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function withAttributes($attributes){
+            return \Bootstrapper\Navbar::withAttributes($attributes);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function withContent($content){
+            return \Bootstrapper\Navbar::withContent($content);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function inverse(){
+            return \Bootstrapper\Navbar::inverse();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function staticTop(){
+            return \Bootstrapper\Navbar::staticTop();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function setType($type){
+            return \Bootstrapper\Navbar::setType($type);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function setPosition($position){
+            return \Bootstrapper\Navbar::setPosition($position);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function top(){
+            return \Bootstrapper\Navbar::top();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function bottom(){
+            return \Bootstrapper\Navbar::bottom();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function create($position, $attributes = array()){
+            return \Bootstrapper\Navbar::create($position, $attributes);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function fluid(){
+            return \Bootstrapper\Navbar::fluid();
+        }
+        
+        /**
+         * Hotswap the underlying instance behind the facade.
+         *
+         * @param mixed $instance
+         * @return void 
+         * @static 
+         */
+        public static function swap($instance){
+            //Method inherited from \Illuminate\Support\Facades\Facade            
+            \Bootstrapper\Navbar::swap($instance);
+        }
+        
+        /**
+         * Initiate a mock expectation on the facade.
+         *
+         * @param mixed
+         * @return \Mockery\Expectation 
+         * @static 
+         */
+        public static function shouldReceive(){
+            //Method inherited from \Illuminate\Support\Facades\Facade            
+            return \Bootstrapper\Navbar::shouldReceive();
+        }
+        
+        /**
+         * Get the root object behind the facade.
+         *
+         * @return mixed 
+         * @static 
+         */
+        public static function getFacadeRoot(){
+            //Method inherited from \Illuminate\Support\Facades\Facade            
+            return \Bootstrapper\Navbar::getFacadeRoot();
+        }
+        
+        /**
+         * Clear a resolved facade instance.
+         *
+         * @param string $name
+         * @return void 
+         * @static 
+         */
+        public static function clearResolvedInstance($name){
+            //Method inherited from \Illuminate\Support\Facades\Facade            
+            \Bootstrapper\Navbar::clearResolvedInstance($name);
+        }
+        
+        /**
+         * Clear all of the resolved instances.
+         *
+         * @return void 
+         * @static 
+         */
+        public static function clearResolvedInstances(){
+            //Method inherited from \Illuminate\Support\Facades\Facade            
+            \Bootstrapper\Navbar::clearResolvedInstances();
+        }
+        
+        /**
+         * Get the application instance behind the facade.
+         *
+         * @return \Illuminate\Foundation\Application 
+         * @static 
+         */
+        public static function getFacadeApplication(){
+            //Method inherited from \Illuminate\Support\Facades\Facade            
+            return \Bootstrapper\Navbar::getFacadeApplication();
+        }
+        
+        /**
+         * Set the application instance.
+         *
+         * @param \Illuminate\Foundation\Application $app
+         * @return void 
+         * @static 
+         */
+        public static function setFacadeApplication($app){
+            //Method inherited from \Illuminate\Support\Facades\Facade            
+            \Bootstrapper\Navbar::setFacadeApplication($app);
+        }
+        
+    }
+
+
     class Formatter extends \SoapBox\Formatter\Facades\Formatter{
         
         /**
