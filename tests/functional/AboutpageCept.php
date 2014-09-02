@@ -5,4 +5,4 @@ $I->am('visitor');
 $I->wantTo('make sure the about page loads.');
 
 $I->amOnPage('/about');
-$I->canSee('about');
+$I->see('About', 'h1');

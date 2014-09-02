@@ -5,4 +5,4 @@ $I->am('visitor');
 $I->wantTo('make sure the homepage loads.');
 
 $I->amOnPage('/');
-$I->canSee('Right Now');
+$I->see('Courthouse Area Revelstoke', 'h3');
