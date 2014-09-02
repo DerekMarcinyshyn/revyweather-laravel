@@ -12,3 +12,14 @@ modules:
     config:
         PhpBrowser:
             url: 'http://revyweather.dev:8000'
+
+env:
+    localhost:
+      modules:
+          enabled:
+              - PhpBrowser
+              - AcceptanceHelper
+          config:
+              PhpBrowser:
+                  url: 'http://localhost'
+
