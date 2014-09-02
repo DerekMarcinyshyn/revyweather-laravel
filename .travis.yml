@@ -4,7 +4,6 @@ php:
   - 5.4
   - 5.5
   - 5.6
-  - hhvm
 
 before_script:
   - sudo apt-get install apache2 libapache2-mod-fastcgi
@@ -15,6 +14,7 @@ before_script:
   - sudo cp -f build/travis-ci-apache /etc/apache2/sites-available/default
   - sudo sed -e "s?%TRAVIS_BUILD_DIR%?$(pwd)?g" --in-place /etc/apache2/sites-available/default
   - sudo service apache2 restart
+  - sudo chmod 777 "%TRAVIS_BUILD_DIR%"
   - composer install --prefer-source --no-interaction --dev
 
 script: vendor/bin/codecept run --verbose --no-interaction --env localhost
