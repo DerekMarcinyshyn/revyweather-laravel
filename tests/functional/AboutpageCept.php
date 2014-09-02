@@ -1,5 +1,5 @@
 <?php
-$I = new AcceptanceTester($scenario);
+$I = new FunctionalTester($scenario);
 
 $I->am('visitor');
 $I->wantTo('make sure the about page loads.');
