@@ -42,6 +42,11 @@ return [
 ];
 ```
 
+## Testing
+```php
+vendor/bin/codecept run
+```
+
 ### License
 
 The MIT License (MIT)

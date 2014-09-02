@@ -1,8 +1,8 @@
 <?php 
 $I = new FunctionalTester($scenario);
 
-$I->am('a human');
-$I->wantTo('make sure the homepage works.');
+$I->am('a visitor');
+$I->wantTo('make sure the homepage loads.');
 
 $I->amOnPage('/');
 $I->canSee('Right Now');
