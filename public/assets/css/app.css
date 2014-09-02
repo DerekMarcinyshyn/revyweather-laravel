@@ -218,3 +218,33 @@ footer {
     color: #999;
     font-size: 12px;
 }
+
+
+/* MEDIA QUERIES */
+
+@media (min-width: 768px) {
+
+}
+
+@media (max-width: 992px) {
+
+    .compass-container {
+        height: 260px;
+    }
+
+}
+
+@media (min-width: 992px) {
+    .navbar-collapse {
+        padding-left: 0!important;
+    }
+}
+
+
+
+@media (min-width: 1200px) {
+    .navbar-collapse {
+        padding-left: 0!important;
+    }
+
+}

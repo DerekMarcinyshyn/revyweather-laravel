@@ -27,12 +27,12 @@
                 <p class="right-now"><span class="text-muted">Wind:</span> {{ courthouse.direction }} &nbsp; {{ windSpeed }} km/h</p>
             </div>
         </div>
-        <div class="col-md-3 col-xs-6 conditions">
+        <div class="col-md-3 col-xs-6 conditions compass-container">
             <div class="bottom">
                 <div id="gauge-courthouse" style="width:200px; height: 140px;"></div>
             </div>
         </div>
-        <div class="col-md-3 col-xs-6 conditions">
+        <div class="col-md-3 col-xs-6 conditions compass-container">
             <div class="bottom">
                 <div class="compass">
                     <div class="compass-inner">
@@ -75,12 +75,12 @@
                 <p class="right-now"><span class="text-muted">Wind:</span> {{ forecastio.currently.windBearing | windDirection }} &nbsp; {{ forecastio.currently.windSpeed | number:1 }} km/h</p>
             </div>
         </div>
-        <div class="col-md-3 col-xs-6 conditions">
+        <div class="col-md-3 col-xs-6 conditions compass-container">
             <div class="bottom">
                 <div id="gauge-downtown" style="width:200px; height: 140px;"></div>
             </div>
         </div>
-        <div class="col-md-3 col-xs-6 conditions">
+        <div class="col-md-3 col-xs-6 conditions compass-container">
             <div class="bottom">
                 <div class="compass">
                     <div class="compass-inner">
@@ -144,12 +144,12 @@
                 <p class="right-now"><span class="text-muted">Wind:</span> {{ airport.currentConditions.wind.direction | ecDirection }} &nbsp; {{ airport.currentConditions.wind.speed | number:1 }} km/h</p>
             </div>
         </div>
-        <div class="col-md-3 col-xs-6 conditions">
+        <div class="col-md-3 col-xs-6 conditions compass-container">
             <div class="bottom">
                 <div id="gauge-airport" style="width:200px; height: 140px;"></div>
             </div>
         </div>
-        <div class="col-md-3 col-xs-6 conditions">
+        <div class="col-md-3 col-xs-6 conditions compass-container">
             <div class="bottom">
                 <div class="compass">
                     <div class="compass-inner">
