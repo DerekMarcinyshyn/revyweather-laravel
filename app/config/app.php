@@ -194,6 +194,7 @@ return array(
 		'View'              => 'Illuminate\Support\Facades\View',
         'Navbar'            => 'Bootstrapper\Facades\Navbar',
         'Navigation'        => 'Bootstrapper\Facades\Navigation',
+        'Thumbnail'         => 'Bootstrapper\Facades\Thumbnail',
 
 
 	),
