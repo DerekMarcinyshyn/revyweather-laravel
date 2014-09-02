@@ -1,7 +1,7 @@
 <?php 
-$I = new FunctionalTester($scenario);
+$I = new AcceptanceTester($scenario);
 
-$I->am('a visitor');
+$I->am('visitor');
 $I->wantTo('make sure the homepage loads.');
 
 $I->amOnPage('/');

@@ -12,10 +12,14 @@ echo Navbar::withBrand('Revelstoke Weather', '/')
         [
             'link'      => URL::route('webcams'),
             'title'     => 'Webcams'
+        ],
+        [
+            'link'      => URL::route('about'),
+            'title'     => 'About'
         ]
     ]));
 
 ?>
-        </div><!--/.row -->
-    </div><!--/.container -->
+        </div>
+    </div>
 </div>
