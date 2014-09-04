@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" @yield('html')>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +18,7 @@
     <![endif]-->
     @yield('head_js')
 </head>
-<body>
+<body @yield('body')>
     <header>
         @include('layouts.nav')
     </header>
@@ -27,7 +27,7 @@
         @yield('flash')
     </section>
 
-    <section>
+    <section class="content">
         @yield('content')
     </section>
 

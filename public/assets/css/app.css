@@ -31,6 +31,9 @@ hr {
     border:1px solid #333;
     padding: 0;
 }
+.loader i {
+    font-size: 30px;
+}
 
 
 
@@ -91,13 +94,15 @@ hr {
     background: #f6f6f6;
     float: left;
     padding: 20px 0 50px 0;
+    display:block;
 }
-
 
 .forecastio {
     width: 20%;
+    display:block;
     float: left;
     padding: 20px 10px 0;
+    background: #f6f6f6;
 }
 
 
@@ -207,6 +212,20 @@ hr {
     top: 140px;
 }
 
+
+/* MAP */
+.container-map {
+    padding-left: 0!important;
+    padding-right: 0!important;
+}
+
+body.map,
+section.content,
+.container-map,
+.map-content {
+    width: 100%;
+    height: 100%;
+}
 
 
 

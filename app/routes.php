@@ -12,6 +12,10 @@ Route::get('webcams', array(
     'uses'      => 'WebcamsController@index'
 ));
 
+Route::get('map', array('as' => 'map', function() {
+    return Response::view('content.map');
+}));
+
 Route::get('about', array('as' => 'about', function() {
     return Response::view('content.about');
 }));

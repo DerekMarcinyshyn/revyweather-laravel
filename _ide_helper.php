@@ -1,7 +1,7 @@
 <?php
 /**
  * An helper file for Laravel 4, to provide autocomplete information to your IDE
- * Generated for Laravel 4.2.8 on 2014-09-01.
+ * Generated for Laravel 4.2.8 on 2014-09-03.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -7181,6 +7181,17 @@ namespace {
         }
         
         /**
+         * Get the default locale.
+         *
+         * @return string 
+         * @static 
+         */
+        public static function getDefaultLocale(){
+            //Method inherited from \Symfony\Component\HttpFoundation\Request            
+            return \Illuminate\Http\Request::getDefaultLocale();
+        }
+        
+        /**
          * Sets the locale.
          *
          * @param string $locale
@@ -9772,6 +9783,17 @@ namespace {
         }
         
         /**
+         * Get the default locale.
+         *
+         * @return string 
+         * @static 
+         */
+        public static function getDefaultLocale(){
+            //Method inherited from \Symfony\Component\HttpFoundation\Request            
+            return \Illuminate\Http\Request::getDefaultLocale();
+        }
+        
+        /**
          * Sets the locale.
          *
          * @param string $locale
@@ -12343,6 +12365,286 @@ namespace {
         public static function setFacadeApplication($app){
             //Method inherited from \Illuminate\Support\Facades\Facade            
             \Bootstrapper\Navbar::setFacadeApplication($app);
+        }
+        
+    }
+
+
+    class Navigation extends \Bootstrapper\Facades\Navigation{
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function render(){
+            return \Bootstrapper\Navigation::render();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function withAttributes($attributes){
+            return \Bootstrapper\Navigation::withAttributes($attributes);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function pills($links = array(), $attributes = array()){
+            return \Bootstrapper\Navigation::pills($links, $attributes);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function links($links){
+            return \Bootstrapper\Navigation::links($links);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function tabs($links = array(), $attributes = array()){
+            return \Bootstrapper\Navigation::tabs($links, $attributes);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function autoroute($autoroute){
+            return \Bootstrapper\Navigation::autoroute($autoroute);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function navbar(){
+            return \Bootstrapper\Navigation::navbar();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function justified(){
+            return \Bootstrapper\Navigation::justified();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function stacked(){
+            return \Bootstrapper\Navigation::stacked();
+        }
+        
+        /**
+         * Hotswap the underlying instance behind the facade.
+         *
+         * @param mixed $instance
+         * @return void 
+         * @static 
+         */
+        public static function swap($instance){
+            //Method inherited from \Illuminate\Support\Facades\Facade            
+            \Bootstrapper\Navigation::swap($instance);
+        }
+        
+        /**
+         * Initiate a mock expectation on the facade.
+         *
+         * @param mixed
+         * @return \Mockery\Expectation 
+         * @static 
+         */
+        public static function shouldReceive(){
+            //Method inherited from \Illuminate\Support\Facades\Facade            
+            return \Bootstrapper\Navigation::shouldReceive();
+        }
+        
+        /**
+         * Get the root object behind the facade.
+         *
+         * @return mixed 
+         * @static 
+         */
+        public static function getFacadeRoot(){
+            //Method inherited from \Illuminate\Support\Facades\Facade            
+            return \Bootstrapper\Navigation::getFacadeRoot();
+        }
+        
+        /**
+         * Clear a resolved facade instance.
+         *
+         * @param string $name
+         * @return void 
+         * @static 
+         */
+        public static function clearResolvedInstance($name){
+            //Method inherited from \Illuminate\Support\Facades\Facade            
+            \Bootstrapper\Navigation::clearResolvedInstance($name);
+        }
+        
+        /**
+         * Clear all of the resolved instances.
+         *
+         * @return void 
+         * @static 
+         */
+        public static function clearResolvedInstances(){
+            //Method inherited from \Illuminate\Support\Facades\Facade            
+            \Bootstrapper\Navigation::clearResolvedInstances();
+        }
+        
+        /**
+         * Get the application instance behind the facade.
+         *
+         * @return \Illuminate\Foundation\Application 
+         * @static 
+         */
+        public static function getFacadeApplication(){
+            //Method inherited from \Illuminate\Support\Facades\Facade            
+            return \Bootstrapper\Navigation::getFacadeApplication();
+        }
+        
+        /**
+         * Set the application instance.
+         *
+         * @param \Illuminate\Foundation\Application $app
+         * @return void 
+         * @static 
+         */
+        public static function setFacadeApplication($app){
+            //Method inherited from \Illuminate\Support\Facades\Facade            
+            \Bootstrapper\Navigation::setFacadeApplication($app);
+        }
+        
+    }
+
+
+    class Thumbnail extends \Bootstrapper\Facades\Thumbnail{
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function render(){
+            return \Bootstrapper\Thumbnail::render();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function image($image, $attributes = array()){
+            return \Bootstrapper\Thumbnail::image($image, $attributes);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function caption($caption){
+            return \Bootstrapper\Thumbnail::caption($caption);
+        }
+        
+        /**
+         * Hotswap the underlying instance behind the facade.
+         *
+         * @param mixed $instance
+         * @return void 
+         * @static 
+         */
+        public static function swap($instance){
+            //Method inherited from \Illuminate\Support\Facades\Facade            
+            \Bootstrapper\Thumbnail::swap($instance);
+        }
+        
+        /**
+         * Initiate a mock expectation on the facade.
+         *
+         * @param mixed
+         * @return \Mockery\Expectation 
+         * @static 
+         */
+        public static function shouldReceive(){
+            //Method inherited from \Illuminate\Support\Facades\Facade            
+            return \Bootstrapper\Thumbnail::shouldReceive();
+        }
+        
+        /**
+         * Get the root object behind the facade.
+         *
+         * @return mixed 
+         * @static 
+         */
+        public static function getFacadeRoot(){
+            //Method inherited from \Illuminate\Support\Facades\Facade            
+            return \Bootstrapper\Thumbnail::getFacadeRoot();
+        }
+        
+        /**
+         * Clear a resolved facade instance.
+         *
+         * @param string $name
+         * @return void 
+         * @static 
+         */
+        public static function clearResolvedInstance($name){
+            //Method inherited from \Illuminate\Support\Facades\Facade            
+            \Bootstrapper\Thumbnail::clearResolvedInstance($name);
+        }
+        
+        /**
+         * Clear all of the resolved instances.
+         *
+         * @return void 
+         * @static 
+         */
+        public static function clearResolvedInstances(){
+            //Method inherited from \Illuminate\Support\Facades\Facade            
+            \Bootstrapper\Thumbnail::clearResolvedInstances();
+        }
+        
+        /**
+         * Get the application instance behind the facade.
+         *
+         * @return \Illuminate\Foundation\Application 
+         * @static 
+         */
+        public static function getFacadeApplication(){
+            //Method inherited from \Illuminate\Support\Facades\Facade            
+            return \Bootstrapper\Thumbnail::getFacadeApplication();
+        }
+        
+        /**
+         * Set the application instance.
+         *
+         * @param \Illuminate\Foundation\Application $app
+         * @return void 
+         * @static 
+         */
+        public static function setFacadeApplication($app){
+            //Method inherited from \Illuminate\Support\Facades\Facade            
+            \Bootstrapper\Thumbnail::setFacadeApplication($app);
         }
         
     }
