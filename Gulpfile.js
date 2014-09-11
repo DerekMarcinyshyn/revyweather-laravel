@@ -4,9 +4,26 @@ var codecept = require('gulp-codeception');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var sourcemaps = require('gulp-sourcemaps');
+var minifyCSS = require('gulp-minify-css');
 
-gulp.task('dev', function() {
+var paths = {
+    css: [
+        'public/assets/css/src/font-awesome.min.css',
+        'public/assets/css/src/bootstrap.min.css',
+        'public/assets/css/src/climacons-font.css',
+        'public/assets/css/src/app.css'
+    ]
+};
 
+gulp.task('build', function() {
+    gulp.src(paths.css)
+        .pipe(concat('app.min.css'))
+        .pipe(minifyCSS())
+        .pipe(gulp.dest('public/assets/css'))
+        .pipe(notify({
+            title: 'Success',
+            message: 'CSS built'
+        }))
 });
 
 
