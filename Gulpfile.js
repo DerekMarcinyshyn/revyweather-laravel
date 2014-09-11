@@ -1,6 +1,14 @@
 var gulp = require('gulp');
 var notify = require('gulp-notify');
 var codecept = require('gulp-codeception');
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
+var sourcemaps = require('gulp-sourcemaps');
+
+gulp.task('dev', function() {
+
+});
+
 
 gulp.task('test', function() {
     gulp.src('tests/**/*.php')
