@@ -7,10 +7,6 @@
     <title>Revelstoke Weather</title>
 
     @yield('css')
-<!--    {{ HTML::style('assets/css/src/bootstrap.min.css') }}-->
-<!--    {{ HTML::style('assets/css/src/font-awesome.min.css') }}-->
-<!--    {{ HTML::style('assets/css/src/climacons-font.css') }}-->
-<!--    {{ HTML::style('assets/css/src/app.css') }}-->
     {{ HTML::style('assets/css/app.min.css') }}
 
     <!--[if lt IE 9]>
