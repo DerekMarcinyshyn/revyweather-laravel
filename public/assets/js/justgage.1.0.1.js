@@ -137,7 +137,7 @@ JustGage = function(config) {
   // title 
   var titleFontSize = ((widgetH / 8) > 10) ? (widgetH / 10) : 10;
   var titleX = dx + widgetW / 2;
-  var titleY = dy + widgetH / 6.5;
+  var titleY = dy + widgetH / 9;
   
   // value 
   var valueFontSize = ((widgetH / 6.4) > 16) ? (widgetH / 6.4) : 16;

@@ -20,10 +20,7 @@ rightNowApp.controller('RightNowController', function($scope, $http, $interval) 
 
 
     function getCurrent() {
-        $scope.showCourthouseLoader = true;
-
         $http.get('api/local.json').success(function(data) {
-            $scope.showCourthouseLoader = false;
             $scope.courthouse = data;
 
             var windSpeed = data.speed * 1.60934;
@@ -91,11 +88,9 @@ rightNowApp.controller('RightNowController', function($scope, $http, $interval) 
     });
 
     $scope.isForecastCollapsed = true;
-    $scope.showForecastioLoader = true;
 
     $http.get('api/revelstoke.json').success(function(data){
         $scope.forecastio = data;
-        $scope.showForecastioLoader = false;
 
         $scope.currentWeather = {
             forecast: {
@@ -132,11 +127,8 @@ rightNowApp.controller('RightNowController', function($scope, $http, $interval) 
         title: "Wind km/h"
     });
 
-    $scope.showAirportLoader = true;
-
     $http.get('api/revelstoke-ec.json').success(function(data) {
         $scope.airport = data;
-        $scope.showAirportLoader = false;
 
         if (data.warnings.event) {
             switch (data.warnings.event['@attributes'].type) {
