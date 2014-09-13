@@ -32,8 +32,8 @@
         @include('layouts.footer')
     </footer>
 
-    {{ HTML::script('assets/js/jquery.min.js') }}
-    {{ HTML::script('assets/js/bootstrap.min.js') }}
+    {{ HTML::script('assets/js/app.min.js') }}
+
     @yield('body_js')
 </body>
 </html>

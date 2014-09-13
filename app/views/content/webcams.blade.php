@@ -1,10 +1,5 @@
 @extends('layouts.master')
 
-@section('css')
-{{ HTML::style('assets/js/fancybox/jquery.fancybox.css') }}
-@stop
-
-
 @section('content')
 <div class="container">
     <div class="row">
@@ -110,8 +105,6 @@
 
 
 @section('body_js')
-{{ HTML::script('assets/js/fancybox/jquery.fancybox.pack.js') }}
-
 <script type="text/javascript">
     $(document).ready(function() {
         $(".fancybox").fancybox({
