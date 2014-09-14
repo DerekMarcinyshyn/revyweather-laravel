@@ -6,6 +6,13 @@ var uglify = require('gulp-uglify');
 var sourcemaps = require('gulp-sourcemaps');
 var minifyCSS = require('gulp-minify-css');
 var autoprefix = require('gulp-autoprefixer');
+var rev = require('gulp-rev');
+var rename = require('gulp-rename');
+var clean = require('gulp-clean');
+var jshint = require('gulp-jshint');
+var runSequence = require('run-sequence');
+
+
 
 var paths = {
     css: [
@@ -27,34 +34,54 @@ var paths = {
         'app/assets/js/raphael.2.1.0.min.js',
         'app/assets/js/justgage.1.0.1.js',
         'app/assets/js/index.js'
+    ],
+    clean: [
+        'public/assets/css',
+        'public/assets/js',
+        'app/assets/manifest'
     ]
 };
 
+gulp.task('clean', function() {
+    return gulp.src(paths.clean)
+        .pipe(clean())
+        .pipe(notify({
+            title: 'Success',
+            message: 'Cleaned folders!'
+        }));
+});
+
 gulp.task('dev_js', function() {
-    gulp.src(paths.js)
+    return gulp.src(paths.js)
         .pipe(sourcemaps.init())
         .pipe(concat('app.min.js'))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('public/assets/js'))
+        .pipe(jshint())
+        .pipe(jshint.reporter('default'))
         .pipe(notify({
             title: 'Success',
             message: 'Javascript development built'
-        }))
+        }));
 });
 
-gulp.task('build_js', function() {
-    gulp.src(paths.js)
+gulp.task('production_js', function() {
+    return gulp.src(paths.js)
         .pipe(concat('app.min.js'))
         .pipe(uglify({mangle: false}))
+        .pipe(rev())
         .pipe(gulp.dest('public/assets/js'))
+        .pipe(rev.manifest())
+        .pipe(rename('js.manifest.json'))
+        .pipe(gulp.dest('app/assets/manifest'))
         .pipe(notify({
             title: 'Success',
             message: 'Javascript production built'
-        }))
+        }));
 });
 
 gulp.task('dev_css', function() {
-    gulp.src(paths.css)
+    return gulp.src(paths.css)
         .pipe(sourcemaps.init())
         .pipe(concat('app.min.css'))
         .pipe(autoprefix('last 10 version'))
@@ -63,24 +90,28 @@ gulp.task('dev_css', function() {
         .pipe(notify({
             title: 'Success',
             message: 'CSS development built'
-        }))
+        }));
 });
 
-gulp.task('build_css', function() {
-    gulp.src(paths.css)
+gulp.task('production_css', function() {
+    return gulp.src(paths.css)
         .pipe(concat('app.min.css'))
         .pipe(autoprefix('last 10 version'))
         .pipe(minifyCSS({keepSpecialComments:0}))
+        .pipe(rev())
         .pipe(gulp.dest('public/assets/css'))
+        .pipe(rev.manifest())
+        .pipe(rename('css.manifest.json'))
+        .pipe(gulp.dest('app/assets/manifest'))
         .pipe(notify({
             title: 'Success',
             message: 'CSS production built'
-        }))
+        }));
 });
 
 
 gulp.task('test', function() {
-    gulp.src('tests/**/*.php')
+    return gulp.src('tests/**/*.php')
         .pipe(codecept('', {notify: true}))
         .on('error', notify.onError({
             title: 'Shit',
@@ -90,7 +121,13 @@ gulp.task('test', function() {
         .pipe(notify({
             title: 'Success',
             message: 'All tests have returned green!'
-        }))
+        }));
+});
+
+gulp.task('build', function() {
+    runSequence('clean',
+        ['dev_css', 'dev_js'],
+        'test');
 });
 
 gulp.task('watch', function() {
@@ -99,5 +136,11 @@ gulp.task('watch', function() {
     gulp.watch(['app/assets/js/*.js'], ['dev_js']);
 });
 
-gulp.task('default', ['test', 'watch']);
-gulp.task('production', ['build_css', 'build_js', 'test']);
+gulp.task('default', ['build', 'watch']);
+
+gulp.task('production', function() {
+    runSequence(
+        ['production_css', 'production_js'],
+        'test'
+    );
+});

@@ -10,6 +10,11 @@
     "gulp-sourcemaps": "~1.1.5",
     "gulp-autoprefixer": "~1.0.0",
     "gulp-cache": "~0.2.2",
-    "gulp-jshint": "~1.8.4"
+    "gulp-jshint": "~1.8.4",
+    "gulp-rev": "~1.1.0",
+    "gulp-rename": "~1.2.0",
+    "gulp-clean": "~0.3.1",
+    "jshint": "~2.5.5",
+    "run-sequence": "~0.3.6"
   }
 }

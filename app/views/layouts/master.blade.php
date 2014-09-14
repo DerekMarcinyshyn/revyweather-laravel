@@ -7,7 +7,7 @@
     <title>Revelstoke Weather</title>
 
     @yield('css')
-    {{ HTML::style('assets/css/app.min.css') }}
+    {{ HTML::style('assets/css/'.css_asset_path('app.min.css')) }}
 
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -32,7 +32,7 @@
         @include('layouts.footer')
     </footer>
 
-    {{ HTML::script('assets/js/app.min.js') }}
+    {{ HTML::script('assets/js/'.js_asset_path('app.min.js')) }}
 
     @yield('body_js')
 </body>

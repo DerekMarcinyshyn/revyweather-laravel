@@ -94,5 +94,6 @@ App::down(function()
 |
 */
 
-require app_path().'/filters.php';
-require app_path().'/events.php';
+require_once app_path().'/filters.php';
+require_once app_path().'/events.php';
+require_once app_path().'/helpers.php';
