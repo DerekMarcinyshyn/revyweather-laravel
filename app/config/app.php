@@ -125,6 +125,8 @@ return array(
         'Indatus\Dispatcher\ServiceProvider',
         'SoapBox\Formatter\FormatterServiceProvider',
         'Bootstrapper\BootstrapperServiceProvider',
+        'JasonNZ\Jinput\JinputServiceProvider',
+        'Gloudemans\Calendar\CalendarServiceProvider'
 
 	),
 
@@ -195,7 +197,8 @@ return array(
         'Navbar'            => 'Bootstrapper\Facades\Navbar',
         'Navigation'        => 'Bootstrapper\Facades\Navigation',
         'Thumbnail'         => 'Bootstrapper\Facades\Thumbnail',
-
+        'Jinput'            => 'JasonNZ\Jinput\Jinput',
+        'Calendar'          => 'Gloudemans\Calendar\Facades\Calendar',
 
 	),
 

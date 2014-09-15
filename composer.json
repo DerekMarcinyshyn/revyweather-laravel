@@ -8,7 +8,9 @@
         "indatus/dispatcher": "dev-master",
         "soapbox/laravel-formatter": "dev-master",
         "patricktalmadge/bootstrapper": "~5",
-        "sensiolabs/security-checker": "2.x"
+        "sensiolabs/security-checker": "2.x",
+        "jasonnz/jinput": "dev-master",
+        "gloudemans/calendar": "dev-master"
 	},
     "require-dev": {
         "barryvdh/laravel-ide-helper": "1.*",

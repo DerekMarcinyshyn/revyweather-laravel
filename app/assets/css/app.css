@@ -240,7 +240,16 @@ body.map footer {
 
 
 
+/* TIMELAPSE */
+.timelapse-calendar table {
+    border: none;
+    font-size: 20px;
+}
 
+.timelapse-calendar td {
+    padding: 6px;
+    text-align: center;
+}
 
 
 

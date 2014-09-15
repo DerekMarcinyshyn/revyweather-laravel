@@ -20,6 +20,7 @@ var paths = {
         'app/assets/css/bootstrap.min.css',
         'app/assets/css/climacons-font.css',
         'app/assets/css/jquery.fancybox.css',
+        'app/assets/css/daterangepicker-bs3.css',
         'app/assets/css/app.css'
     ],
     js: [
@@ -33,7 +34,10 @@ var paths = {
         'app/assets/js/skycons.js',
         'app/assets/js/raphael.2.1.0.min.js',
         'app/assets/js/justgage.1.0.1.js',
-        'app/assets/js/index.js'
+        'app/assets/js/moment.min.js',
+        'app/assets/js/daterangepicker.js',
+        'app/assets/js/index.js',
+        'app/assets/js/timelapse.js'
     ],
     clean: [
         'public/assets/css',
@@ -126,8 +130,7 @@ gulp.task('test', function() {
 
 gulp.task('dev', function() {
     runSequence('clean',
-        ['dev_css', 'dev_js'],
-        'test');
+        ['dev_css', 'dev_js']);
 });
 
 gulp.task('watch', function() {
@@ -136,7 +139,9 @@ gulp.task('watch', function() {
     gulp.watch(['app/assets/js/*.js'], ['dev_js']);
 });
 
-gulp.task('default', ['dev', 'watch']);
+gulp.task('default', function() {
+    runSequence('dev', 'watch');
+});
 
 gulp.task('production', function() {
     runSequence(

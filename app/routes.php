@@ -19,3 +19,7 @@ Route::get('map', array('as' => 'map', function() {
 Route::get('about', array('as' => 'about', function() {
     return Response::view('content.about');
 }));
+
+Route::get('timelapse', array('as'        => 'timelapse', function(){
+    return Response::view('content.timelapse');
+}));
