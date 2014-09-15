@@ -124,7 +124,7 @@ gulp.task('test', function() {
         }));
 });
 
-gulp.task('build', function() {
+gulp.task('dev', function() {
     runSequence('clean',
         ['dev_css', 'dev_js'],
         'test');
@@ -136,7 +136,7 @@ gulp.task('watch', function() {
     gulp.watch(['app/assets/js/*.js'], ['dev_js']);
 });
 
-gulp.task('default', ['build', 'watch']);
+gulp.task('default', ['dev', 'watch']);
 
 gulp.task('production', function() {
     runSequence(
