@@ -10,7 +10,6 @@ use Gloudemans\Calendar\Facades\Calendar;
 
 class Dates
 {
-
     /**
      * @param $year
      * @param $month
@@ -26,7 +25,7 @@ class Dates
         $data = $this->getDatesWithVideo($year, $month);
         $template = '
             {table_open}<table border="0" cellpadding="0" cellspacing="0">{/table_open}
-            {cal_cell_content}<a href="#" rel="{content}">{day}</a>{/cal_cell_content}
+            {cal_cell_content}<a class="timelapse-start-video" rel="{content}">{day}</a>{/cal_cell_content}
             ';
 
         $calendar = \Calendar::initialize($config);

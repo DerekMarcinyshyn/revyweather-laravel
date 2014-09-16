@@ -9,7 +9,7 @@ body {
 hr {
     margin-top: 10px;
     margin-bottom: 10px;
-    border-top:1px solid #ddd;
+    border-top:1px solid #aaa;
 }
 
 
@@ -55,7 +55,7 @@ hr {
     color: #999;
 }
 .powered-by a {
-    box-shadow: inset 0 -3px 0 #839da9;
+    color: #839da9;
 }
 .powered-by a:hover {
     text-decoration: none;
@@ -251,8 +251,14 @@ body.map footer {
     text-align: center;
 }
 
+.timelapse-start-video {
+    cursor: pointer;
+}
 
-
+.video-js {
+    box-shadow: 0 0 14px #333;
+    margin: 0 0 10px 0;
+}
 
 
 

@@ -21,6 +21,7 @@ var paths = {
         'app/assets/css/climacons-font.css',
         'app/assets/css/jquery.fancybox.css',
         'app/assets/css/daterangepicker-bs3.css',
+        'app/assets/css/video-js.css',
         'app/assets/css/app.css'
     ],
     js: [
@@ -37,6 +38,7 @@ var paths = {
         'app/assets/js/moment.min.js',
         'app/assets/js/daterangepicker.js',
         'app/assets/js/index.js',
+        'app/assets/js/video.dev.js',
         'app/assets/js/timelapse.js'
     ],
     clean: [
