@@ -126,7 +126,8 @@ return array(
         'SoapBox\Formatter\FormatterServiceProvider',
         'Bootstrapper\BootstrapperServiceProvider',
         'JasonNZ\Jinput\JinputServiceProvider',
-        'Gloudemans\Calendar\CalendarServiceProvider'
+        'Gloudemans\Calendar\CalendarServiceProvider',
+        'Way\Generators\GeneratorsServiceProvider'
 
 	),
 

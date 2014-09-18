@@ -54,7 +54,7 @@
 
 
         <div class="col-md-12">
-            <p class="powered-by">Powered by <a href="http://netduino.com/netduinoplus2/specs.htm" target="_blank">Netduino Plus 2</a> and <a href="http://www.raspberrypi.org/" target="_blank">RaspberryPi</a> updated every 5 seconds.</p>
+            <p class="powered-by">Powered by <a href="http://netduino.com/netduinoplus2/specs.htm" target="_blank">Netduino Plus 2</a> and <a href="http://www.raspberrypi.org/" target="_blank">RaspberryPi</a> updated every 10 seconds.</p>
         </div>
 
         <hr class="col-md-12">

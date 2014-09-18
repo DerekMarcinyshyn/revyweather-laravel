@@ -1,12 +1,10 @@
 <?php
 
-use Indatus\Dispatcher\Scheduling\ScheduledCommand;
-use Indatus\Dispatcher\Scheduling\Schedulable;
-use Indatus\Dispatcher\Drivers\Cron\Scheduler;
+use Illuminate\Console\Command;
 use Revyweather\Weather\Local\Data;
 use Revyweather\Weather\Local\LocalDataException;
 
-class GetCourthouseCommand extends ScheduledCommand {
+class GetCourthouseCommand extends Command {
 
 	/**
 	 * The console command name.
@@ -20,7 +18,7 @@ class GetCourthouseCommand extends ScheduledCommand {
 	 *
 	 * @var string
 	 */
-	protected $description = 'Get the local weather data.';
+	protected $description = 'Get the local weather data used for daemon every 10 seconds.';
 
     /**
      * @var \Revyweather\Weather\Local\Data
@@ -36,17 +34,6 @@ class GetCourthouseCommand extends ScheduledCommand {
 	{
         $this->data = $data;
 		parent::__construct();
-	}
-
-	/**
-	 * When a command should run
-	 *
-	 * @param Scheduler $scheduler
-	 * @return \Indatus\Dispatcher\Scheduling\Schedulable
-	 */
-	public function schedule(Schedulable $scheduler)
-	{
-		return $scheduler;
 	}
 
 	/**

@@ -3,7 +3,9 @@ body {
 }
 
 
-
+.text-muted {
+    color: #666;
+}
 
 
 hr {
