@@ -7,6 +7,11 @@ Route::get('/', array(
     'uses'      => 'HomeController@index'
 ));
 
+Route::get('history', array(
+    'as'        => 'history',
+    'uses'      => 'HistoryController@index'
+));
+
 Route::get('webcams', array(
     'as'        => 'webcams',
     'uses'      => 'WebcamsController@index'

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-<div id="wrapper-loader"><img src="{{ asset('assets/img/loader.gif') }}" /></div>
+<div id="wrapper-loader" class="wrapper-loader"><img src="{{ asset('assets/img/index-loader.gif') }}" /></div>
 <div id="wrapper" style="display:none;">
     <div class="container">
         <div class="row">

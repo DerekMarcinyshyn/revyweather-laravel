@@ -5,17 +5,17 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.2.*",
-        "indatus/dispatcher": "dev-master",
+        "indatus/dispatcher": "1.*",
         "soapbox/laravel-formatter": "dev-master",
         "patricktalmadge/bootstrapper": "~5",
         "sensiolabs/security-checker": "2.x",
         "jasonnz/jinput": "dev-master",
-        "gloudemans/calendar": "dev-master"
+        "gloudemans/calendar": "dev-master",
+        "monashee/backup": "dev-master"
 	},
     "require-dev": {
         "barryvdh/laravel-ide-helper": "1.*",
-        "codeception/codeception": "*",
-        "way/generators": "~2.0"
+        "codeception/codeception": "*"
     },
 	"autoload": {
 		"classmap": [

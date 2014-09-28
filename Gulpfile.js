@@ -37,9 +37,11 @@ var paths = {
         'app/assets/js/justgage.1.0.1.js',
         'app/assets/js/moment.min.js',
         'app/assets/js/daterangepicker.js',
-        'app/assets/js/index.js',
+        'app/assets/js/highcharts/highcharts.js',
+        'app/assets/js/pages/index.js',
         'app/assets/js/video.dev.js',
-        'app/assets/js/timelapse.js'
+        'app/assets/js/pages/timelapse.js',
+        'app/assets/js/pages/history.js'
     ],
     clean: [
         'public/assets/css',
@@ -138,7 +140,7 @@ gulp.task('dev', function() {
 gulp.task('watch', function() {
     gulp.watch(['tests/**/*.php', 'app/**/*.php'], ['test']);
     gulp.watch(['app/assets/css/*.css'], ['dev_css']);
-    gulp.watch(['app/assets/js/*.js'], ['dev_js']);
+    gulp.watch(['app/assets/**/*.js'], ['dev_js']);
 });
 
 gulp.task('default', function() {

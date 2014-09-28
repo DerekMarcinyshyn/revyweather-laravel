@@ -135,7 +135,7 @@
         <!-- split into 4 columns -->
         <div class="col-md-3 col-xs-6 conditions">
             <div class="bottom">
-                <img data-ng-src="assets/img/ec/icons-large/{{ airport.currentConditions.iconCode }}.png" alt="{{ airport.currentConditions.condition }}" width="80" height="80" />
+                <img id="icon-image" data-ng-src="assets/img/ec/icons-large/{{ airport.currentConditions.iconCode }}.png" alt="{{ airport.currentConditions.condition }}" width="80" height="80" />
                 <div class="current-temperature">{{ airport.currentConditions.temperature | number:1 }}&deg;C</div>
             </div>
         </div>

@@ -22,3 +22,7 @@ Route::get('api/latest-image.jpg', function(){
 Route::post('api/get-timelapse-calendar-dates', array(
     'uses' => 'TimelapseController@getTimelapseCalendarDates'
 ));
+
+Route::get('api/history/{from}/{to}', array(
+    'uses' => 'HistoryController@getHistoryJson'
+));

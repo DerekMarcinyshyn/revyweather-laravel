@@ -127,7 +127,7 @@ return array(
         'Bootstrapper\BootstrapperServiceProvider',
         'JasonNZ\Jinput\JinputServiceProvider',
         'Gloudemans\Calendar\CalendarServiceProvider',
-        'Way\Generators\GeneratorsServiceProvider'
+        'Monashee\Backup\BackupServiceProvider',
 
 	),
 
