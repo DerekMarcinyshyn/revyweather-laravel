@@ -46,7 +46,7 @@ class SaveCourthouseCommand extends ScheduledCommand {
 	 */
 	public function schedule(Schedulable $scheduler)
 	{
-		return $scheduler;
+		return $scheduler->everyMinutes(30);
 	}
 
 	/**

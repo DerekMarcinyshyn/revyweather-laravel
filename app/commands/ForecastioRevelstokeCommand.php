@@ -1,9 +1,6 @@
 <?php
 
-use Illuminate\Console\Command;
 use Revyweather\Weather\Forecastio\ForecastioException;
-use Symfony\Component\Console\Input\InputOption;
-use Symfony\Component\Console\Input\InputArgument;
 use Revyweather\Weather\Forecastio\Revelstoke;
 use Indatus\Dispatcher\Scheduling\ScheduledCommand;
 use Indatus\Dispatcher\Scheduling\Schedulable;
@@ -25,6 +22,9 @@ class ForecastioRevelstokeCommand extends ScheduledCommand {
 	 */
 	protected $description = 'Get the Forecast.io for Revelstoke, BC.';
 
+    /**
+     * @var Revelstoke
+     */
     protected $revelstoke;
 
 	/**
@@ -54,12 +54,11 @@ class ForecastioRevelstokeCommand extends ScheduledCommand {
 
     /**
      * Set up schedule on when to run command
-     * TODO: still needs configuring
      *
-     * @param Schedulable $scheduler
-     * @return Schedulable|\Indatus\Dispatcher\Scheduling\Schedulable[]
+     * @param Scheduler $scheduler
+     * @return \Indatus\Dispatcher\Scheduling\Schedulable
      */
     public function schedule(Schedulable $scheduler) {
-        return $scheduler;
+        return $scheduler->everyMinutes(3);
     }
 }

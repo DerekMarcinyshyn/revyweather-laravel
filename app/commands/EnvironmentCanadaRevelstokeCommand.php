@@ -22,6 +22,9 @@ class EnvironmentCanadaRevelstokeCommand extends ScheduledCommand {
 	 */
 	protected $description = 'Gets the Environment Canada Revelstoke weather.';
 
+    /**
+     * @var Forecast
+     */
     protected $forecast;
 
 	/**
@@ -43,7 +46,7 @@ class EnvironmentCanadaRevelstokeCommand extends ScheduledCommand {
 	 */
 	public function schedule(Schedulable $scheduler)
 	{
-		return $scheduler;
+		return $scheduler->hourly()->minutes(10);
 	}
 
 	/**
