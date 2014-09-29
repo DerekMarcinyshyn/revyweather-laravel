@@ -106,7 +106,7 @@
             <p>{{ forecastio.daily.summary }}</p>
 
             <button class="btn btn-sm show-forecastio" data-ng-click="isForecastCollapsed = !isForecastCollapsed">
-                <i class="fa {{ isForecastCollapsed ? 'fa-caret-right' : 'fa-caret-down' }}"></i> &nbsp; Daily Forecast</button>
+                <i class="fa {{ isForecastCollapsed ? 'fa-caret-right' : 'fa-caret-down' }}"></i> &nbsp; Forecast.io Daily Forecast</button>
             <div collapse="isForecastCollapsed">
                 <div class="forecastio-forecast-container">
                     <div class="forecastio" data-ng-repeat="forecast in forecastio.daily.data | limitTo:5">
@@ -173,7 +173,7 @@
             <h4>Today</h4>
             <p>{{ airport.forecastGroup.regionalNormals.textSummary }}</p>
             <button class="btn btn-sm show-forecastio" data-ng-click="isEcForecastCollapsed = !isEcForecastCollapsed">
-                <i class="fa {{ isEcForecastCollapsed ? 'fa-caret-right' : 'fa-caret-down' }}"></i> &nbsp;  Daily Forecast</button>
+                <i class="fa {{ isEcForecastCollapsed ? 'fa-caret-right' : 'fa-caret-down' }}"></i> &nbsp;  Environment Canada Forecast</button>
             <div collapse="isEcForecastCollapsed" class="forecast-container-collapse">
                 <div class="forecastio-forecast-container">
                     <div class="forecastio" data-ng-repeat="forecast in airport.forecastGroup.forecast | limitTo:5">

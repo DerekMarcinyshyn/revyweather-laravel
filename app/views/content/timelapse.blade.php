@@ -22,8 +22,8 @@
             <h3 id="timelapse-video-title" class="timelapse-video-title"><?php echo $yesterday ?></h3>
             <video id="timelapse-video" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="auto" width="540" height="304" data-setup="{}" poster="/assets/img/weather-station.jpg">
                 <?php $path = date('Y/F/d/F-d', strtotime('yesterday')); ?>
-                <source src="http://video.revyweather.com/<?php echo $path ?>.webm" type="video/webm">
                 <source src="http://video.revyweather.com/<?php echo $path ?>.mp4" type="video/mp4">
+                <source src="http://video.revyweather.com/<?php echo $path ?>.webm" type="video/webm">
             </video>
         </div>
     </div>

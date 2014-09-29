@@ -28,9 +28,9 @@ jQuery(document).ready(function($) {
                     var timelapsePlayer = this;
 
                     timelapsePlayer.pause();
-                    $('video').attr('src', path + target + '.webm');
-                    $('video source:nth-child(1)').attr('src', path + target + '.webm');
-                    $('video source:nth-child(2)').attr('src', path + target + '.mp4');
+                    $('video').attr('src', path + target + '.mp4');
+                    $('video source:nth-child(1)').attr('src', path + target + '.mp4');
+                    $('video source:nth-child(2)').attr('src', path + target + '.webm');
                     $('.vjs-big-play-button').show();
                     $('#timelapse-video').removeClass('vjs-playing').addClass('vjs-pause');
                     timelapsePlayer.load();
