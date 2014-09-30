@@ -5,7 +5,7 @@
 # @author Derek Marcinyshyn <derek@marcinyshyn.com>
 # @date   August 4, 2014
 
-while (sleep 5 && /usr/bin/php /home/monashee/code/revyweather/artisan revyweather:courthouse)
+while (sleep 5 && /usr/bin/php /home/forge/default/artisan revyweather:courthouse)
 do
     wait $!
 done
