@@ -28,7 +28,7 @@ return array(
 	|
 	*/
 
-	'host' => 'smtp.gmail.com',
+	'host' => 'smtp.mandrillapp.com',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ return array(
 	|
 	*/
 
-	'username' => getenv('GMAIL_USERNAME'),
+	'username' => getenv('MANDRILL_USERNAME'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -93,7 +93,7 @@ return array(
 	|
 	*/
 
-	'password' => getenv('GMAIL_PASSWORD'),
+	'password' => getenv('MANDRILL_PASSWORD'),
 
 	/*
 	|--------------------------------------------------------------------------
