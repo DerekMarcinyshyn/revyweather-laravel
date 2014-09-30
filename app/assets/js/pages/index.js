@@ -66,11 +66,11 @@ rightNowApp.controller('RightNowController', function($scope, $http, $interval) 
         });
     }
 
-//    setInterval(function() {
-//        $scope.$apply(function() {
-//           getCurrent();
-//        });
-//    }, 5000);
+    setInterval(function() {
+        $scope.$apply(function() {
+           getCurrent();
+        });
+    }, 5000);
     getCurrent();
 
 
