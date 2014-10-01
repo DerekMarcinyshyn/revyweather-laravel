@@ -113,7 +113,7 @@ class History {
             'data' => $relativeHumidity,
             'type' => 'spline',
             'dashStyle' => 'ShortDash',
-            'color' => '#A3CDFF',
+            'color' => '#88E8A9',
             'yAxis' => 2,
             'tooltip' => array(
                 'valueSuffix' => ' %'
@@ -133,7 +133,7 @@ class History {
             'data' => $speed,
             'type' => 'spline',
             'dashStyle' => 'Dash',
-            'color' => '#aaaaaa',
+            'color' => '#cccccc',
             'yAxis' => 3,
             'tooltip' => array(
                 'valueSuffix' => ' km/h'

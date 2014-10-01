@@ -30,7 +30,7 @@ $(function() {
             yAxis: [{
                 gridLineWidth: 1,
                 labels: {
-                    styles: {
+                    style: {
                         color: '#B26969'
                     },
                     format: '{value} °C'
@@ -44,7 +44,7 @@ $(function() {
             }, {
                 gridLineWidth: 0,
                 labels: {
-                    styles: {
+                    style: {
                         color: '#3B54FF'
                     },
                     format: '{value} kPa'
@@ -55,34 +55,34 @@ $(function() {
                         color: '#3B54FF'
                     }
                 },
-                opposite: true
+                opposite: false
             }, {
                 gridLineWidth: 0,
                 labels: {
-                    styles: {
-                        color: '#A3CDFF'
+                    style: {
+                        color: '#88E8A9'
                     },
                     format: '{value} %'
                 },
                 title: {
                     text: 'Relative Humidity',
                     style: {
-                        color: '#A3CDFF'
+                        color: '#88E8A9'
                     }
                 },
                 opposite: true
             }, {
                 gridLineWidth: 0,
                 labels: {
-                    styles: {
-                        color: '#555555'
+                    style: {
+                        color: '#999999'
                     },
                     format: '{value} km/h'
                 },
                 title: {
                     text: 'Wind Speed',
                     style: {
-                        color: '#555555'
+                        color: '#999999'
                     }
                 },
                 opposite: true
