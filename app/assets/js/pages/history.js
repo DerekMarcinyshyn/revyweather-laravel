@@ -92,7 +92,7 @@ $(function() {
                 layout:             'vertical',
                 align:              'left',
                 verticalAlign:      'top',
-                x:                  80,
+                x:                  180,
                 y:                  2,
                 borderWidth:        1,
                 floating:           true,
