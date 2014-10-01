@@ -67,6 +67,13 @@ App::error(function(Exception $exception, $code)
     }
 });
 
+App::missing(function($e)
+{
+    $url = Request::fullUrl();
+    Log::warning('404 for URL: '.$url);
+    return Response::view('default', array(), 404);
+});
+
 /*
 |--------------------------------------------------------------------------
 | Maintenance Mode Handler

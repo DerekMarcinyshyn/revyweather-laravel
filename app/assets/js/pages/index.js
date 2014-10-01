@@ -170,7 +170,7 @@ rightNowApp.controller('RightNowController', function($scope, $http, $interval) 
             'transform': 'rotate(' + degrees + 'deg)'
         };
 
-        console.log(data);
+        //console.log(data);
     });
 });
 
