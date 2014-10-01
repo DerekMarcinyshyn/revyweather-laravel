@@ -52,6 +52,10 @@ rightNowApp.controller('RightNowController', function($scope, $http, $interval) 
                 case "NW":
                     degrees = 315;
                     break;
+
+                default:
+                    degrees = 'N';
+                    break;
             }
 
             $scope.arrowCourthouse = {
