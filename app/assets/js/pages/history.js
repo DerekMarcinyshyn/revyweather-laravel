@@ -106,6 +106,13 @@ $(function() {
                 text:   ''
             },
 
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+
             series: []
         };
 

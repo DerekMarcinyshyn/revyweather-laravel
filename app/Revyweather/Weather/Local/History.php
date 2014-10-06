@@ -132,7 +132,7 @@ class History {
             'name' => 'Wind Speed',
             'data' => $speed,
             'type' => 'column',
-            'color' => '#dddddd',
+            'color' => '#cccccc',
             'yAxis' => 3,
             'tooltip' => array(
                 'valueSuffix' => ' km/h'
