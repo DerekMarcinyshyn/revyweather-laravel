@@ -131,9 +131,8 @@ class History {
         $speedResult = array(
             'name' => 'Wind Speed',
             'data' => $speed,
-            'type' => 'spline',
-            'dashStyle' => 'Dash',
-            'color' => '#cccccc',
+            'type' => 'column',
+            'color' => '#dddddd',
             'yAxis' => 3,
             'tooltip' => array(
                 'valueSuffix' => ' km/h'
