@@ -13,7 +13,7 @@
 
             <h2>Software Overview</h2>
             <ul>
-                <li><a href="http://aws.amazon.com/ec2/" target="_blank">Ubuntu Server on AWS EC2</a></li>
+                <li><a href="https://www.digitalocean.com/" target="_blank">Ubuntu Server on Digital Ocean</a></li>
                 <li><a href="https://forge.laravel.com/" target="_blank">Laravel Forge</a></li>
                 <li><a href="http://nginx.org/" target="_blank">Nginx</a></li>
                 <li><a href="http://php.net/" target="_blank">PHP 5.6</a></li>
