@@ -1,7 +1,7 @@
 <?php
 /**
  * An helper file for Laravel 4, to provide autocomplete information to your IDE
- * Generated for Laravel 4.2.9 on 2014-09-29.
+ * Generated for Laravel 4.2.11 on 2014-10-12.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -3686,16 +3686,6 @@ namespace {
         }
         
         /**
-         * Run the default delete function on the builder.
-         *
-         * @return mixed 
-         * @static 
-         */
-        public static function forceDelete(){
-            return \Illuminate\Database\Eloquent\Builder::forceDelete();
-        }
-        
-        /**
          * Register a replacement for the default delete function.
          *
          * @param \Closure $callback
@@ -5040,6 +5030,16 @@ namespace {
             \Illuminate\Events\Dispatcher::forget($event);
         }
         
+        /**
+         * Forget all of the queued listeners.
+         *
+         * @return void 
+         * @static 
+         */
+        public static function forgetQueued(){
+            \Illuminate\Events\Dispatcher::forgetQueued();
+        }
+        
     }
 
 
@@ -5509,6 +5509,18 @@ namespace {
          */
         public static function textarea($name, $value = null, $options = array()){
             return \Illuminate\Html\FormBuilder::textarea($name, $value, $options);
+        }
+        
+        /**
+         * Create a number input field.
+         *
+         * @param string $name
+         * @param array $options
+         * @return string 
+         * @static 
+         */
+        public static function number($name, $value = null, $options = array()){
+            return \Illuminate\Html\FormBuilder::number($name, $value, $options);
         }
         
         /**
@@ -11574,7 +11586,7 @@ namespace {
          *
          * @param string $path
          * @param mixed $extra
-         * @param bool $secure
+         * @param bool|null $secure
          * @return string 
          * @static 
          */
@@ -11598,7 +11610,7 @@ namespace {
          * Generate a URL to an application asset.
          *
          * @param string $path
-         * @param bool $secure
+         * @param bool|null $secure
          * @return string 
          * @static 
          */
@@ -12255,8 +12267,9 @@ namespace {
     class Navbar extends \Bootstrapper\Facades\Navbar{
         
         /**
-         * 
+         * Renders the navbar
          *
+         * @return string 
          * @static 
          */
         public static function render(){
@@ -12264,8 +12277,12 @@ namespace {
         }
         
         /**
-         * 
+         * Sets the brand of the navbar
          *
+         * @param string $brand The brand
+         * @param null|string $link The link. If not set we default to linking to
+         *                           '/' using the UrlGenerator
+         * @return $this 
          * @static 
          */
         public static function withBrand($brand, $link = null){
@@ -12273,8 +12290,10 @@ namespace {
         }
         
         /**
-         * 
+         * Adds attributes to the navbar
          *
+         * @param $attributes array The attributes of the array
+         * @return $this 
          * @static 
          */
         public static function withAttributes($attributes){
@@ -12282,8 +12301,12 @@ namespace {
         }
         
         /**
-         * 
+         * Adds some content to the navbar
          *
+         * @param mixed $content Anything that can become a string! If you pass in a
+         *                       Bootstrapper\Navigation object we'll make sure
+         *                       it's a navbar on render.
+         * @return $this 
          * @static 
          */
         public static function withContent($content){
@@ -12291,8 +12314,9 @@ namespace {
         }
         
         /**
-         * 
+         * Sets the navbar to be inverse
          *
+         * @return $this 
          * @static 
          */
         public static function inverse(){
@@ -12300,8 +12324,9 @@ namespace {
         }
         
         /**
-         * 
+         * Sets the position to top
          *
+         * @return $this 
          * @static 
          */
         public static function staticTop(){
@@ -12309,8 +12334,11 @@ namespace {
         }
         
         /**
-         * 
+         * Sets the type of the navbar
          *
+         * @param string $type The type of the navbar. Assumes that the navbar-
+         *                     prefix is there
+         * @return $this 
          * @static 
          */
         public static function setType($type){
@@ -12318,8 +12346,11 @@ namespace {
         }
         
         /**
-         * 
+         * Sets the position of the navbar
          *
+         * @param string $position The position of the navbar. Assumes that the
+         *                         navbar- prefix is there
+         * @return $this 
          * @static 
          */
         public static function setPosition($position){
@@ -12327,8 +12358,9 @@ namespace {
         }
         
         /**
-         * 
+         * Sets the position of the navbar to the top
          *
+         * @return $this 
          * @static 
          */
         public static function top(){
@@ -12336,8 +12368,9 @@ namespace {
         }
         
         /**
-         * 
+         * Sets the position of the navbar to the bottom
          *
+         * @return $this 
          * @static 
          */
         public static function bottom(){
@@ -12345,8 +12378,11 @@ namespace {
         }
         
         /**
-         * 
+         * Creates a navbar with a position and attributes
          *
+         * @param string $position The position of the navbar
+         * @param array $attributes The attributes of the navbar
+         * @return $this 
          * @static 
          */
         public static function create($position, $attributes = array()){
@@ -12354,93 +12390,13 @@ namespace {
         }
         
         /**
-         * 
+         * Sets the navbar to be fluid
          *
+         * @return $this 
          * @static 
          */
         public static function fluid(){
             return \Bootstrapper\Navbar::fluid();
-        }
-        
-        /**
-         * Hotswap the underlying instance behind the facade.
-         *
-         * @param mixed $instance
-         * @return void 
-         * @static 
-         */
-        public static function swap($instance){
-            //Method inherited from \Illuminate\Support\Facades\Facade            
-            \Bootstrapper\Navbar::swap($instance);
-        }
-        
-        /**
-         * Initiate a mock expectation on the facade.
-         *
-         * @param mixed
-         * @return \Mockery\Expectation 
-         * @static 
-         */
-        public static function shouldReceive(){
-            //Method inherited from \Illuminate\Support\Facades\Facade            
-            return \Bootstrapper\Navbar::shouldReceive();
-        }
-        
-        /**
-         * Get the root object behind the facade.
-         *
-         * @return mixed 
-         * @static 
-         */
-        public static function getFacadeRoot(){
-            //Method inherited from \Illuminate\Support\Facades\Facade            
-            return \Bootstrapper\Navbar::getFacadeRoot();
-        }
-        
-        /**
-         * Clear a resolved facade instance.
-         *
-         * @param string $name
-         * @return void 
-         * @static 
-         */
-        public static function clearResolvedInstance($name){
-            //Method inherited from \Illuminate\Support\Facades\Facade            
-            \Bootstrapper\Navbar::clearResolvedInstance($name);
-        }
-        
-        /**
-         * Clear all of the resolved instances.
-         *
-         * @return void 
-         * @static 
-         */
-        public static function clearResolvedInstances(){
-            //Method inherited from \Illuminate\Support\Facades\Facade            
-            \Bootstrapper\Navbar::clearResolvedInstances();
-        }
-        
-        /**
-         * Get the application instance behind the facade.
-         *
-         * @return \Illuminate\Foundation\Application 
-         * @static 
-         */
-        public static function getFacadeApplication(){
-            //Method inherited from \Illuminate\Support\Facades\Facade            
-            return \Bootstrapper\Navbar::getFacadeApplication();
-        }
-        
-        /**
-         * Set the application instance.
-         *
-         * @param \Illuminate\Foundation\Application $app
-         * @return void 
-         * @static 
-         */
-        public static function setFacadeApplication($app){
-            //Method inherited from \Illuminate\Support\Facades\Facade            
-            \Bootstrapper\Navbar::setFacadeApplication($app);
         }
         
     }
@@ -12449,8 +12405,9 @@ namespace {
     class Navigation extends \Bootstrapper\Facades\Navigation{
         
         /**
-         * 
+         * Renders the navigation object
          *
+         * @return string 
          * @static 
          */
         public static function render(){
@@ -12458,8 +12415,10 @@ namespace {
         }
         
         /**
-         * 
+         * Set the attributes of the navigation object
          *
+         * @param array $attributes The attributes
+         * @return $this 
          * @static 
          */
         public static function withAttributes($attributes){
@@ -12467,17 +12426,25 @@ namespace {
         }
         
         /**
-         * 
+         * Creates a pills navigation block
          *
+         * @param array $links The links
+         * @param array $attributes The attributes. Does not overwrite the
+         *                          previous values if not set
+         * @see Bootstrapper\Navigatation::$links
+         * @return $this 
          * @static 
          */
-        public static function pills($links = array(), $attributes = array()){
+        public static function pills($links = array(), $attributes = null){
             return \Bootstrapper\Navigation::pills($links, $attributes);
         }
         
         /**
-         * 
+         * Sets the links of the navigation object
          *
+         * @param array $links The links
+         * @return $this 
+         * @see Bootstrapper\Navigation::$links
          * @static 
          */
         public static function links($links){
@@ -12485,17 +12452,23 @@ namespace {
         }
         
         /**
-         * 
+         * Creates a navigation tab object.
          *
+         * @param array $links The links to be passed in
+         * @param array $attributes The attributes of the navigation object. Will
+         *                          overwrite unless not set.
+         * @return $this 
          * @static 
          */
-        public static function tabs($links = array(), $attributes = array()){
+        public static function tabs($links = array(), $attributes = null){
             return \Bootstrapper\Navigation::tabs($links, $attributes);
         }
         
         /**
-         * 
+         * Sets the autorouting. Pass false to turn it off, true to turn it on
          *
+         * @param bool $autoroute Whether the autorouting should be on
+         * @return $this 
          * @static 
          */
         public static function autoroute($autoroute){
@@ -12503,8 +12476,9 @@ namespace {
         }
         
         /**
-         * 
+         * Turns the navigation object into one for navbars
          *
+         * @return $this 
          * @static 
          */
         public static function navbar(){
@@ -12512,8 +12486,9 @@ namespace {
         }
         
         /**
-         * 
+         * Makes the navigation links justified
          *
+         * @return $this 
          * @static 
          */
         public static function justified(){
@@ -12521,93 +12496,13 @@ namespace {
         }
         
         /**
-         * 
+         * Makes the navigation stacked
          *
+         * @return $this 
          * @static 
          */
         public static function stacked(){
             return \Bootstrapper\Navigation::stacked();
-        }
-        
-        /**
-         * Hotswap the underlying instance behind the facade.
-         *
-         * @param mixed $instance
-         * @return void 
-         * @static 
-         */
-        public static function swap($instance){
-            //Method inherited from \Illuminate\Support\Facades\Facade            
-            \Bootstrapper\Navigation::swap($instance);
-        }
-        
-        /**
-         * Initiate a mock expectation on the facade.
-         *
-         * @param mixed
-         * @return \Mockery\Expectation 
-         * @static 
-         */
-        public static function shouldReceive(){
-            //Method inherited from \Illuminate\Support\Facades\Facade            
-            return \Bootstrapper\Navigation::shouldReceive();
-        }
-        
-        /**
-         * Get the root object behind the facade.
-         *
-         * @return mixed 
-         * @static 
-         */
-        public static function getFacadeRoot(){
-            //Method inherited from \Illuminate\Support\Facades\Facade            
-            return \Bootstrapper\Navigation::getFacadeRoot();
-        }
-        
-        /**
-         * Clear a resolved facade instance.
-         *
-         * @param string $name
-         * @return void 
-         * @static 
-         */
-        public static function clearResolvedInstance($name){
-            //Method inherited from \Illuminate\Support\Facades\Facade            
-            \Bootstrapper\Navigation::clearResolvedInstance($name);
-        }
-        
-        /**
-         * Clear all of the resolved instances.
-         *
-         * @return void 
-         * @static 
-         */
-        public static function clearResolvedInstances(){
-            //Method inherited from \Illuminate\Support\Facades\Facade            
-            \Bootstrapper\Navigation::clearResolvedInstances();
-        }
-        
-        /**
-         * Get the application instance behind the facade.
-         *
-         * @return \Illuminate\Foundation\Application 
-         * @static 
-         */
-        public static function getFacadeApplication(){
-            //Method inherited from \Illuminate\Support\Facades\Facade            
-            return \Bootstrapper\Navigation::getFacadeApplication();
-        }
-        
-        /**
-         * Set the application instance.
-         *
-         * @param \Illuminate\Foundation\Application $app
-         * @return void 
-         * @static 
-         */
-        public static function setFacadeApplication($app){
-            //Method inherited from \Illuminate\Support\Facades\Facade            
-            \Bootstrapper\Navigation::setFacadeApplication($app);
         }
         
     }
@@ -12616,8 +12511,10 @@ namespace {
     class Thumbnail extends \Bootstrapper\Facades\Thumbnail{
         
         /**
-         * 
+         * Renders the thumbnail
          *
+         * @return string 
+         * @throws ThumbnailException if the image is not specified
          * @static 
          */
         public static function render(){
@@ -12625,8 +12522,11 @@ namespace {
         }
         
         /**
-         * 
+         * Sets the image for the thumbnail
          *
+         * @param string $image The image source
+         * @param array $attributes The attributes
+         * @return $this 
          * @static 
          */
         public static function image($image, $attributes = array()){
@@ -12634,93 +12534,14 @@ namespace {
         }
         
         /**
-         * 
+         * Sets the caption for the thumbnail
          *
+         * @param string $caption The new caption
+         * @return $this 
          * @static 
          */
         public static function caption($caption){
             return \Bootstrapper\Thumbnail::caption($caption);
-        }
-        
-        /**
-         * Hotswap the underlying instance behind the facade.
-         *
-         * @param mixed $instance
-         * @return void 
-         * @static 
-         */
-        public static function swap($instance){
-            //Method inherited from \Illuminate\Support\Facades\Facade            
-            \Bootstrapper\Thumbnail::swap($instance);
-        }
-        
-        /**
-         * Initiate a mock expectation on the facade.
-         *
-         * @param mixed
-         * @return \Mockery\Expectation 
-         * @static 
-         */
-        public static function shouldReceive(){
-            //Method inherited from \Illuminate\Support\Facades\Facade            
-            return \Bootstrapper\Thumbnail::shouldReceive();
-        }
-        
-        /**
-         * Get the root object behind the facade.
-         *
-         * @return mixed 
-         * @static 
-         */
-        public static function getFacadeRoot(){
-            //Method inherited from \Illuminate\Support\Facades\Facade            
-            return \Bootstrapper\Thumbnail::getFacadeRoot();
-        }
-        
-        /**
-         * Clear a resolved facade instance.
-         *
-         * @param string $name
-         * @return void 
-         * @static 
-         */
-        public static function clearResolvedInstance($name){
-            //Method inherited from \Illuminate\Support\Facades\Facade            
-            \Bootstrapper\Thumbnail::clearResolvedInstance($name);
-        }
-        
-        /**
-         * Clear all of the resolved instances.
-         *
-         * @return void 
-         * @static 
-         */
-        public static function clearResolvedInstances(){
-            //Method inherited from \Illuminate\Support\Facades\Facade            
-            \Bootstrapper\Thumbnail::clearResolvedInstances();
-        }
-        
-        /**
-         * Get the application instance behind the facade.
-         *
-         * @return \Illuminate\Foundation\Application 
-         * @static 
-         */
-        public static function getFacadeApplication(){
-            //Method inherited from \Illuminate\Support\Facades\Facade            
-            return \Bootstrapper\Thumbnail::getFacadeApplication();
-        }
-        
-        /**
-         * Set the application instance.
-         *
-         * @param \Illuminate\Foundation\Application $app
-         * @return void 
-         * @static 
-         */
-        public static function setFacadeApplication($app){
-            //Method inherited from \Illuminate\Support\Facades\Facade            
-            \Bootstrapper\Thumbnail::setFacadeApplication($app);
         }
         
     }

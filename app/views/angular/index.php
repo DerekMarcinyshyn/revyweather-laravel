@@ -132,37 +132,44 @@
             <h3>Revelstoke Airport</h3>
             <p class="text-muted timestamp">{{ airport.currentConditions.dateTime[1].textSummary }}</p>
         </div>
+
+        <div data-ng-hide="showAirportConditions" class="col-md-12">
+            <p class="padding-15 bg-danger text-danger">Oops. Sorry no current conditions.<br>Looks like an error at the <a href="http://weather.gc.ca/city/pages/bc-65_metric_e.html" target="_blank">Revelstoke Environment Canada weather station</a>.</p>
+        </div>
+
         <!-- split into 4 columns -->
-        <div class="col-md-3 col-xs-6 conditions">
-            <div class="bottom">
-                <img id="icon-image" data-ng-src="assets/img/ec/icons-large/{{ airport.currentConditions.iconCode }}.png" alt="{{ airport.currentConditions.condition }}" width="80" height="80" />
-                <div class="current-temperature">{{ airport.currentConditions.temperature | number:1 }}&deg;C</div>
+        <div data-ng-show="showAirportConditions">
+            <div class="col-md-3 col-xs-6 conditions">
+                <div class="bottom">
+                    <img id="icon-image" data-ng-src="assets/img/ec/icons-large/{{ airport.currentConditions.iconCode }}.png" alt="{{ airport.currentConditions.condition }}" width="80" height="80" />
+                    <div class="current-temperature">{{ airport.currentConditions.temperature | number:1 }}&deg;C</div>
+                </div>
             </div>
-        </div>
-        <div class="col-md-3 col-xs-6 conditions">
-            <div class="bottom">
-                <p class="right-now"><span class="text-muted">Condition:</span> {{ airport.currentConditions.condition }}</p>
-                <p class="right-now"><span class="text-muted">Pressure:</span> {{ airport.currentConditions.pressure | number:1 }} kPa</p>
-                <p class="right-now"><span class="text-muted">Humidity:</span> {{ airport.currentConditions.relativeHumidity | number:0 }}%</p>
-                <p class="right-now"><span class="text-muted">Wind:</span> {{ airport.currentConditions.wind.direction | ecDirection }} &nbsp; {{ airport.currentConditions.wind.speed | number:1 }} km/h</p>
+            <div class="col-md-3 col-xs-6 conditions">
+                <div class="bottom">
+                    <p class="right-now"><span class="text-muted">Condition:</span> {{ airport.currentConditions.condition }}</p>
+                    <p class="right-now"><span class="text-muted">Pressure:</span> {{ airport.currentConditions.pressure | number:1 }} kPa</p>
+                    <p class="right-now"><span class="text-muted">Humidity:</span> {{ airport.currentConditions.relativeHumidity | number:0 }}%</p>
+                    <p class="right-now"><span class="text-muted">Wind:</span> {{ airport.currentConditions.wind.direction | ecDirection }} &nbsp; {{ airport.currentConditions.wind.speed | number:1 }} km/h</p>
+                </div>
             </div>
-        </div>
-        <div class="col-md-3 col-xs-6 conditions compass-container">
-            <div class="bottom">
-                <div id="gauge-airport" style="width:200px; height: 160px;"></div>
+            <div class="col-md-3 col-xs-6 conditions compass-container">
+                <div class="bottom">
+                    <div id="gauge-airport" style="width:200px; height: 160px;"></div>
+                </div>
             </div>
-        </div>
-        <div class="col-md-3 col-xs-6 conditions compass-container">
-            <div class="bottom">
-                <div class="compass">
-                    <div class="compass-inner">
-                        <div class="north">N</div>
-                        <div class="east">E</div>
-                        <div class="west">W</div>
-                        <div class="south">S</div>
-                        <div data-ng-style="arrowAirport" class="main-arrow">
-                            <div class="arrow-up"></div>
-                            <div class="arrow-down"></div>
+            <div class="col-md-3 col-xs-6 conditions compass-container">
+                <div class="bottom">
+                    <div class="compass">
+                        <div class="compass-inner">
+                            <div class="north">N</div>
+                            <div class="east">E</div>
+                            <div class="west">W</div>
+                            <div class="south">S</div>
+                            <div data-ng-style="arrowAirport" class="main-arrow">
+                                <div class="arrow-up"></div>
+                                <div class="arrow-down"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
