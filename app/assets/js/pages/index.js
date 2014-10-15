@@ -133,10 +133,6 @@ rightNowApp.controller('RightNowController', function($scope, $http, $interval) 
     $http.get('api/revelstoke-ec.json').success(function(data) {
         $scope.airport = data;
 
-        if (data.currentConditions.station['@attributes'].code == "") {
-            $scope.showAirportConditions = false;
-        }
-
         if (data.warnings.event) {
             switch (data.warnings.event['@attributes'].type) {
                 case 'watch':
