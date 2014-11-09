@@ -170,6 +170,7 @@
 .climacon.lightning.cloud.moon:before {
 	content: "\e027";
 }
+.climacon.clear:before,
 .climacon.sun:before {
 	content: "\e028";
 }
