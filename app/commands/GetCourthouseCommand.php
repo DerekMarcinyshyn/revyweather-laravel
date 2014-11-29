@@ -46,7 +46,7 @@ class GetCourthouseCommand extends Command {
         try {
             $this->data->getWeatherData();
         } catch (LocalDataException $e) {
-            Event::fire('local.data.fail', $e);
+            //Event::fire('local.data.fail', $e);
         }
 	}
 }
