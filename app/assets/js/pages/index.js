@@ -122,13 +122,6 @@ rightNowApp.controller('RightNowController', function($scope, $http, $interval) 
      */
     $scope.isEcForecastCollapsed = false;
 
-    var ga = new JustGage({
-        id: "gauge-airport",
-        value: 0,
-        min: 0,
-        max: 20,
-        title: "Wind km/h"
-    });
 
     $http.get('api/revelstoke-ec.json').success(function(data) {
         $scope.airport = data;
@@ -161,20 +154,28 @@ rightNowApp.controller('RightNowController', function($scope, $http, $interval) 
             }
         }
 
-        var windSpeed = data.currentConditions.wind.speed;
-        ga.refresh(windSpeed);
+        if (data.currentConditions.condition.length) {
+            var ga = new JustGage({
+                id: "gauge-airport",
+                value: 0,
+                min: 0,
+                max: 20,
+                title: "Wind km/h"
+            });
 
-        var degrees = data.currentConditions.wind.bearing;
+            var windSpeed = data.currentConditions.wind.speed;
+            ga.refresh(windSpeed);
 
-        $scope.arrowAirport = {
-            '-webkit-transform': 'rotate(' + degrees + 'deg)',
-            '-moz-transform': 'rotate(' + degrees + 'deg)',
-            '-o-transform': 'rotate(' + degrees + 'deg)',
-            '-ms-transform': 'rotate(' + degrees + 'deg)',
-            'transform': 'rotate(' + degrees + 'deg)'
-        };
+            var degrees = data.currentConditions.wind.bearing;
 
-        //console.log(data);
+            $scope.arrowAirport = {
+                '-webkit-transform': 'rotate(' + degrees + 'deg)',
+                '-moz-transform': 'rotate(' + degrees + 'deg)',
+                '-o-transform': 'rotate(' + degrees + 'deg)',
+                '-ms-transform': 'rotate(' + degrees + 'deg)',
+                'transform': 'rotate(' + degrees + 'deg)'
+            };
+        }
     });
 });
 
