@@ -36,6 +36,7 @@ class Forecast {
     /**
      * @param Filesystem $filesystem
      * @param Client $client
+     * @param Formatter $formatter
      */
     public function __construct(Filesystem $filesystem, Client $client) {
         $this->filesystem = $filesystem;
@@ -56,10 +57,10 @@ class Forecast {
                 $body = $response->xml();
 
                 // convert from XML to JSON
-                $data = Formatter::make($body, 'XML')->to_array();
+                $json = Formatter::make($body, Formatter::XML)->toJson();
 
                 // save to file
-                $this->filesystem->put($this->filename, json_encode($data));
+                $this->filesystem->put($this->filename, $json);
             }
         } catch (\Exception $e) {
             throw new EnvironmentCanadaException($e);
