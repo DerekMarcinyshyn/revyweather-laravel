@@ -36,7 +36,6 @@ class Forecast {
     /**
      * @param Filesystem $filesystem
      * @param Client $client
-     * @param Formatter $formatter
      */
     public function __construct(Filesystem $filesystem, Client $client) {
         $this->filesystem = $filesystem;
