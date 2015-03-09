@@ -73,7 +73,7 @@ jQuery(document).ready(function($) {
         $('#timelapse-year-next').val(timelapseYearNext);
 
         // set date range
-        if (month == rightnow.format('M') && parseInt(year, 10) == 2014) {
+        if (month == rightnow.format('M') && parseInt(year, 10) == 2015) {
             $('#timelapse-next').addClass('disabled');
         } else {
             $('#timelapse-next').removeClass('disabled');
