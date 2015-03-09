@@ -59,6 +59,6 @@ class ForecastioRevelstokeCommand extends ScheduledCommand {
      * @return \Indatus\Dispatcher\Scheduling\Schedulable
      */
     public function schedule(Schedulable $scheduler) {
-        return $scheduler->everyMinutes(3);
+        return $scheduler->everyMinutes(10);
     }
 }

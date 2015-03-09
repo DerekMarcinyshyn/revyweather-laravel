@@ -123,7 +123,7 @@
 
 
         <div class="col-md-12">
-            <p class="powered-by">Powered by <a href="http://forecast.io" target="_blank">Forecast.io</a> updated every 3 minutes.</p>
+            <p class="powered-by">Powered by <a href="http://forecast.io" target="_blank">Forecast.io</a> updated every 10 minutes.</p>
         </div>
 
         <hr class="col-md-12">
