@@ -1,7 +1,7 @@
 <?php
 /**
  * An helper file for Laravel 4, to provide autocomplete information to your IDE
- * Generated for Laravel 4.2.17 on 2015-02-12.
+ * Generated for Laravel 4.2.17 on 2015-06-13.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -11479,11 +11479,13 @@ namespace {
         /**
          * Sets the navbar to be inverse
          *
+         * @param string $position
+         * @param array $attributes
          * @return $this 
          * @static 
          */
-        public static function inverse(){
-            return \Bootstrapper\Navbar::inverse();
+        public static function inverse($position = null, $attributes = array()){
+            return \Bootstrapper\Navbar::inverse($position, $attributes);
         }
         
         /**
@@ -11572,6 +11574,18 @@ namespace {
         public static function withAttributes($attributes){
             //Method inherited from \Bootstrapper\RenderedObject            
             return \Bootstrapper\Navbar::withAttributes($attributes);
+        }
+        
+        /**
+         * Adds the given classes to attributes
+         *
+         * @param array $classes
+         * @return $this 
+         * @static 
+         */
+        public static function addClass($classes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\Navbar::addClass($classes);
         }
         
     }
@@ -11691,6 +11705,18 @@ namespace {
             return \Bootstrapper\Navigation::withAttributes($attributes);
         }
         
+        /**
+         * Adds the given classes to attributes
+         *
+         * @param array $classes
+         * @return $this 
+         * @static 
+         */
+        public static function addClass($classes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\Navigation::addClass($classes);
+        }
+        
     }
 
 
@@ -11740,6 +11766,18 @@ namespace {
         public static function withAttributes($attributes){
             //Method inherited from \Bootstrapper\RenderedObject            
             return \Bootstrapper\Thumbnail::withAttributes($attributes);
+        }
+        
+        /**
+         * Adds the given classes to attributes
+         *
+         * @param array $classes
+         * @return $this 
+         * @static 
+         */
+        public static function addClass($classes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\Thumbnail::addClass($classes);
         }
         
     }
