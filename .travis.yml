@@ -7,6 +7,6 @@ php:
   - hhvm
 
 before_script:
-  - composer install --prefer-source --no-interaction --dev
+  - composer install --prefer-source --no-interaction
 
 script: vendor/bin/codecept run --verbose --no-interaction
