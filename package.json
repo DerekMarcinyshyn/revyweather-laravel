@@ -1,7 +1,7 @@
 {
   "devDependencies": {
     "gulp-codeception": "~0.4.3",
-    "gulp": "~3.8.10",
+    "gulp": "~3.9.0",
     "gulp-notify": "~1.6.0",
     "gulp-concat": "~2.4.0",
     "gulp-minify-css": "~0.3.8",
