@@ -1,7 +1,7 @@
 <?php
 /**
  * An helper file for Laravel 4, to provide autocomplete information to your IDE
- * Generated for Laravel 4.2.17 on 2015-06-13.
+ * Generated for Laravel 4.2.17 on 2015-07-01.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -11464,6 +11464,20 @@ namespace {
         }
         
         /**
+         * Sets the brand of the navbar
+         *
+         * @param string $image The brand image
+         * @param null|string $link The link. If not set we default to linking to
+         *                             '/' using the UrlGenerator
+         * @param string $altText The alt text for the image
+         * @return $this 
+         * @static 
+         */
+        public static function withBrandImage($image, $link = null, $altText = ''){
+            return \Bootstrapper\Navbar::withBrandImage($image, $link, $altText);
+        }
+        
+        /**
          * Adds some content to the navbar
          *
          * @param mixed $content Anything that can become a string! If you pass in a
@@ -11691,6 +11705,16 @@ namespace {
          */
         public static function right(){
             return \Bootstrapper\Navigation::right();
+        }
+        
+        /**
+         * Makes the navigation links float left
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function left(){
+            return \Bootstrapper\Navigation::left();
         }
         
         /**

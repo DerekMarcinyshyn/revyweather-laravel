@@ -156,10 +156,10 @@
             <h2>Revelstoke Mountain Resort</h2>
         </div>
         <div class="col-sm-3 webcams-padding-top">
-            <a href="http://www.revelstokemountainresort.com/uploads/webcams/stoke.jpg" class="fancybox" rel="webcams" title="Mt Cartier">
+            <a href="http://www.revelstokemountainresort.com/uploads/webcams/stoke.jpg" class="fancybox" rel="webcams" title="Monashee Mountains">
                 <img src="http://www.revelstokemountainresort.com/uploads/webcams/stoke.jpg" class="thumbnail img-responsive" />
             </a>
-            <h5>Mt Cartier</h5>
+            <h5>Monashee Mountains</h5>
         </div>
         <div class="col-sm-3 webcams-padding-top">
             <a href="http://www.revelstokemountainresort.com/uploads/webcams/ripper.jpg" class="fancybox" rel="webcams" title="Ripper Chair">
