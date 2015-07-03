@@ -57,7 +57,7 @@ class Save {
             $response = $this->client->get($this->url);
 
             if ($response->getStatusCode() == '200') {
-                $this->saveToDatabase($response->json());
+                $this->saveToDatabase(json_encode($response->getBody()));
             }
 
         } catch (\Exception $e) {

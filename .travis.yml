@@ -8,5 +8,3 @@ php:
 
 before_script:
   - composer install --prefer-source --no-interaction
-
-script: vendor/bin/codecept run --verbose --no-interaction
