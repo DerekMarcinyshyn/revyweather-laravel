@@ -55,7 +55,6 @@ class Save {
     {
         try {
             $response = $this->client->get($this->url);
-
             if ($response->getStatusCode() == '200') {
                 $this->saveToDatabase(json_decode($response->getBody()));
             }
