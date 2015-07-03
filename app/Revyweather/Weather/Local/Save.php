@@ -57,9 +57,8 @@ class Save {
             $response = $this->client->get($this->url);
 
             if ($response->getStatusCode() == '200') {
-                $this->saveToDatabase(json_encode($response->getBody()));
+                $this->saveToDatabase(json_decode($response->getBody()));
             }
-
         } catch (\Exception $e) {
             $this->event->fire('local.save.fail');
             throw new LocalSaveException($e);
@@ -69,15 +68,15 @@ class Save {
     /**
      * @param $json
      */
-    private function saveToDatabase($json)
+    private function saveToDatabase($data)
     {
-        $this->current->temp = number_format($json['temperature'], 1);
-        $this->current->humidity = number_format($json['humidity'], 0);
-        $this->current->relative_humidity = number_format($json['relativehumidity'], 0);
-        $this->current->bmp_temperature = number_format($json['bmp_temperature']);
-        $this->current->barometer = number_format($json['barometer'], 1);
-        $this->current->direction = $json['direction'];
-        $this->current->speed = number_format($json['speed'], 1);
+        $this->current->temp = number_format($data->temperature, 1);
+        $this->current->humidity = number_format($data->humidity, 0);
+        $this->current->relative_humidity = number_format($data->relativehumidity, 0);
+        $this->current->bmp_temperature = number_format($data->bmp_temperature);
+        $this->current->barometer = number_format($data->barometer, 1);
+        $this->current->direction = $data->direction;
+        $this->current->speed = number_format($data->speed, 1);
         $this->current->save();
 
         $this->event->fire('local.save.success');
