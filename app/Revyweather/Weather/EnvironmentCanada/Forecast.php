@@ -53,7 +53,7 @@ class Forecast {
             $response = $this->client->get(self::REVELSTOKE);
 
             if ($response->getStatusCode() == '200') {
-                $body = $response->xml();
+                $body = (string) $response->getBody();
 
                 // convert from XML to JSON
                 $json = Formatter::make($body, Formatter::XML)->toJson();
