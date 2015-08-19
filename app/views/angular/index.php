@@ -57,7 +57,7 @@
             <p class="powered-by">Powered by <a href="http://netduino.com/netduinoplus2/specs.htm" target="_blank">Netduino Plus 2</a> and <a href="http://www.raspberrypi.org/" target="_blank">RaspberryPi</a> updated every 5 seconds.</p>
         </div>
 
-        <hr class="col-md-12">
+        <hr class="col-md-12 divider">
 
         <div class="col-md-12">
             <h3>Downtown Revelstoke</h3>
@@ -126,7 +126,7 @@
             <p class="powered-by">Powered by <a href="http://forecast.io" target="_blank">Forecast.io</a> updated every 10 minutes.</p>
         </div>
 
-        <hr class="col-md-12">
+        <hr class="col-md-12 divider">
 
         <div class="col-md-12">
             <h3>Revelstoke Airport</h3>

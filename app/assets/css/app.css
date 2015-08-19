@@ -1,5 +1,5 @@
 body {
-    background: url('/assets/img/mooning.png') fixed repeat;
+    background: #f5f8fa;
 }
 
 .wrapper-loader {
@@ -9,18 +9,15 @@ body {
     width: 220px;
 }
 
-
 .text-muted {
     color: #666;
 }
-
 
 hr {
     margin-top: 10px;
     margin-bottom: 10px;
     border-top:1px solid #aaa;
 }
-
 
 .navbar {
     margin-bottom: 0;
@@ -29,9 +26,6 @@ hr {
 .padding-15 {
     padding: 15px;
 }
-
-
-
 
 .alert a {
     font-size: 16px;
@@ -47,15 +41,6 @@ hr {
 .loader i {
     font-size: 30px;
 }
-
-
-
-
-
-
-
-
-
 
 .right-now {
     margin: 0 0 2px 0;
@@ -99,7 +84,7 @@ hr {
 
 .show-forecastio, .show-forecastio:hover, .show-forecastio:focus {
     margin: 15px 0 0 0;
-    background: #f6f6f6;
+    background: #fff;
     border: 0;
     color: #666;
 }
@@ -109,10 +94,11 @@ hr {
 }
 
 .forecastio-forecast-container {
-    background: #f6f6f6;
+    background: #fff;
     float: left;
     padding: 20px 0 50px 0;
     display:block;
+    width: 100%;
 }
 
 .forecastio {
@@ -120,9 +106,8 @@ hr {
     display:block;
     float: left;
     padding: 20px 10px 0;
-    background: #f6f6f6;
+    background: #fff;
 }
-
 
 .forecast-summary {
     text-align: center;
@@ -145,33 +130,31 @@ hr {
     font-size: 18px;
 }
 
-/** COMPASS */
-.compass {
-    width: 210px;
-    height: 210px;
-    background-color: #F3F3F3;
-    border-radius: 100%;
-    background-image: -webkit-linear-gradient(top, #F7F7F7, #CCCCCC);
-    position: relative;
-    margin: 0 0 0 40px;
+hr.divider {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #e6e6e6, #aaa, #e6e6e6);
 }
 
+/** COMPASS */
 .compass-inner {
-    width: 180px;
-    height: 180px;
-    background-color: #333;
+    width: 140px;
+    height: 140px;
+    background: radial-gradient(circle at 100px 100px, #008cba, #000);
     border-radius: 100%;
     position: relative;
-    left: 15px;
-    top: 15px;
+    top: 50%;
+    left: 50%;
 }
 
 .main-arrow {
     height: 100%;
-    width: 15px;
-    left: 78px;
-    padding-top: 3px;
-    box-sizing:border-box;
+    width: 10px;
+    left: 63px;
+    top: 0;
+    padding-top: 0;
+    box-sizing: border-box;
     position: relative;
     transition: all .7s cubic-bezier(.86, .75, .53, 1.58);
 }
@@ -180,9 +163,9 @@ hr {
     margin:0;
     width: 0;
     height: 0;
-    border-left: 7.5px solid transparent;
-    border-right: 7.5px solid transparent;
-    border-bottom: 82.5px solid #EF5052;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 70px solid #EF5052;
     position: relative;
 }
 
@@ -192,41 +175,41 @@ hr {
     transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     height: 0;
-    border-left: 7.5px solid transparent;
-    border-right: 7.5px solid transparent;
-    border-bottom: 82.5px solid #e6e6e6;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 70px solid #e6e6e6;
     position: relative;
 }
 
 .north {
-    font-size: 28px;
-    color: #FFF;
+    font-size: 20px;
+    color: #333;
     position: absolute;
-    left: 76px;
-    top: 0;
+    left: 63px;
+    top: -30px;
 }
 
 .east {
-    font-size: 22px;
+    font-size: 16px;
     color: #999;
     position: absolute;
-    left: 150px;
-    top: 70px;
+    left: 145px;
+    top: 60px;
 }
 
 .west {
-    font-size: 22px;
+    font-size: 16px;
     color: #999;
     position: absolute;
-    left: 12px;
-    top: 70px;
+    left: -20px;
+    top: 60px;
 }
 
 .south {
-    font-size: 22px;
+    font-size: 16px;
     color: #999;
     position: absolute;
-    left: 78px;
+    left: 65px;
     top: 140px;
 }
 
