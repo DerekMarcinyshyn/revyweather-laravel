@@ -82,7 +82,9 @@ hr {
     color: #666;
 }
 
-.show-forecastio, .show-forecastio:hover, .show-forecastio:focus {
+.show-forecastio,
+.show-forecastio:hover,
+.show-forecastio:focus {
     margin: 15px 0 0 0;
     background: #fff;
     border: 0;
@@ -95,6 +97,7 @@ hr {
 
 .forecastio-forecast-container {
     background: #fff;
+    box-shadow: 0 0 80px #aaa;
     float: left;
     padding: 20px 0 50px 0;
     display:block;
@@ -134,14 +137,14 @@ hr.divider {
     border: 0;
     height: 1px;
     background: #333;
-    background-image: linear-gradient(to right, #e6e6e6, #aaa, #e6e6e6);
+    background-image: linear-gradient(to right, #f6f6f6, #aaa, #f6f6f6);
 }
 
 /** COMPASS */
 .compass-inner {
     width: 140px;
     height: 140px;
-    background: radial-gradient(circle at 100px 100px, #008cba, #000);
+    background: radial-gradient(circle at 100px 100px, #008cba, #222);
     border-radius: 100%;
     position: relative;
     top: 50%;
