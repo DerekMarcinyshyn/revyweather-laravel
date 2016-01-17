@@ -161,6 +161,10 @@ rightNowApp.controller('RightNowController', function($scope, $http, $interval) 
             }
         }
 
+        if (data.warnings.event['@attributes'].type == "") {
+            $scope.airport.warnings = false;
+        }
+
         var degrees = data.currentConditions.wind.bearing;
 
         $scope.arrowAirport = {
