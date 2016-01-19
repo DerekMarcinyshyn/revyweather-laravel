@@ -1,7 +1,7 @@
 <?php
 /**
  * An helper file for Laravel 4, to provide autocomplete information to your IDE
- * Generated for Laravel 4.2.17 on 2015-07-01.
+ * Generated for Laravel 4.2.18 on 2016-01-19.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -5635,7 +5635,7 @@ namespace {
          *
          * @param string $key
          * @param mixed $default
-         * @return string 
+         * @return string|array 
          * @static 
          */
         public static function query($key = null, $default = null){
@@ -8205,7 +8205,7 @@ namespace {
          *
          * @param string $key
          * @param mixed $default
-         * @return string 
+         * @return string|array 
          * @static 
          */
         public static function query($key = null, $default = null){
@@ -12023,7 +12023,7 @@ namespace {
          *
          * @param string $key
          * @param mixed $default
-         * @return string 
+         * @return string|array 
          * @static 
          */
         public static function query($key = null, $default = null){

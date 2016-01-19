@@ -134,6 +134,8 @@ rightNowApp.controller('RightNowController', function($scope, $http, $interval) 
         $scope.airport = data;
 
         if (data.warnings.event) {
+            (data.warnings.event['@attributes'].type == "") ? $scope.airport.warnings = false : $scope.airport.warnings = true;
+
             switch (data.warnings.event['@attributes'].type) {
                 case 'watch':
                     $scope.alertClass = 'alert-danger';
@@ -159,10 +161,6 @@ rightNowApp.controller('RightNowController', function($scope, $http, $interval) 
                     $scope.alertClass = 'alert-info';
                     break;
             }
-        }
-
-        if (data.warnings.event['@attributes'].type == "") {
-            $scope.airport.warnings = false;
         }
 
         var degrees = data.currentConditions.wind.bearing;
