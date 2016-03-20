@@ -35,3 +35,4 @@ com_crashlytics_export_strings.xml
 tests/_output/*
 
 node_modules
+bower_components

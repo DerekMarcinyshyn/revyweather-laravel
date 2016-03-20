@@ -1,0 +1,22 @@
+{
+  "name": "revyweather",
+  "description": "revyweather.com",
+  "main": "index.php",
+  "authors": [
+    "DerekMarcinyshyn <derek@monasheemountainmultimedia.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/DerekMarcinyshyn/revyweather-laravel",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-material": "^1.0.6"
+  }
+}
