@@ -20,7 +20,6 @@
 <body ng-app="RevyWeatherApp" layout="column" ng-cloak>
 @include('nav')
 @yield('content')
-
 @if ( Config::get('app.debug') )
     <script src="{{ url('js/all.js') }}"></script>
 @else
