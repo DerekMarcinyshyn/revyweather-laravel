@@ -401,4 +401,10 @@ t.$apply(function(){r.removeChip(t.$$replacedScope.$index)})}),e(function(){n.at
  */
 
 
+var revyWeatherApp = angular.module('RevyWeatherApp', ['ngMaterial']);
+
+revyWeatherApp.controller('NavController', function() {});
+
+revyWeatherApp.controller('HomeController', function() {});
+
 //# sourceMappingURL=all.js.map

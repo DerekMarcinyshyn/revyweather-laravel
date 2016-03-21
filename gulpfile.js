@@ -1,10 +1,24 @@
+/**
+ * gulpfile.js
+ * @author  Derek Marcinyshyn
+ * @date    2016-03-20
+ */
+
 var elixir = require('laravel-elixir');
+var gulp = require('gulp');
 
 elixir(function(mix) {
     mix
+        // fonts
+        .copy('bower_components/font-awesome/fonts', 'resources/assets/fonts')
+        .copy('bower_components/font-awesome/fonts', 'public/fonts')
+        .copy('bower_components/font-awesome/fonts', 'public/build/fonts')
+
         // css
         .copy('bower_components/angular-material/angular-material.min.css', 'resources/assets/css/angular-material.min.css')
+        .copy('bower_components/font-awesome/css/font-awesome.min.css', 'resources/assets/css/font-awesome.min.css')
         .styles([
+            'font-awesome.min.css',
             'angular-material.min.css',
             'app.css'
         ])
@@ -25,6 +39,8 @@ elixir(function(mix) {
         .version([
             'css/all.css',
             'js/all.js'
-        ]);
+        ])
+    ;
+
 });
     

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Revy Weather</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     @if (Config::get('app.debug'))
         <link rel="stylesheet" href="{{ url('css/all.css') }}"/>
     @else
@@ -16,7 +17,7 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body>
+<body ng-app="RevyWeatherApp" layout="column" ng-cloak>
 @include('nav')
 @yield('content')
 
