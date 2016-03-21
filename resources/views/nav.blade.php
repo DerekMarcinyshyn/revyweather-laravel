@@ -12,25 +12,25 @@
                     </md-button>
                 </div>
             </md-toolbar>
-            <md-content layout-padding>
+            <md-content>
                 <md-list>
-                    <md-list-item>
-                        <md-button ng-click="goto('/')" class="md-primary">Right Now</md-button>
+                    <md-list-item ng-click="goto('/')">
+                        <i class="fa fa-cloud"></i> &nbsp;&nbsp; Right Now
                     </md-list-item>
-                    <md-list-item>
-                        <md-button ng-click="goto('/history')" class="md-primary">History</md-button>
+                    <md-list-item ng-click="goto('/history')">
+                        <i class="fa fa-line-chart"></i> &nbsp;&nbsp; History
                     </md-list-item>
-                    <md-list-item>
-                        <md-button ng-click="goto('/webcams')" class="md-primary">Webcams</md-button>
+                    <md-list-item ng-click="goto('/webcams')">
+                        <i class="fa fa-camera-retro"></i> &nbsp;&nbsp; Webcams
                     </md-list-item>
-                    <md-list-item>
-                        <md-button ng-click="goto('/map')" class="md-primary">Map</md-button>
+                    <md-list-item ng-click="goto('/map')">
+                        <i class="fa fa-map-o"></i> &nbsp;&nbsp; Map
                     </md-list-item>
-                    <md-list-item>
-                        <md-button ng-click="goto('/timelapse')" class="md-primary">Timelapse</md-button>
+                    <md-list-item ng-click="goto('/timelapse')">
+                        <i class="fa fa-hourglass"></i> &nbsp;&nbsp; Timelapse
                     </md-list-item>
-                    <md-list-item>
-                        <md-button ng-click="goto('/about')" class="md-primary">About</md-button>
+                    <md-list-item ng-click="goto('/about')">
+                        <i class="fa fa-info-circle"></i> &nbsp;&nbsp; About
                     </md-list-item>
                 </md-list>
             </md-content>
