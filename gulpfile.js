@@ -18,7 +18,8 @@ elixir(function(mix) {
             'angular.min.js',
             'angular-aria.min.js',
             'angular-animate.min.js',
-            'angular-material.min.js'
+            'angular-material.min.js',
+            'app.js'
         ])
 
         .version([
