@@ -6,6 +6,18 @@
 
 var revyWeatherApp = angular.module('RevyWeatherApp', ['ngMaterial']);
 
-revyWeatherApp.controller('NavController', function() {});
+revyWeatherApp.controller('NavController', function($scope, $mdSidenav) {
+    $scope.openSidenav = function() {
+        $mdSidenav('left').open();
+    };
+    $scope.closeSidenav = function() {
+        $mdSidenav('left').close();
+    };
+    $scope.goto = function(page) {
+        $mdSidenav('left').close();
+        window.location = page;
+    };
+});
 
 revyWeatherApp.controller('HomeController', function() {});
+
