@@ -13,21 +13,21 @@ Route::get('/', function () {
 });
 
 Route::get('history', function() {
-    return 'history';
+    return view('history');
 });
 
 Route::get('webcams', function() {
-    return 'webcams';
+    return view('webcams');
 });
 
 Route::get('map', function() {
-    return 'map';
+    return view('map');
 });
 
 Route::get('timelapse', function() {
-    return 'timelapse';
+    return view('timelapse');
 });
 
 Route::get('about', function() {
-    return 'about';
+    return view('about');
 });
