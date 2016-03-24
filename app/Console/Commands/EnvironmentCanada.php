@@ -9,19 +9,22 @@ namespace RevyWeather\Console\Commands;
  */
 
 use Illuminate\Console\Command;
+use RevyWeather\Services\Weather\GetEnvironmentCanada;
 
 class EnvironmentCanada extends Command
 {
+
     /**
-     * The name and signature of the console command.
-     *
+     * @var GetEnvironmentCanada
+     */
+    protected $ec;
+    
+    /**
      * @var string
      */
     protected $signature = 'revyweather:environment-canada';
 
     /**
-     * The console command description.
-     *
      * @var string
      */
     protected $description = 'Get the latest XML Environment Canada for Revelstoke';
@@ -29,9 +32,10 @@ class EnvironmentCanada extends Command
     /**
      * EnvironmentCanada constructor.
      */
-    public function __construct()
+    public function __construct(GetEnvironmentCanada $ec)
     {
         parent::__construct();
+        $this->ec = $ec;
     }
 
     /**
@@ -42,5 +46,6 @@ class EnvironmentCanada extends Command
     public function handle()
     {
         $this->info('Getting the Revelstoke XML feed');
+        $this->ec->getRevelstokeWeather();
     }
 }
