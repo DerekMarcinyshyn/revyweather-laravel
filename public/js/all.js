@@ -415,7 +415,11 @@ revyWeatherApp.controller('NavController', function($scope, $mdSidenav) {
     };
 });
 
-revyWeatherApp.controller('HomeController', function() {});
+revyWeatherApp.controller('HomeController', function($scope, $http) {
+    $http.get('api/v1/ec-revelstoke.json').success(function(data) {
+        $scope.airport = data;
+    });
+});
 
 
 //# sourceMappingURL=all.js.map
