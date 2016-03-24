@@ -8,9 +8,12 @@ class HomepageTest extends TestCase
 {
 
     /** @test */
-    public function it_shows_site_title()
+    public function it_shows_site_titles()
     {
         $this->visit('/')
-             ->see('Revelstoke Weather');
+            ->see('Courthouse Revelstoke')
+            ->see('Downtown Revelstoke')
+            ->see('Revelstoke Airport')
+        ;
     }
 }
