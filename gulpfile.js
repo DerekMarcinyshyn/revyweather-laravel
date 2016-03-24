@@ -39,6 +39,9 @@ elixir(function(mix) {
             'css/all.css',
             'js/all.js'
         ])
+
+        // img
+        .copy('resources/assets/img', 'public/img')
     ;
     mix.phpUnit();
 });
