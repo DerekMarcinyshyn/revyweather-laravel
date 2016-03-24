@@ -11,7 +11,7 @@ namespace RevyWeather\Console\Commands;
 use Illuminate\Console\Command;
 use RevyWeather\Services\Weather\GetEnvironmentCanada;
 
-class EnvironmentCanada extends Command
+class EnvironmentCanadaCommand extends Command
 {
 
     /**
@@ -47,5 +47,6 @@ class EnvironmentCanada extends Command
     {
         $this->info('Getting the Revelstoke XML feed');
         $this->ec->getRevelstokeWeather();
+        $this->info('done.');
     }
 }
