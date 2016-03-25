@@ -19,6 +19,18 @@ revyWeatherApp.controller('NavController', function($scope, $mdSidenav) {
 });
 
 revyWeatherApp.controller('HomeController', function($scope, $http) {
+    var ga = new JustGage({
+        id: "gauge-airport",
+        value: 0,
+        min: 0,
+        max: 20,
+        title: 'Wind',
+        titleFontColor: '#cccccc',
+        gaugeColor: '#cccccc',
+        gaugeWidthScale: 0.6,
+        label: 'km/h'
+    });
+
     $http.get('api/v1/ec-revelstoke.json').success(function(data) {
         $scope.airport = data;
 
@@ -51,6 +63,19 @@ revyWeatherApp.controller('HomeController', function($scope, $http) {
                     break;
             }
         }
+
+        var degrees = data.currentConditions.wind.bearing;
+
+        $scope.arrowAirport = {
+            '-webkit-transform': 'rotate(' + degrees + 'deg)',
+            '-moz-transform': 'rotate(' + degrees + 'deg)',
+            '-o-transform': 'rotate(' + degrees + 'deg)',
+            '-ms-transform': 'rotate(' + degrees + 'deg)',
+            'transform': 'rotate(' + degrees + 'deg)'
+        };
+
+        var windSpeed = data.currentConditions.wind.speed;
+        ga.refresh(windSpeed);
     });
 });
 

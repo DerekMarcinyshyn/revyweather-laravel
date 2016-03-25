@@ -16,7 +16,8 @@
                 <article class="conditions" layout="column">
                     <div layout="row">
                         <div flex="50">
-                            <img src="" ng-src="img/ec/icons-large/{{ airport.currentConditions.iconCode }}.png" alt="" width="80" height="80" />
+                            <img src="" ng-src="img/ec/icons-large/{{ airport.currentConditions.iconCode }}.png"
+                                 alt="" width="80" height="80" />
                         </div>
                         <div flex="50">
                             <span class="text-temperature">{{ airport.currentConditions.temperature | number:1 }}&deg;C</span>
@@ -30,15 +31,41 @@
                     </div>
                     <div layout="row">
                         <div flex="50">
-                            <p>Wind speed gauge</p>
+                            <div id="gauge-airport" style="width:150px;height:110px;"></div>
                         </div>
                         <div flex="50">
-                            <p>Compass gauge</p>
+                            <div class="compass">
+                                <div class="compass-inner">
+                                    <div class="north">N</div>
+                                    <div class="east">E</div>
+                                    <div class="west">W</div>
+                                    <div class="south">S</div>
+                                    <div data-ng-style="arrowAirport" class="main-arrow">
+                                        <div class="arrow-up"></div>
+                                        <div class="arrow-down"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </article>
-                <article class="forecast">
-                    <h2>forecast</h2>
+                <article class="forecast" layout="column">
+                    <h2>Forecast</h2>
+                    <md-whiteframe ng-repeat="forecast in airport.forecastGroup.forecast | limitTo:5" 
+                                   class="md-whiteframe-4dp layout-padding">
+                        <h3>{{ forecast.period }}</h3>
+                        <div layout="row">
+                            <div flex="50">
+                                <img src="" ng-src="img/ec/icons-large/{{ forecast.abbreviatedForecast.iconCode }}.png"
+                                     alt="" width="80" height="80" />
+                            </div>
+                            <div flex="50">
+                                <span class="text-temperature">{{ forecast.temperatures.temperature | number:1 }}&deg;C</span>
+                            </div>
+                        </div>
+                        <p>{{ forecast.textSummary }}</p>
+                    </md-whiteframe>
+                    <p class="powered-by">Powered by <a href="http://weather.gc.ca/city/pages/bc-65_metric_e.html" target="_blank">Environment Canada</a> updated every hour.</p>
                 </article>
             </md-card-content>
         </md-card>

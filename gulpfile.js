@@ -32,6 +32,8 @@ elixir(function(mix) {
             'angular-aria.min.js',
             'angular-animate.min.js',
             'angular-material.min.js',
+            'justgage.js',
+            'raphael-2.1.4.min.js',
             'app.js'
         ])
 
