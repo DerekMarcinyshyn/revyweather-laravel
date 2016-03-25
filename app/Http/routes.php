@@ -37,5 +37,11 @@ Route::group(['middleware' => ['web']], function() {
                     'Content-Type'  => 'application/json'
                 ]);
         });
+        Route::get('api/v1/forecastio-revelstoke.json', function() {
+            return response(file_get_contents(storage_path('app/public/data/forecasts/forecastio-revelstoke.json')))
+                ->withHeaders([
+                    'Content-Type'  => 'application/json'
+                ]);
+        });
     });
 });
