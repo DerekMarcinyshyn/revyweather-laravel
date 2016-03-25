@@ -31,7 +31,8 @@ class GetForecastio
     }
 
     /**
-     * Get Revelstoke json from Forecast.io
+     * Get Forecast.io and save to filesystem
+     * @param Client $client
      */
     public function getRevelstoke(Client $client)
     {

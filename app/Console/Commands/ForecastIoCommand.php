@@ -8,6 +8,7 @@ namespace RevyWeather\Console\Commands;
  * @date    2016-03-24
  */
 
+use GuzzleHttp\Client;
 use Illuminate\Console\Command;
 use RevyWeather\Services\Weather\GetForecastio;
 
@@ -32,15 +33,11 @@ class ForecastIoCommand extends Command
         parent::__construct();
     }
 
-    /**
-     * Execute the console command.
-     *
-     * @return mixed
-     */
-    public function handle(GetForecastio $getForecastio)
+
+    public function handle(GetForecastio $getForecastio, Client $client)
     {
         $this->info('Get Forecast.io Revelstoke forecast...');
-        $getForecastio->getRevelstoke();
+        $getForecastio->getRevelstoke($client);
         $this->info('done.');
     }
 }

@@ -17,9 +17,13 @@ class GetEnvironmentCanada
 
     const REVELSTOKE = 'http://dd.weatheroffice.gc.ca/citypage_weather/xml/BC/s0000679_e.xml';
     const FILENAME = 'public/data/forecasts/ec-revelstoke.json';
-    
+
     /**
-     * @return bool
+     * Get Environment Canada Revelstoke XML feed and
+     * convert to JSON and
+     * save to filesystem
+     * 
+     * @param Client $client
      */
     public function getRevelstokeWeather(Client $client)
     {
@@ -27,19 +31,12 @@ class GetEnvironmentCanada
             $response = $client->get(self::REVELSTOKE);
 
             if ($response->getStatusCode() == '200') {
-                $body = (string) $response->getBody();
-
-                // convert xml to json
+                $body = (string)$response->getBody();
                 $json = Formatter::make($body, Formatter::XML)->toJson();
                 Storage::disk('local')->put(self::FILENAME, $json);
-
-                return true;
-            } else {
-                return false;
             }
         } catch (\Exception $e) {
             var_dump($e->getMessage());
-            return false;
         }
     }
 }
