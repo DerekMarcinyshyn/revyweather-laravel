@@ -15,11 +15,6 @@ class EnvironmentCanadaCommand extends Command
 {
 
     /**
-     * @var GetEnvironmentCanada
-     */
-    protected $ec;
-    
-    /**
      * @var string
      */
     protected $signature = 'revyweather:environment-canada';
@@ -32,21 +27,20 @@ class EnvironmentCanadaCommand extends Command
     /**
      * EnvironmentCanada constructor.
      */
-    public function __construct(GetEnvironmentCanada $ec)
+    public function __construct()
     {
         parent::__construct();
-        $this->ec = $ec;
     }
 
     /**
      * Execute the console command.
-     *
+     * @param GetEnvironmentCanada $ec
      * @return mixed
      */
-    public function handle()
+    public function handle(GetEnvironmentCanada $ec)
     {
         $this->info('Getting the Revelstoke XML feed');
-        $this->ec->getRevelstokeWeather();
+        $ec->getRevelstokeWeather();
         $this->info('done.');
     }
 }

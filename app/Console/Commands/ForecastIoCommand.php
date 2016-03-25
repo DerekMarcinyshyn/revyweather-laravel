@@ -25,18 +25,11 @@ class ForecastIoCommand extends Command
     protected $description = 'Get the latest Forecast.io forecast for Revelstoke.';
 
     /**
-     * @var GetForecastio
-     */
-    protected $getForecastio;
-
-    /**
      * ForecastIoCommand constructor.
-     * @param GetForecastio $getForecastio
      */
-    public function __construct(GetForecastio $getForecastio)
+    public function __construct()
     {
         parent::__construct();
-        $this->getForecastio = $getForecastio;
     }
 
     /**
@@ -44,10 +37,10 @@ class ForecastIoCommand extends Command
      *
      * @return mixed
      */
-    public function handle()
+    public function handle(GetForecastio $getForecastio)
     {
         $this->info('Get Forecast.io Revelstoke forecast...');
-        $this->getForecastio->getRevelstoke();
+        $getForecastio->getRevelstoke();
         $this->info('done.');
     }
 }

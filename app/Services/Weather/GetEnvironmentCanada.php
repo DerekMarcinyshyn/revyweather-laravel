@@ -17,28 +17,14 @@ class GetEnvironmentCanada
 
     const REVELSTOKE = 'http://dd.weatheroffice.gc.ca/citypage_weather/xml/BC/s0000679_e.xml';
     const FILENAME = 'public/data/forecasts/ec-revelstoke.json';
-
-    /**
-     * @var \GuzzleHttp\Client
-     */
-    protected $client;
-
-    /**
-     * EnvironmentCanada constructor.
-     * @param Client $client
-     */
-    public function __construct(Client $client)
-    {
-        $this->client = $client;
-    }
-
+    
     /**
      * @return bool
      */
-    public function getRevelstokeWeather()
+    public function getRevelstokeWeather(Client $client)
     {
         try {
-            $response = $this->client->get(self::REVELSTOKE);
+            $response = $client->get(self::REVELSTOKE);
 
             if ($response->getStatusCode() == '200') {
                 $body = (string) $response->getBody();
