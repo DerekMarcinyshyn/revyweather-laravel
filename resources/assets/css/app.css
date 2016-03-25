@@ -1,0 +1,24 @@
+body,
+md-content {
+    color: #212121;
+    background: #e6e6e6;
+}
+md-sidenav md-content {
+    background: white;
+}
+.text-summary {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 30px;
+}
+.text-conditions {
+    margin: 30px 0;
+}
+.text-conditions p {
+    font-size: 14px;
+    margin: 0 0 4px 0;
+    padding: 0;
+}
+.text-temperature {
+    font-size: 50px;
+}
