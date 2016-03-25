@@ -19,6 +19,10 @@ md-sidenav md-content {
     margin: 0 0 4px 0;
     padding: 0;
 }
+.label {
+    color: #666;
+    font-size: 12px;
+}
 .text-temperature {
     font-size: 50px;
 }
@@ -32,6 +36,10 @@ md-sidenav md-content {
 .forecast h2 {
     color: #999;
     margin-bottom: 30px;
+}
+.climacon {
+    font-size: 90px;
+    color: #212121;
 }
 .powered-by {
     font-size: 12px;

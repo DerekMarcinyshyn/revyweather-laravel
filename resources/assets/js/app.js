@@ -3,7 +3,10 @@
  * @author  Derek Marcinyshyn
  */
 
-var revyWeatherApp = angular.module('RevyWeatherApp', ['ngMaterial']);
+var revyWeatherApp = angular.module('RevyWeatherApp', [
+    'ngMaterial',
+    'angular-skycons'
+]);
 
 revyWeatherApp.controller('NavController', function($scope, $mdSidenav) {
     $scope.openSidenav = function() {
@@ -19,6 +22,43 @@ revyWeatherApp.controller('NavController', function($scope, $mdSidenav) {
 });
 
 revyWeatherApp.controller('HomeController', function($scope, $http) {
+    var gd = new JustGage({
+        id: "gauge-downtown",
+        value: 0,
+        min: 0,
+        max: 20,
+        title: 'Wind',
+        titleFontColor: '#cccccc',
+        gaugeColor: '#cccccc',
+        gaugeWidthScale: 0.6,
+        label: 'km/h'
+    });
+
+    $http.get('api/v1/forecastio-revelstoke.json').success(function(data) {
+        $scope.forecastio = data;
+        $scope.currentWeather = {
+            forecast: {
+                icon: data.currently.icon,
+                iconSize: 80
+            }
+        };
+
+        var windSpeed = data.currently.windSpeed;
+        windSpeed = Math.ceil(windSpeed * 10) / 10;
+        gd.refresh(windSpeed);
+
+        var degrees = data.currently.windBearing;
+
+        $scope.arrowDowntown = {
+            '-webkit-transform': 'rotate(' + degrees + 'deg)',
+            '-moz-transform': 'rotate(' + degrees + 'deg)',
+            '-o-transform': 'rotate(' + degrees + 'deg)',
+            '-ms-transform': 'rotate(' + degrees + 'deg)',
+            'transform': 'rotate(' + degrees + 'deg)'
+        };
+    });
+
+
     var ga = new JustGage({
         id: "gauge-airport",
         value: 0,
@@ -88,3 +128,15 @@ revyWeatherApp.filter('ecDirection', function() {
     }
 });
 
+revyWeatherApp.filter('windDirection', function() {
+    return function(input) {
+        var directions = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW', 'N'];
+        return directions[Math.round(input/45)];
+    }
+});
+
+revyWeatherApp.filter('climacons', function() {
+    return function(input) {
+        return input.replace(/-/g, " ");
+    }
+});
