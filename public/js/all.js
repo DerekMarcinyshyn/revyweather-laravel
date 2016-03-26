@@ -2387,6 +2387,11 @@ revyWeatherApp.controller('NavController', function($scope, $mdSidenav) {
 });
 
 revyWeatherApp.controller('HomeController', function($scope, $http) {
+    $scope.showCourthouse = false;
+    $scope.showDowntown = false;
+    $scope.showAirport = false;
+    $scope.warnings = false;
+
     angular.element(document).ready(function() {
         var gc = new JustGage({
             id: "gauge-courthouse",
@@ -2403,6 +2408,7 @@ revyWeatherApp.controller('HomeController', function($scope, $http) {
         function getCurrent() {
             $http.get('api/v1/revelstoke.json').success(function(data) {
                 $scope.courthouse = data;
+                $scope.showCourthouse = true;
 
                 var windSpeed = data.speed * 1.60934;
                 $scope.windSpeed = Math.ceil(windSpeed * 10) / 10;
@@ -2471,6 +2477,7 @@ revyWeatherApp.controller('HomeController', function($scope, $http) {
 
         $http.get('api/v1/forecastio-revelstoke.json').success(function(data) {
             $scope.forecastio = data;
+            $scope.showDowntown = true;
             $scope.currentWeather = {
                 forecast: {
                     icon: data.currently.icon,
@@ -2493,7 +2500,6 @@ revyWeatherApp.controller('HomeController', function($scope, $http) {
             };
         });
 
-
         var ga = new JustGage({
             id: "gauge-airport",
             value: 0,
@@ -2508,6 +2514,7 @@ revyWeatherApp.controller('HomeController', function($scope, $http) {
 
         $http.get('api/v1/ec-revelstoke.json').success(function(data) {
             $scope.airport = data;
+            $scope.showAirport = true;
 
             if (data.warnings.event) {
                 (data.warnings.event['@attributes'].type == "") ? $scope.warnings = false : $scope.warnings = true;

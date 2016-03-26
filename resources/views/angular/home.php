@@ -1,6 +1,11 @@
 <div ng-controller="HomeController" ng-cloak>
     <md-content layout-xs="column" layout="row">
-        <md-card flex="66" flex-xs="100" flex-sm="90" class="alert md-whiteframe-6dp" ng-class="alertClass">
+        <md-card flex="66"
+                 flex-xs="100"
+                 flex-sm="90"
+                 class="alert md-whiteframe-6dp"
+                 ng-class="alertClass"
+                 ng-show="warnings">
             <md-card-title>
                 <a href="{{ airport.warnings['@attributes'].url }}" target="_blank">
                     {{ airport.warnings.event["@attributes"].description }} &nbsp; <i class="fa fa-external-link"></i>
@@ -9,7 +14,8 @@
             <md-card-content>{{ airport.warnings.event.dateTime[1].textSummary }}</md-card-content>
         </md-card>
 
-        <md-card flex="66" flex-xs="100" flex-sm="90">
+        <md-progress-circular ng-hide="showCourthouse" class="md-primary" md-diameter="40"></md-progress-circular>
+        <md-card ng-show="showCourthouse" flex="66" flex-xs="100" flex-sm="90">
             <md-card-title class="md-headline">Courthouse Revelstoke</md-card-title>
             <md-card-content>
                 <p class="text-summary">{{ courthouse.timestamp }}</p>
@@ -50,7 +56,8 @@
                 </article>
         </md-card>
 
-        <md-card flex="66" flex-xs="100" flex-sm="90">
+        <md-progress-circular ng-hide="showDowntown" class="md-primary" md-diameter="40"></md-progress-circular>
+        <md-card ng-show="showDowntown" flex="66" flex-xs="100" flex-sm="90">
             <md-card-title class="md-headline">Downtown Revelstoke</md-card-title>
             <md-card-content>
                 <p class="text-summary">{{ forecastio.currently.time * 1000 | date:'medium' }}</p>
@@ -115,7 +122,8 @@
             </md-card-content>
         </md-card>
 
-        <md-card flex="66" flex-xs="100" flex-sm="90">
+        <md-progress-circular ng-hide="showAirport" class="md-primary" md-diameter="40"></md-progress-circular>
+        <md-card ng-show="showAirport" flex="66" flex-xs="100" flex-sm="90">
             <md-card-title class="md-headline">Revelstoke Airport</md-card-title>
             <md-card-content>
                 <p class="text-summary">{{ airport.currentConditions.dateTime[1].textSummary }}</p>

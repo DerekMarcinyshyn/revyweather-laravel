@@ -10,6 +10,7 @@ namespace RevyWeather\Console\Commands;
 
 use GuzzleHttp\Client;
 use Illuminate\Console\Command;
+use RevyWeather\Services\Log\Daily;
 use RevyWeather\Services\Weather\GetForecastio;
 
 class ForecastIoCommand extends Command
@@ -36,11 +37,12 @@ class ForecastIoCommand extends Command
     /**
      * @param GetForecastio $getForecastio
      * @param Client $client
+     * @param Daily $daily
      */
-    public function handle(GetForecastio $getForecastio, Client $client)
+    public function handle(GetForecastio $getForecastio, Client $client, Daily $daily)
     {
         $this->info('Get Forecast.io Revelstoke forecast...');
-        $getForecastio->getRevelstoke($client);
+        $getForecastio->getRevelstoke($client, $daily);
         $this->info('done.');
     }
 }
