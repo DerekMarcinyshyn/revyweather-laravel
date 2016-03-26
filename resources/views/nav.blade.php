@@ -41,7 +41,7 @@
                     <md-icon><i class="fa fa-bars"></i></md-icon>
                 </md-button>
                 <span flex></span>
-                <h2><a href="{{ url('/') }}">Revy Weather</a></h2>
+                <h2 class="title"><a href="{{ url('/') }}">Revy Weather</a></h2>
                 <span flex></span>
             </div>
         </md-toolbar>
