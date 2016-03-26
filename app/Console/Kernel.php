@@ -15,7 +15,8 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         Commands\EnvironmentCanadaCommand::class,
         Commands\ForecastIoCommand::class,
-        Commands\DailyReportCommand::class
+        Commands\DailyReportCommand::class,
+        Commands\LocalCommand::class
     ];
 
     /**
