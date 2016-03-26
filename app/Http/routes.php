@@ -44,4 +44,11 @@ Route::group(['middleware' => ['web']], function() {
                 ]);
         });
     });
+
+    Route::get('api/v1/revelstoke.json', function() {
+        return response(file_get_contents(storage_path('app/public/data/forecasts/revelstoke.json')))
+            ->withHeaders([
+                'Content-Type'  => 'application/json'
+            ]);
+    });
 });

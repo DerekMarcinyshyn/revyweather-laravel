@@ -124,3 +124,25 @@ md-sidenav md-content {
     left: 65px;
     top: 140px;
 }
+
+.alert a {
+    text-decoration: none;
+    color: #fff;
+    text-shadow: 1px 1px #444;
+    font-size: 14px;
+}
+.alert md-card-content {
+    font-size: 12px;
+}
+.alert-danger {
+    background: #EF5052;
+    color: #fff;
+    text-shadow: 1px 1px #444;
+}
+
+@media (max-width: 600px) {
+    .compass {
+        zoom: 0.7;
+        -moz-transform: scale(0.7);
+    }
+}

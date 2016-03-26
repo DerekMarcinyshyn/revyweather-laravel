@@ -2384,6 +2384,76 @@ revyWeatherApp.controller('NavController', function($scope, $mdSidenav) {
 });
 
 revyWeatherApp.controller('HomeController', function($scope, $http) {
+    // local weather
+    var gc = new JustGage({
+        id: "gauge-courthouse",
+        value: 0,
+        min: 0,
+        max: 20,
+        title: 'Wind',
+        titleFontColor: '#cccccc',
+        gaugeColor: '#cccccc',
+        gaugeWidthScale: 0.6,
+        label: 'km/h'
+    });
+
+    function getCurrent() {
+        $http.get('api/v1/revelstoke.json').success(function(data) {
+            $scope.courthouse = data;
+
+            var windSpeed = data.speed * 1.60934;
+            $scope.windSpeed = Math.ceil(windSpeed * 10) / 10;
+            gc.refresh($scope.windSpeed);
+
+            var degrees = 0;
+            switch (data.direction) {
+                case "N":
+                    degrees = 0;
+                    break;
+                case "NE":
+                    degrees = 45;
+                    break;
+                case "E":
+                    degrees = 90;
+                    break;
+                case "SE":
+                    degrees = 135;
+                    break;
+                case "S":
+                    degrees = 180;
+                    break;
+                case "SW":
+                    degrees = 225;
+                    break;
+                case "W":
+                    degrees = 270;
+                    break;
+                case "NW":
+                    degrees = 315;
+                    break;
+
+                default:
+                    degrees = 'N';
+                    break;
+            }
+
+            $scope.arrowCourthouse = {
+                '-webkit-transform': 'rotate(' + degrees + 'deg)',
+                '-moz-transform': 'rotate(' + degrees + 'deg)',
+                '-o-transform': 'rotate(' + degrees + 'deg)',
+                '-ms-transform': 'rotate(' + degrees + 'deg)',
+                'transform': 'rotate(' + degrees + 'deg)'
+            };
+        });
+    }
+
+    setInterval(function() {
+        $scope.$apply(function() {
+            getCurrent();
+        });
+    }, 5000);
+    getCurrent();
+    
     var gd = new JustGage({
         id: "gauge-downtown",
         value: 0,
@@ -2437,7 +2507,7 @@ revyWeatherApp.controller('HomeController', function($scope, $http) {
         $scope.airport = data;
 
         if (data.warnings.event) {
-            (data.warnings.event['@attributes'].type == "") ? $scope.airport.warnings = false : $scope.airport.warnings = true;
+            (data.warnings.event['@attributes'].type == "") ? $scope.warnings = false : $scope.warnings = true;
 
             switch (data.warnings.event['@attributes'].type) {
                 case 'watch':

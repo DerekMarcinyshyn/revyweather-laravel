@@ -1,8 +1,53 @@
 <div ng-controller="HomeController" ng-cloak>
     <md-content layout-xs="column" layout="row">
+        <md-card flex="66" flex-xs="100" flex-sm="90" class="alert md-whiteframe-6dp" ng-class="alertClass">
+            <md-card-title>
+                <a href="{{ airport.warnings['@attributes'].url }}" target="_blank">
+                    {{ airport.warnings.event["@attributes"].description }} &nbsp; <i class="fa fa-external-link"></i>
+                </a>
+            </md-card-title>
+            <md-card-content>{{ airport.warnings.event.dateTime[1].textSummary }}</md-card-content>
+        </md-card>
 
         <md-card flex="66" flex-xs="100" flex-sm="90">
             <md-card-title class="md-headline">Courthouse Revelstoke</md-card-title>
+            <md-card-content>
+                <p class="text-summary">{{ courthouse.timestamp }}</p>
+                <article class="conditions" layout="column">
+                    <div layout="row">
+                        <div flex="50">
+                            <skycon icon="currentWeather.forecast.icon" color="black" size="currentWeather.forecast.iconSize"></skycon>
+                        </div>
+                        <div flex="50">
+                            <span class="text-temperature">{{ forecastio.currently.temperature | number:1 }}&deg;C</span>
+                        </div>
+                    </div>
+                    <div layout="column" class="text-conditions">
+                        <p><span class="text-summary">Condition:</span> {{ forecastio.currently.summary }}</p>
+                        <p><span class="text-summary">Pressure:</span> {{ courthouse.barometer }}kPa</p>
+                        <p><span class="text-summary">Humidity:</span> {{ courthouse.relativehumidity | number:0 }}%</p>
+                        <p><span class="text-summary">Wind:</span> {{ courthouse.direction }} &nbsp; {{ windSpeed }} km/h</p>
+                    </div>
+                    <div layout="row">
+                        <div flex="50">
+                            <div id="gauge-courthouse" style="width:150px;height:110px;"></div>
+                        </div>
+                        <div flex="50">
+                            <div class="compass">
+                                <div class="compass-inner">
+                                    <div class="north">N</div>
+                                    <div class="east">E</div>
+                                    <div class="west">W</div>
+                                    <div class="south">S</div>
+                                    <div data-ng-style="arrowCourthouse" class="main-arrow">
+                                        <div class="arrow-up"></div>
+                                        <div class="arrow-down"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
         </md-card>
 
         <md-card flex="66" flex-xs="100" flex-sm="90">
