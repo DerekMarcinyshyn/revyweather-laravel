@@ -10,6 +10,7 @@
                     <md-button ng-click="closeSidenav()" class="md-icon-button" aria-label="Close Navigation">
                         <md-icon><i class="fa fa-arrow-left"></i></md-icon>
                     </md-button>
+                    &nbsp;Revy Weather
                 </div>
             </md-toolbar>
             <md-content>
@@ -37,11 +38,11 @@
         </md-sidenav>
         <md-toolbar>
             <div class="md-toolbar-tools">
-                <md-button ng-click="openSidenav()" class="md-icon-button" aria-label="Open Navigation">
+                <md-button ng-click="openSidenav()" class="md-icon-button hamburger" aria-label="Open Navigation">
                     <md-icon><i class="fa fa-bars"></i></md-icon>
                 </md-button>
                 <span flex></span>
-                <h2 class="title"><a href="{{ url('/') }}">Revy Weather</a></h2>
+                <h2><a href="{{ url('/') }}">Revy Weather</a></h2>
                 <span flex></span>
             </div>
         </md-toolbar>

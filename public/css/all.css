@@ -313,11 +313,15 @@ md-content {
     color: #212121;
     background: #e6e6e6;
 }
-.title {
-    margin-left: -40px !important;
-}
 md-sidenav md-content {
     background: white;
+}
+.md-toolbar-tools .md-button.hamburger {
+     position: absolute;
+     top: 7px;
+     color: #fff;
+     text-shadow: 1px 1px 1px #111;
+     font-size: 30px;
 }
 .text-summary {
     font-size: 12px;
