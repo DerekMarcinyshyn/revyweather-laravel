@@ -33,7 +33,10 @@ class ForecastIoCommand extends Command
         parent::__construct();
     }
 
-
+    /**
+     * @param GetForecastio $getForecastio
+     * @param Client $client
+     */
     public function handle(GetForecastio $getForecastio, Client $client)
     {
         $this->info('Get Forecast.io Revelstoke forecast...');

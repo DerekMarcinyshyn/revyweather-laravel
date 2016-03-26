@@ -14,7 +14,8 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         Commands\EnvironmentCanadaCommand::class,
-        Commands\ForecastIoCommand::class
+        Commands\ForecastIoCommand::class,
+        Commands\DailyReportCommand::class
     ];
 
     /**
@@ -27,5 +28,10 @@ class Kernel extends ConsoleKernel
     {
         $schedule->command('revyweather:environment-canada')
             ->hourly();
+        $schedule->command('revyweather:forecast-io')
+            ->everyTenMinutes();
+        $schedule->command('revyweather:daily-report')
+            ->timezone('America/Vancouver')
+            ->dailyAt('06:00');
     }
 }

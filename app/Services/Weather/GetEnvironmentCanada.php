@@ -11,6 +11,7 @@ namespace RevyWeather\Services\Weather;
 use Storage;
 use SoapBox\Formatter\Formatter;
 use GuzzleHttp\Client;
+use RevyWeather\Services\Log\Daily;
 
 class GetEnvironmentCanada
 {
@@ -24,8 +25,9 @@ class GetEnvironmentCanada
      * save to filesystem
      * 
      * @param Client $client
+     * @param Daily $daily
      */
-    public function getRevelstokeWeather(Client $client)
+    public function getRevelstokeWeather(Client $client, Daily $daily)
     {
         try {
             $response = $client->get(self::REVELSTOKE);
@@ -36,7 +38,7 @@ class GetEnvironmentCanada
                 Storage::disk('local')->put(self::FILENAME, $json);
             }
         } catch (\Exception $e) {
-            var_dump($e->getMessage());
+            $daily->save($e->getMessage());
         }
     }
 }

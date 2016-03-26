@@ -8,7 +8,9 @@ namespace RevyWeather\Console\Commands;
  * @date    2016-03-23
  */
 
+use GuzzleHttp\Client;
 use Illuminate\Console\Command;
+use RevyWeather\Services\Log\Daily;
 use RevyWeather\Services\Weather\GetEnvironmentCanada;
 
 class EnvironmentCanadaCommand extends Command
@@ -35,12 +37,14 @@ class EnvironmentCanadaCommand extends Command
     /**
      * Execute the console command.
      * @param GetEnvironmentCanada $ec
+     * @param Client $client
+     * @param Daily $daily
      * @return mixed
      */
-    public function handle(GetEnvironmentCanada $ec)
+    public function handle(GetEnvironmentCanada $ec, Client $client, Daily $daily)
     {
         $this->info('Getting the Revelstoke XML feed');
-        $ec->getRevelstokeWeather();
+        $ec->getRevelstokeWeather($client, $daily);
         $this->info('done.');
     }
 }

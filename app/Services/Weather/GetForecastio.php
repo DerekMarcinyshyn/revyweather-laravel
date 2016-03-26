@@ -11,6 +11,7 @@ namespace RevyWeather\Services\Weather;
 
 use Storage;
 use GuzzleHttp\Client;
+use RevyWeather\Services\Log\Daily;
 
 class GetForecastio
 {
@@ -33,8 +34,9 @@ class GetForecastio
     /**
      * Get Forecast.io and save to filesystem
      * @param Client $client
+     * @param Daily $daily
      */
-    public function getRevelstoke(Client $client)
+    public function getRevelstoke(Client $client, Daily $daily)
     {
         try {
             $response = $client->get($this->createUrl());
@@ -44,7 +46,7 @@ class GetForecastio
                 Storage::disk('local')->put(self::FILENAME, $body);
             }
         } catch (\Exception $e) {
-            var_dump($e->getMessage());
+            $daily->save($e->getMessage());
         }
     }
 
