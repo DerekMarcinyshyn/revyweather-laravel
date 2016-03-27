@@ -43,6 +43,9 @@ Route::group(['middleware' => ['web']], function() {
                     'Content-Type'  => 'application/json'
                 ]);
         });
+        Route::get('api/v1/history', [
+            'uses' => 'HistoryController@getHistory'
+        ]);
     });
 
     Route::get('api/v1/revelstoke.json', function() {
