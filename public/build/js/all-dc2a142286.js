@@ -2369,7 +2369,27 @@ var revyWeatherApp = angular.module('RevyWeatherApp', [
     'ngMaterial',
     'angular-skycons'
 ]);
+revyWeatherApp.filter('ecDirection', function() {
+    return function(input) {
+        if (input == "" || input == undefined)
+            return '';
+        else
+            return input;
+    }
+});
 
+revyWeatherApp.filter('windDirection', function() {
+    return function(input) {
+        var directions = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW', 'N'];
+        return directions[Math.round(input/45)];
+    }
+});
+
+revyWeatherApp.filter('climacons', function() {
+    return function(input) {
+        return input.replace(/-/g, " ");
+    }
+});
 revyWeatherApp.controller('NavController', function($scope, $mdSidenav) {
     $scope.openSidenav = function() {
         $mdSidenav('left').open();
@@ -2385,7 +2405,6 @@ revyWeatherApp.controller('NavController', function($scope, $mdSidenav) {
             });
     };
 });
-
 revyWeatherApp.controller('HomeController', function($scope, $http) {
     $scope.showCourthouse = false;
     $scope.showDowntown = false;
@@ -2561,26 +2580,7 @@ revyWeatherApp.controller('HomeController', function($scope, $http) {
         });
     });
 });
-
-revyWeatherApp.filter('ecDirection', function() {
-    return function(input) {
-        if (input == "" || input == undefined)
-            return '';
-        else
-            return input;
-    }
-});
-
-revyWeatherApp.filter('windDirection', function() {
-    return function(input) {
-        var directions = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW', 'N'];
-        return directions[Math.round(input/45)];
-    }
-});
-
-revyWeatherApp.filter('climacons', function() {
-    return function(input) {
-        return input.replace(/-/g, " ");
-    }
+revyWeatherApp.controller('HistoryController', function($scope, $http) {
+    console.log('hello history controller');
 });
 //# sourceMappingURL=all.js.map

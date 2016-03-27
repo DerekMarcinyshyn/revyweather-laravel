@@ -39,7 +39,11 @@ elixir(function(mix) {
             'raphael-2.1.4.min.js',
             'skycons.js',
             'angular-skycons.min.js',
-            'app.js'
+            'app.js',
+            'filters.js',
+            'controllers/navController.js',
+            'controllers/homeController.js',
+            'controllers/historyController.js'
         ])
 
         .version([

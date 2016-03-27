@@ -1,5 +1,5 @@
 @extends('layout')
 
 @section('content')
-@include('angular.home')
+    @include('angular.home')
 @endsection
