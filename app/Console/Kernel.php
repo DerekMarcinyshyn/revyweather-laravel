@@ -2,6 +2,12 @@
 
 namespace RevyWeather\Console;
 
+/**
+ * Console Kernel
+ * @author  Derek Marcinyshyn
+ * @date    2016-03-27
+ */
+
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -16,7 +22,8 @@ class Kernel extends ConsoleKernel
         Commands\EnvironmentCanadaCommand::class,
         Commands\ForecastIoCommand::class,
         Commands\DailyReportCommand::class,
-        Commands\LocalCommand::class
+        Commands\LocalCommand::class,
+        Commands\LocalSaveCommand::class
     ];
 
     /**
@@ -29,10 +36,15 @@ class Kernel extends ConsoleKernel
     {
         $schedule->command('revyweather:environment-canada')
             ->hourly();
+        
         $schedule->command('revyweather:forecast-io')
             ->everyTenMinutes();
+        
         $schedule->command('revyweather:daily-report')
             ->timezone('America/Vancouver')
             ->dailyAt('06:00');
+        
+        $schedule->command('revyweather:local-save')
+            ->everyThirtyMinutes();
     }
 }
