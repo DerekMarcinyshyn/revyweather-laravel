@@ -5,7 +5,7 @@
                 md-component-id="left"
                 md-disable-backdrop
                 md-whiteframe="4">
-            <md-toolbar class="md-theme-indigo">
+            <md-toolbar class="md-theme-indigo" ng-click="closeSidenav()">
                 <div class="md-toolbar-tools">
                     <md-button ng-click="closeSidenav()" class="md-icon-button" aria-label="Close Navigation">
                         <md-icon><i class="fa fa-arrow-left"></i></md-icon>

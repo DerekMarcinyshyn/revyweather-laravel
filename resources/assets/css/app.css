@@ -26,12 +26,20 @@ md-sidenav md-content {
     margin: 0 0 4px 0;
     padding: 0;
 }
-.label {
-    color: #666;
+.label-low {
+    color: darkblue;
+    font-size: 12px;
+}
+.label-high {
+    color: darkred;
     font-size: 12px;
 }
 .text-temperature {
+    padding-top: 40px;
     font-size: 50px;
+}
+.container-temperature {
+    padding-top: 30px;
 }
 .forecast md-whiteframe {
     background: #f6f6f6;
@@ -43,6 +51,9 @@ md-sidenav md-content {
 .forecast h2 {
     color: #999;
     margin-bottom: 30px;
+}
+.forecast-day {
+    min-height: 50px;
 }
 .climacon {
     font-size: 90px;
