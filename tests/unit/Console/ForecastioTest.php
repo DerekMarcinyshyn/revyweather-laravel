@@ -4,13 +4,13 @@ use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
-class ServicesLogMailerDailyReportTest extends TestCase
+class ForecastioTest extends TestCase
 {
 
     /** @test */
     public function it_initializes()
     {
-        $this->assertInstanceOf(RevyWeather\Services\Mailer\DailyReport::class,
-            new RevyWeather\Services\Mailer\DailyReport());
+        $this->assertInstanceOf(RevyWeather\Console\Commands\ForecastIoCommand::class,
+            new RevyWeather\Console\Commands\ForecastIoCommand);
     }
 }

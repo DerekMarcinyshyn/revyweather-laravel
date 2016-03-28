@@ -23,7 +23,8 @@ class Kernel extends ConsoleKernel
         Commands\ForecastIoCommand::class,
         Commands\DailyReportCommand::class,
         Commands\LocalCommand::class,
-        Commands\LocalSaveCommand::class
+        Commands\LocalSaveCommand::class,
+        Commands\LocalSaveImageCommand::class
     ];
 
     /**
@@ -46,5 +47,8 @@ class Kernel extends ConsoleKernel
         
         $schedule->command('revyweather:local-save')
             ->everyThirtyMinutes();
+
+        $schedule->command('revyweather:local-save-image')
+            ->everyFiveMinutes();
     }
 }

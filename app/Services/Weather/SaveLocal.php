@@ -53,7 +53,7 @@ class SaveLocal
             }
 
         } catch (\Exception $e) {
-            $daily->save($e->getMessage());
+            $daily->save('Exception saving local weather to database. '.$e->getMessage());
         }
     }
 

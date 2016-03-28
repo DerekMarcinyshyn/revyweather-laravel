@@ -5,7 +5,7 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use RevyWeather\Services\Weather\GetForecastio;
 
-class ServicesWeatherGetForecastioTest extends TestCase
+class WeatherGetForecastioTest extends TestCase
 {
 
     /** @test */

@@ -9,7 +9,6 @@ namespace RevyWeather\Services\Weather;
  * @date    27/03/16
  */
 
-use Carbon\Carbon;
 use RevyWeather\Local;
 
 class GetLocalHistory

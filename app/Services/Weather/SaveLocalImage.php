@@ -1,21 +1,22 @@
-<?php
+<?php namespace 
 
-namespace RevyWeather\Services\Weather;
+RevyWeather\Services\Weather;
 
 /**
- * Local
- * @author  Derek Marcinyshyn
- * @date    2016-03-25
+ * SaveLocalImage.php
+ *
+ * @author  Derek Marcinyshyn <derek@marcinyshyn.com>
+ * @date    27/03/16
  */
 
 use Storage;
 use GuzzleHttp\Client;
 use RevyWeather\Services\Log\Daily;
 
-class GetLocal
+class SaveLocalImage
 {
-    
-    const FILENAME = 'public/data/forecasts/revelstoke.json';
+
+    const FILENAME = 'public/data/images/courthouse.jpg';
 
     /**
      * @var string
@@ -27,12 +28,12 @@ class GetLocal
      */
     public function __construct()
     {
-        $this->url = env('LOCAL_URL');
+        $this->url = env('LOCAL_IMAGE');
     }
 
     /**
-     * Get local weather from my house
-     * 
+     * Get local image from my house
+     *
      * @param Client $client
      * @param Daily $daily
      */
@@ -40,14 +41,13 @@ class GetLocal
     {
         try {
             $response = $client->get($this->url);
-            
+
             if ($response->getStatusCode() == '200') {
-                $body = (string) $response->getBody();
-                Storage::disk('local')->put(self::FILENAME, $body);
+                Storage::disk('local')->put(self::FILENAME, $response->getBody());
             }
-            
+
         } catch (\Exception $e) {
-            $daily->save('Exception saving local json to disk. '.$e->getMessage());
+            $daily->save('Exception saving local image to disk. '.$e->getMessage());
         }
     }
 }

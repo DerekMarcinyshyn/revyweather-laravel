@@ -46,7 +46,7 @@ class GetForecastio
                 Storage::disk('local')->put(self::FILENAME, $body);
             }
         } catch (\Exception $e) {
-            $daily->save($e->getMessage());
+            $daily->save('Exception saving Forecast.io to disk. '.$e->getMessage());
         }
     }
 

@@ -27,6 +27,9 @@ Route::group(['middleware' => ['web']], function() {
     Route::get('about', function() {
         return view('about');
     });
+    Route::get('courthouse.jpg', function() {
+        return response()->file(storage_path('app/public/data/images/courthouse.jpg'));
+    });
     
     // API
     Route::group(['middleware' => ['api']], function() {

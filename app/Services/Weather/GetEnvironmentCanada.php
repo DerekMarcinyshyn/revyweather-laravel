@@ -38,7 +38,7 @@ class GetEnvironmentCanada
                 Storage::disk('local')->put(self::FILENAME, $json);
             }
         } catch (\Exception $e) {
-            $daily->save($e->getMessage());
+            $daily->save('Exception saving Environment Canada forecast to disk. '.$e->getMessage());
         }
     }
 }

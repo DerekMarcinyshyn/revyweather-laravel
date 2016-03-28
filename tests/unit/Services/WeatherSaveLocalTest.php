@@ -5,7 +5,7 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use RevyWeather\Local;
 
-class ServicesWeatherSaveLocalTest extends TestCase
+class WeatherSaveLocalTest extends TestCase
 {
 
     /** @test */
