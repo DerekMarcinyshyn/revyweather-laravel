@@ -17,7 +17,7 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body ng-app="RevyWeatherApp" layout="column" ng-cloak>
+<body ng-app="RevyWeatherApp" layout="column" ng-cloak class="@yield('classBody')">
 @include('nav')
 @yield('content')
 @if ( Config::get('app.debug') )

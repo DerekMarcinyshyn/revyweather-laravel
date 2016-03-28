@@ -33,6 +33,7 @@ elixir(function(mix) {
         .copy('bower_components/highcharts/lib/highcharts.js', 'resources/assets/js/highcharts.js')
         .copy('bower_components/highcharts/lib/adapters/standalone-framework.js', 'resources/assets/js/standalone-framework.js')
         .copy('bower_components/highcharts-ng/dist/highcharts-ng.min.js', 'resources/assets/js/highcharts-ng.min.js')
+        .copy('bower_components/moment/min/moment.min.js', 'resources/assets/js/moment.min.js')
         .scripts([
             'angular.min.js',
             'angular-aria.min.js',
@@ -45,6 +46,7 @@ elixir(function(mix) {
             'highcharts.js',
             'standalone-framework.js',
             'highcharts-ng.min.js',
+            'moment.min.js',
             'app.js',
             'filters.js',
             'controllers/navController.js',

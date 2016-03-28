@@ -21,6 +21,7 @@
     "font-awesome": "^4.5.0",
     "angular-skycons": "^2.0.2",
     "highcharts-ng": "^0.0.11",
-    "highcharts": "highcharts.com#^4.2.3"
+    "highcharts": "highcharts.com#^4.2.3",
+    "moment": "^2.12.0"
   }
 }

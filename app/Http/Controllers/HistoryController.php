@@ -39,7 +39,7 @@ class HistoryController extends Controller
 
     /**
      * @param Request $request
-     * @return array
+     * @return array|string
      */
     public function getHistory(Request $request)
     {
@@ -52,8 +52,8 @@ class HistoryController extends Controller
             return $this->getLocalHistory->getLocalWeatherHistory($request['from'], $request['to']);
         } catch (\Exception $e) {
             $this->daily->save($e->getMessage());
-            
-            return [false];
+            dd($e->getTraceAsString());
+            return 'false';
         }
     }
 }

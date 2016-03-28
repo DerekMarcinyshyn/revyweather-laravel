@@ -313,6 +313,9 @@ md-content {
     color: #212121;
     background: #e6e6e6;
 }
+body.history {
+    background: #fff;
+}
 md-sidenav md-content {
     background: white;
 }

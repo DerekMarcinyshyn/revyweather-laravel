@@ -9,6 +9,7 @@ namespace RevyWeather\Services\Weather;
  * @date    27/03/16
  */
 
+use Carbon\Carbon;
 use RevyWeather\Local;
 
 class GetLocalHistory
@@ -137,7 +138,7 @@ class GetLocalHistory
             'name'      => 'Wind Speed',
             'data'      => $speed,
             'type'      => 'column',
-            'color'     => '#cccccc',
+            'color'     => '#aaaaaa',
             'yAxis'     => 3,
             'tooltip'   => [
                 'valueSuffix' => ' km/h'
