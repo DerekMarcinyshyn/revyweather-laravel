@@ -30,6 +30,9 @@ elixir(function(mix) {
         .copy('bower_components/angular-material/angular-material.min.js', 'resources/assets/js/angular-material.min.js')
         .copy('bower_components/skycons/skycons.js', 'resources/assets/js/skycons.js')
         .copy('bower_components/angular-skycons/angular-skycons.min.js', 'resources/assets/js/angular-skycons.min.js')
+        .copy('bower_components/highcharts/lib/highcharts.js', 'resources/assets/js/highcharts.js')
+        .copy('bower_components/highcharts/lib/adapters/standalone-framework.js', 'resources/assets/js/standalone-framework.js')
+        .copy('bower_components/highcharts-ng/dist/highcharts-ng.min.js', 'resources/assets/js/highcharts-ng.min.js')
         .scripts([
             'angular.min.js',
             'angular-aria.min.js',
@@ -39,6 +42,9 @@ elixir(function(mix) {
             'raphael-2.1.4.min.js',
             'skycons.js',
             'angular-skycons.min.js',
+            'highcharts.js',
+            'standalone-framework.js',
+            'highcharts-ng.min.js',
             'app.js',
             'filters.js',
             'controllers/navController.js',

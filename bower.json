@@ -19,6 +19,8 @@
   "dependencies": {
     "angular-material": "^1.0.6",
     "font-awesome": "^4.5.0",
-    "angular-skycons": "^2.0.2"
+    "angular-skycons": "^2.0.2",
+    "highcharts-ng": "^0.0.11",
+    "highcharts": "highcharts.com#^4.2.3"
   }
 }

@@ -5,5 +5,6 @@
 
 var revyWeatherApp = angular.module('RevyWeatherApp', [
     'ngMaterial',
-    'angular-skycons'
+    'angular-skycons',
+    'highcharts-ng'
 ]);
