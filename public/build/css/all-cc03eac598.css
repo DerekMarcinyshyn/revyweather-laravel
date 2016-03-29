@@ -316,6 +316,12 @@ md-content {
 body.history {
     background: #fff;
 }
+.webcams-bg {
+    background: #3f3f3f;
+}
+md-dialog {
+    background: black;
+}
 md-sidenav md-content {
     background: white;
 }
@@ -474,6 +480,21 @@ md-sidenav md-content {
 .alert-info {
     background: #d9edf7;
     color: #000;
+}
+/** Webcams */
+.webcams {
+    background: #000;
+    color: #e6e6e6;
+    padding: 0;
+    border-radius: 3px;
+}
+.webcams h2 {
+    padding: 10px;
+}
+.webcams img {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
 }
 
 @media (max-width: 600px) {

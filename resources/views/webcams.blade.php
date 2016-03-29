@@ -1,7 +1,9 @@
 @extends('layout')
 
+@section('classBody')
+    webcams-bg
+@endsection
+
 @section('content')
-<section>
-    <h1>Webcams</h1>
-</section>
+    @include('angular.webcams')
 @endsection

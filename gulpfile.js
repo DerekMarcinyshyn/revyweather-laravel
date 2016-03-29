@@ -51,7 +51,8 @@ elixir(function(mix) {
             'filters.js',
             'controllers/navController.js',
             'controllers/homeController.js',
-            'controllers/historyController.js'
+            'controllers/historyController.js',
+            'controllers/webcamsController.js'
         ])
 
         .version([

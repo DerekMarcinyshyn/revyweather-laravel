@@ -8,7 +8,7 @@ class HomepageTest extends TestCase
 {
 
     /** @test */
-    public function it_shows_site_titles()
+    public function it_shows_headers()
     {
         $this->visit('/')
             ->see('Courthouse Revelstoke')
