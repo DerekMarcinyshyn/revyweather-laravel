@@ -317,7 +317,7 @@ body.history {
     background: #fff;
 }
 .webcams-bg {
-    background: #3f3f3f;
+    background: url('../img/tweed.png');
 }
 md-dialog {
     background: black;
