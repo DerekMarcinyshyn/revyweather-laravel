@@ -10,7 +10,7 @@
                         <md-button style="float:right"
                                    class="md-icon-button"
                                    aria-label="Expand"
-                                   ng-click="expand(this)">
+                                   ng-click="expand($event, webcam.url)">
                             <i class="fa fa-expand"></i>
                         </md-button>
                     </h2>

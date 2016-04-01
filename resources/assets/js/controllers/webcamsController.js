@@ -78,19 +78,22 @@ revyWeatherApp.controller('WebcamsController', function($scope, $mdDialog) {
         }
     ];
 
-    $scope.expand = function(webcam) {
+    $scope.expand = function($event, url) {
         $mdDialog.show({
+            targetEvent: $event,
             parent: angular.element(document.body),
             fullscreen: true,
             clickOutsideToClose: true,
             template:
-                '<md-dialog aria-label="Fullscreen webcam">' +
-                    '<md-dialog-content>' +
-                    '<img src="' + webcam.$parent.$parent.webcam.url +'" width="100%" height="auto" />' +
-                    '</md-dialog-content>' +
+                '<md-dialog aria-label="Fullscreen webcam" layout-fill>' +
                     '<md-dialog-actions>' +
-                        '<md-button ng-click="closeDialog()" class="md-raised">Close</md-button>' +
+                    '<md-button ng-click="closeDialog()" class="md-icon-button text-white" aria-label="Close">' +
+                    '<i class="fa fa-times"></i>' +
+                    '</md-button>' +
                     '</md-dialog-actions>' +
+                    '<md-dialog-content>' +
+                    '<img ng-src="' + url +'" width="100%" height="auto" />' +
+                    '</md-dialog-content>' +
                 '</md-dialog>',
             controller: DialogController
         });

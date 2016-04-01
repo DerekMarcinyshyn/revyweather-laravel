@@ -12,6 +12,13 @@ body.history {
 md-dialog {
     background: black;
 }
+md-dialog .md-actions,
+md-dialog md-dialog-actions {
+    order: 1;
+}
+md-dialog .md-icon-button {
+    color: white;
+}
 md-sidenav md-content {
     background: white;
 }
