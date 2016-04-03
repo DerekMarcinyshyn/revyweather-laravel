@@ -91,7 +91,7 @@ revyWeatherApp.controller('HistoryController', function($scope, $http, $timeout,
             loading: true,
             series: [],
             size: {
-                height: '600'
+                height: '720'
             }
         };
 
