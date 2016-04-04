@@ -59,7 +59,8 @@ elixir(function(mix) {
             'controllers/navController.js',
             'controllers/homeController.js',
             'controllers/historyController.js',
-            'controllers/webcamsController.js'
+            'controllers/webcamsController.js',
+            'controllers/timelapseController.js'
         ])
         
         // swf
