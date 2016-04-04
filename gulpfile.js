@@ -12,14 +12,19 @@ elixir(function(mix) {
         .copy('bower_components/font-awesome/fonts', 'resources/assets/fonts')
         .copy('resources/assets/fonts', 'public/fonts')
         .copy('resources/assets/fonts', 'public/build/fonts')
+        .copy('bower_components/video.js/dist/font', 'resources/assets/font')
+        .copy('resources/assets/font', 'public/font')
+        .copy('resources/assets/font', 'public/build/font')
 
         // css
         .copy('bower_components/angular-material/angular-material.min.css', 'resources/assets/css/angular-material.min.css')
         .copy('bower_components/font-awesome/css/font-awesome.min.css', 'resources/assets/css/font-awesome.min.css')
+        .copy('bower_components/video.js/dist/video-js.min.css', 'resources/assets/css/video-js.min.css')
         .styles([
             'font-awesome.min.css',
             'climacons-font.css',
             'angular-material.min.css',
+            'video-js.min.css',
             'app.css'
         ])
 
@@ -34,6 +39,7 @@ elixir(function(mix) {
         .copy('bower_components/highcharts/lib/adapters/standalone-framework.js', 'resources/assets/js/standalone-framework.js')
         .copy('bower_components/highcharts-ng/dist/highcharts-ng.min.js', 'resources/assets/js/highcharts-ng.min.js')
         .copy('bower_components/moment/min/moment.min.js', 'resources/assets/js/moment.min.js')
+        .copy('bower_components/video.js/dist/video.min.js', 'resources/assets/js/video.min.js')
         .scripts([
             'angular.min.js',
             'angular-aria.min.js',
@@ -47,6 +53,7 @@ elixir(function(mix) {
             'standalone-framework.js',
             'highcharts-ng.min.js',
             'moment.min.js',
+            'video.min.js',
             'app.js',
             'filters.js',
             'controllers/navController.js',
@@ -54,6 +61,9 @@ elixir(function(mix) {
             'controllers/historyController.js',
             'controllers/webcamsController.js'
         ])
+        
+        // swf
+        .copy('bower_components/video.js/dist/video-js.swf', 'public/video-js.swf')
 
         .version([
             'css/all.css',
