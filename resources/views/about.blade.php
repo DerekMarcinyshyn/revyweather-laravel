@@ -1,15 +1,14 @@
 @extends('layout')
 
 @section('content')
-<md-content layout-xs="column" layout="row" layout-align="center">
+<md-content class="md-padding" layout="row" layout-align="center">
     <div flex="100" flex-gt-md="66">
         <md-card>
             <md-card-title><h1>About</h1></md-card-title>
             <md-card-content>
                 <p>RevyWeather.com is my side project for playing with hardware and software.</p>
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
             </md-card-content>
+            <img src="{{ url('img/weather-station.jpg') }}" />
         </md-card>
         <md-card>
             <md-card-title><h3>Versions</h3></md-card-title>
