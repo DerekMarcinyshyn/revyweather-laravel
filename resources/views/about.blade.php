@@ -1,7 +1,8 @@
 @extends('layout')
 
 @section('content')
-<section>
+<md-content flex layout-padding>
     <h1>About</h1>
-</section>
+    <p>RevyWeather.com is a side project for playing with hardware and software.</p>
+</md-content>
 @endsection

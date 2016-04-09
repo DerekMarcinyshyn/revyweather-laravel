@@ -68,9 +68,10 @@ md-sidenav md-content {
 .forecast md-whiteframe {
     background: #f6f6f6;
     margin-bottom: 30px;
+    border: 1px solid #c6c6c6;
 }
 .forecast {
-    margin: 80px 0 0 0;
+    margin: 30px 0 0 0;
 }
 .forecast h2 {
     color: #999;
