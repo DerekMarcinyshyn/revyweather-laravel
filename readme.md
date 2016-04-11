@@ -2,15 +2,9 @@
 
 [![Build Status](https://travis-ci.org/DerekMarcinyshyn/revyweather-laravel.svg?branch=master)](https://travis-ci.org/DerekMarcinyshyn/revyweather-laravel)
 
-This web application is a work in progress experimenting with the latest available technologies in both hardware and software.
+This is one of my side projects.
 
-The hardware is a Netduino Plus 2 and a RaspberryPi connected to a local server at my home.
-
-The software is this Laravel web application collecting the data from local server and serving it on the internet.
-
-The software stack includes [HHVM](http://hhvm.com/), [nginx](http://nginx.org/), [Laravel](http://laravel.com/) and [AngularJS](https://angularjs.org/) with [Laravel Forge](https://forge.laravel.com/) on [AWS EC2](http://aws.amazon.com/).
-
-More on [http://revyweather.com/about](http://revyweather.com/about)
+More on info: [http://revyweather.com/about](http://revyweather.com/about)
 
 ## Hardware
 
@@ -28,30 +22,50 @@ Both are connected to a local server that creates the timelapse videos, syncs wi
 
 ## Environment variables
 
-You need to create a .env.php and .env.local.php
+.env
 
 ```php
-<?php
+APP_ENV=local
+APP_DEBUG=true
+APP_KEY=some_key_
+APP_URL=http://example.com
 
-return [
-    'FORECAST_IO_KEY'   => 'forecast-io-key',
-    'LOCAL_SERVER_URL'  => 'http://example.com',
-    'GMAIL_USERNAME'    => 'username',
-    'GMAIL_PASSWORD'    => 'password',
-    'LOCAL_IMAGE_URL'   => 'http://example.com/image.jpg'
-];
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=homestead
+DB_USERNAME=homestead
+DB_PASSWORD=secret
+
+CACHE_DRIVER=file
+SESSION_DRIVER=file
+QUEUE_DRIVER=sync
+
+REDIS_HOST=127.0.0.1
+REDIS_PASSWORD=null
+REDIS_PORT=6379
+
+MAIL_DRIVER=smtp
+MAIL_HOST=smtp.sendgrid.net
+MAIL_PORT=587
+MAIL_USERNAME=username
+MAIL_PASSWORD=password
+MAIL_ENCRYPTION=tls
+
+FORECAST_IO_KEY=forecast_io_key
+LOCAL_URL=http://example.com/current
+LOCAL_IMAGE=http://example.com/latest-image
 ```
 
 ## Testing
 ```php
-vendor/bin/codecept run
+vendor/bin/phpunit
 ```
 
 ### License
 
 The MIT License (MIT)
 
-Copyright (c) 2014 Derek Marcinyshyn
+Copyright (c) 2014-2016 Derek Marcinyshyn
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
