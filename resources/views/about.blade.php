@@ -13,7 +13,7 @@
         <md-card>
             <md-card-title><h3>Versions</h3></md-card-title>
             <md-card-content>
-                <p><strong>v1.0</strong> was built using Zend Framework 2 with the Zend Server on AWS EC2 and to test out that DevOps workflow.</p>
+                <p><strong>v1.0</strong> was built using Zend Framework 2 with the Zend Server on AWS EC2 to test out that DevOps workflow.</p>
                 <p><strong>v2.0</strong> was built using Laravel v4.2 and runs on a Digital Ocean droplet and used Laravel Forge for server admin and deployments.</p>
                 <p><strong>v3.0</strong> is built on Laravel v5.2 and runs on a <a href="https://www.revelstokewebhosting.net" target="_blank">Revelstoke Web Hosting</a> cloud server.</p>
             </md-card-content>
