@@ -99,8 +99,8 @@
                             </div>
                         </div>
                     </div>
-                    <h2 layout="row" class="forecast">Forecast</h2>
-                    <p layout="row">{{ forecastio.daily.summary }}</p>
+                    <h2 layout="row" class="forecast" layout-padding>Forecast</h2>
+                    <p layout="row" layout-padding>{{ forecastio.daily.summary }}</p>
                     <div class="forecast" layout="column" layout-gt-xs="row">
                         <md-whiteframe ng-repeat="forecastio in forecastio.daily.data | limitTo:5"
                                        class="md-whiteframe-4dp layout-padding layout-margin"
@@ -170,7 +170,7 @@
                             </div>
                         </div>
                     </div>
-                    <h2 layout="row" class="forecast">Forecast</h2>
+                    <h2 layout="row" class="forecast" layout-padding>Forecast</h2>
                     <div class="forecast" layout="column" layout-gt-xs="row">
                         <md-whiteframe ng-repeat="forecast in airport.forecastGroup.forecast | limitTo:5"
                                        class="md-whiteframe-4dp layout-padding layout-margin"

@@ -2804,8 +2804,8 @@ revyWeatherApp.controller('HomeController', function($scope, $http) {
             max: 20,
             title: 'Wind',
             titleFontColor: '#cccccc',
-            gaugeColor: '#cccccc',
-            gaugeWidthScale: 0.6,
+            gaugeColor: '#f6f6f6',
+            gaugeWidthScale: 0.5,
             label: 'km/h'
         });
 
@@ -2874,8 +2874,8 @@ revyWeatherApp.controller('HomeController', function($scope, $http) {
             max: 20,
             title: 'Wind',
             titleFontColor: '#cccccc',
-            gaugeColor: '#cccccc',
-            gaugeWidthScale: 0.6,
+            gaugeColor: '#f6f6f6',
+            gaugeWidthScale: 0.5,
             label: 'km/h'
         });
 
@@ -2911,8 +2911,8 @@ revyWeatherApp.controller('HomeController', function($scope, $http) {
             max: 20,
             title: 'Wind',
             titleFontColor: '#cccccc',
-            gaugeColor: '#cccccc',
-            gaugeWidthScale: 0.6,
+            gaugeColor: '#f6f6f6',
+            gaugeWidthScale: 0.5,
             label: 'km/h'
         });
 
