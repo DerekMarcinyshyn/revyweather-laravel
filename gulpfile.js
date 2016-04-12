@@ -73,6 +73,7 @@ elixir(function(mix) {
 
         // img
         .copy('resources/assets/img', 'public/img')
+        .copy('resources/assets/img', 'public/build/img')
     ;
     mix.phpUnit();
 });
