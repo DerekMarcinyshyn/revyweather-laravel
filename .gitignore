@@ -6,6 +6,7 @@ composer.lock
 .env.php
 .DS_Store
 Thumbs.db
+.env
 
 .idea/
 .idea/workspace.xml
@@ -35,9 +36,15 @@ tests/_output/*
 
 node_modules
 bower_components
+<<<<<<< HEAD
 .env
 .phpstorm.meta.php
 _ide_helper.php
 storage
 database
 bootstrap/cache
+=======
+
+_ide_helper.php
+.phpstorm.meta.php
+>>>>>>> l5
