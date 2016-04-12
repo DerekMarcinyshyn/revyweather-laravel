@@ -36,7 +36,6 @@ tests/_output/*
 
 node_modules
 bower_components
-.phpstorm.meta.php
+
 _ide_helper.php
-storage
-bootstrap/cache
+.phpstorm.meta.php
