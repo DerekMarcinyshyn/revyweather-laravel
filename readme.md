@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/DerekMarcinyshyn/revyweather-laravel.svg?branch=master)](https://travis-ci.org/DerekMarcinyshyn/revyweather-laravel)
 
-This web application is a work in progress experimenting with the latest available technologies in both hardware and software.
+This version is deprecated and will be updating to Laravel 5 shortly.
 
 The hardware is a Netduino Plus 2 and a RaspberryPi connected to a local server at my home.
 
