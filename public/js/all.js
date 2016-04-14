@@ -3194,7 +3194,7 @@ revyWeatherApp.controller('TimelapseController', function($scope, $filter) {
     $scope.videoDateChange = function() {
         var month = $filter('date')($scope.timelapseDate, 'MMMM');
         var day = $filter('date')($scope.timelapseDate, 'dd');
-        var video = '//video.revyweather.com/'+$scope.timelapseDate.getFullYear()+'/'+month+'/'+day+'/'+month+'-'+day;
+        var video = '//d19od77dpzy72f.cloudfront.net/'+$scope.timelapseDate.getFullYear()+'/'+month+'/'+day+'/'+month+'-'+day;
         var videoPlayer = videojs('timelapse-video');
         videoPlayer.ready(function() {
             var timelapsePlayer = this;
