@@ -1,4 +1,4 @@
-revyWeatherApp.controller('HomeController', function($scope, $http) {
+revyWeatherApp.controller('HomeController', ['$scope', '$http', function($scope, $http) {
     $scope.showCourthouse = false;
     $scope.showDowntown = false;
     $scope.showAirport = false;
@@ -172,4 +172,4 @@ revyWeatherApp.controller('HomeController', function($scope, $http) {
             ga.refresh(windSpeed);
         });
     });
-});
+}]);

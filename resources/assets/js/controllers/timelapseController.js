@@ -1,4 +1,4 @@
-revyWeatherApp.controller('TimelapseController', function($scope, $filter) {
+revyWeatherApp.controller('TimelapseController', ['$scope', '$filter', function($scope, $filter) {
     $scope.timelapseDate = new Date();
     $scope.timelapseDate.setDate($scope.timelapseDate.getDate() -1);
     $scope.minDate = new Date("August 25, 2013");
@@ -22,4 +22,4 @@ revyWeatherApp.controller('TimelapseController', function($scope, $filter) {
             timelapsePlayer.load();
         });
     };
-});
+}]);

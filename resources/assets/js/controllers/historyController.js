@@ -1,4 +1,4 @@
-revyWeatherApp.controller('HistoryController', function($scope, $http, $timeout, highchartsNG) {
+revyWeatherApp.controller('HistoryController', ['$scope', '$http', '$timeout', 'highchartsNG', function($scope, $http, $timeout, highchartsNG) {
     highchartsNG.ready(function() {
         Highcharts.setOptions({
             global: {
@@ -108,4 +108,4 @@ revyWeatherApp.controller('HistoryController', function($scope, $http, $timeout,
             $scope.$broadcast('highchartsng.reflow');
         });
     });
-});
+}]);

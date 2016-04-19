@@ -1,4 +1,4 @@
-revyWeatherApp.controller('NavController', function($scope, $mdSidenav) {
+revyWeatherApp.controller('NavController', ['$scope', '$mdSidenav', function($scope, $mdSidenav) {
     $scope.openSidenav = function() {
         $mdSidenav('left').open();
     };
@@ -12,4 +12,4 @@ revyWeatherApp.controller('NavController', function($scope, $mdSidenav) {
                 window.location = page;
             });
     };
-});
+}]);

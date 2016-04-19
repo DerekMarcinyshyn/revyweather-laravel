@@ -1,4 +1,4 @@
-revyWeatherApp.controller('WebcamsController', function($scope, $mdDialog) {
+revyWeatherApp.controller('WebcamsController', ['$scope', '$mdDialog', function($scope, $mdDialog) {
     $scope.webcams = [
         {
             title: 'Mt Mackenzie',
@@ -104,4 +104,4 @@ revyWeatherApp.controller('WebcamsController', function($scope, $mdDialog) {
             $mdDialog.hide();
         }
     }
-});
+}]);
