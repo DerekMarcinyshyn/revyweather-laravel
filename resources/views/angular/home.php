@@ -134,7 +134,12 @@
                 <md-card-title class="md-headline">Revelstoke Airport</md-card-title>
                 <md-card-content>
                     <p class="text-summary">{{ airport.currentConditions.dateTime[1].textSummary }}</p>
-                    <div class="conditions" layout-padding layout="column" layout-gt-xs="row">
+                    <div class="conditions"
+                         layout-padding
+                         layout="column"
+                         layout-gt-xs="row"
+                         ng-hide="(airport.currentConditions.dateTime[1].textSummary == undefined)"
+                    >
                         <div flex-gt-xs="25" layout="row" layout-gt-xs="column">
                             <div flex="50" layout="column">
                                 <img src="img/ec/icons-large/00.png" ng-src="img/ec/icons-large/{{ airport.currentConditions.iconCode }}.png"
@@ -169,6 +174,10 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div style="color:darkred" layout-padding
+                         ng-show="(airport.currentConditions.dateTime[1].textSummary == undefined)">
+                        Not observed
                     </div>
                     <h2 layout="row" class="forecast" layout-padding>Forecast</h2>
                     <div class="forecast" layout="column" layout-gt-xs="row">
