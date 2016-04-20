@@ -1,80 +1,81 @@
 revyWeatherApp.controller('WebcamsController', ['$scope', '$mdDialog', function($scope, $mdDialog) {
+    var time = new Date().getTime();
     $scope.webcams = [
         {
             title: 'Mt Mackenzie',
-            url: 'courthouse.jpg'
+            url: 'courthouse.jpg?'+time
         },{
             title: 'Monashee Mountains',
-            url: 'http://www.revelstokemountainresort.com/uploads/webcams/stoke.jpg'
+            url: 'http://www.revelstokemountainresort.com/uploads/webcams/stoke.jpg?'+time
         },{
             title: 'Ripper Chair',
-            url: 'http://www.revelstokemountainresort.com/uploads/webcams/ripper.jpg'
+            url: 'http://www.revelstokemountainresort.com/uploads/webcams/ripper.jpg?'+time
         },{
             title: 'Mackenzie Outpost',
-            url: 'http://www.revelstokemountainresort.com/uploads/webcams/gondola.jpg'
+            url: 'http://www.revelstokemountainresort.com/uploads/webcams/gondola.jpg?'+time
         },{
             title: 'Gnorm',
-            url: 'http://www.revelstokemountainresort.com/uploads/webcams/gnome.jpg'
+            url: 'http://www.revelstokemountainresort.com/uploads/webcams/gnome.jpg?'+time
         },{
             title: 'Revelstoke',
-            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/11.jpg'
+            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/11.jpg?'+time
         },{
             title: 'Highway 23 North/TCH',
-            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/584.jpg'
+            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/584.jpg?'+time
         },{
             title: 'Highway 23 South/TCH',
-            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/585.jpg'
+            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/585.jpg?'+time
         },{
             title: 'Highway 23 South/TCH',
-            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/586.jpg'
+            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/586.jpg?'+time
         },{
             title: 'Highway 23 South/TCH',
-            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/587.jpg'
+            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/587.jpg?'+time
         },{
             title: 'Clanwilliam Overpass - East',
-            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/296.jpg'
+            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/296.jpg?'+time
         },{
             title: 'Clanwilliam Overpass - West',
-            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/517.jpg'
+            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/517.jpg?'+time
         },{
             title: '3 Valley Gap',
-            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/12.jpg'
+            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/12.jpg?'+time
         },{
             title: 'Jack McDonald Snowshed',
-            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/159.jpg'
+            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/159.jpg?'+time
         },{
             title: 'Rogers Pass',
-            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/101.jpg'
+            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/101.jpg?'+time
         },{
             title: 'Donald Bridge - East',
-            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/385.jpg'
+            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/385.jpg?'+time
         },{
             title: 'Donald Bridge - West',
-            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/386.jpg'
+            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/386.jpg?'+time
         },{
             title: 'Golden',
-            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/135.jpg'
+            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/135.jpg?'+time
         },{
             title: 'Kicking Horse Canyon',
-            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/214.jpg'
+            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/214.jpg?'+time
         },{
             title: 'Field NE',
-            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/142.jpg'
+            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/142.jpg?'+time
         },{
             title: 'Field',
-            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/189.jpg'
+            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/189.jpg?'+time
         },{
             title: 'Lake Louise - West',
-            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/218.jpg'
+            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/218.jpg?'+time
         },{
             title: 'Lake Louise - East',
-            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/219.jpg'
+            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/219.jpg?'+time
         },{
             title: 'Banff - West',
-            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/220.jpg'
+            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/220.jpg?'+time
         },{
             title: 'Banff - East',
-            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/221.jpg'
+            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/221.jpg?'+time
         }
     ];
 
