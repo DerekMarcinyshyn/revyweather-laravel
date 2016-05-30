@@ -20,5 +20,7 @@
 @task('update_permissions')
     cd /var/www/vhosts/revelstokewebhosting.net/;
     chown -R revyhosting:psaserv revyweather.ca;
+    cd /var/www/vhosts/revelstokewebhosting.net/revyweather.ca;
+    chmod 777 -Rf storage
     ls -la;
 @endtask
