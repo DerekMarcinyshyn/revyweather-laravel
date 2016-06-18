@@ -8,15 +8,6 @@ revyWeatherApp.controller('WebcamsController', ['$scope', '$mdDialog', function(
             title: 'Monashee Mountains',
             url: 'http://www.revelstokemountainresort.com/uploads/webcams/stoke.jpg?'+time
         },{
-            title: 'Ripper Chair',
-            url: 'http://www.revelstokemountainresort.com/uploads/webcams/ripper.jpg?'+time
-        },{
-            title: 'Mackenzie Outpost',
-            url: 'http://www.revelstokemountainresort.com/uploads/webcams/gondola.jpg?'+time
-        },{
-            title: 'Gnorm',
-            url: 'http://www.revelstokemountainresort.com/uploads/webcams/gnome.jpg?'+time
-        },{
             title: 'Revelstoke',
             url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/11.jpg?'+time
         },{

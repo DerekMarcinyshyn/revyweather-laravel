@@ -23,7 +23,7 @@ a:hover {
     color: #0b97c4;
 }
 .webcams-bg {
-    background: url('../img/tweed.png');
+    background: url('../img/tweed.png') fixed;
 }
 md-dialog {
     background: black;
