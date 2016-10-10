@@ -18,6 +18,11 @@
     git fetch origin master
     git reset --hard FETCH_HEAD
 
+    echo "----------------"
+    echo "composer install"
+    echo "----------------"
+    composer install
+
     echo "------------------"
     echo "update permissions"
     echo "------------------"
