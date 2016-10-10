@@ -10,3 +10,4 @@ node_modules
 bower_components
 _ide_helper.php
 .phpstorm.meta.php
+public/favicon.png

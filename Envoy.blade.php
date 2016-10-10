@@ -1,26 +1,29 @@
-@servers(['web' => 'rwh-cloud'])
+@servers(['web' => 'plesk-root'])
 
 @macro('deploy', ['on' => 'web'])
-    list
-    fetch_repo
-    update_permissions
+    update
 @endmacro
 
-@task('list')
-    cd /var/www/vhosts/revelstokewebhosting.net/revyweather.ca;
+@task('update')
+    echo "----------"
+    echo "list files"
+    echo "----------"
+    cd /var/www/vhosts/revyweather.ca/httpdocs/revyweather-laravel
     ls -la
-@endtask
 
-@task('fetch_repo')
-    cd /var/www/vhosts/revelstokewebhosting.net/revyweather.ca;
-    git fetch origin master;
-    git reset --hard FETCH_HEAD;
-@endtask
+    echo "-----------"
+    echo "update repo"
+    echo "-----------"
+    cd /var/www/vhosts/revyweather.ca/httpdocs/revyweather-laravel
+    git fetch origin master
+    git reset --hard FETCH_HEAD
 
-@task('update_permissions')
-    cd /var/www/vhosts/revelstokewebhosting.net/;
-    chown -R revyhosting:psaserv revyweather.ca;
-    cd /var/www/vhosts/revelstokewebhosting.net/revyweather.ca;
+    echo "------------------"
+    echo "update permissions"
+    echo "------------------"
+    cd /var/www/vhosts/revyweather.ca/httpdocs
+    chown -R revyweather:psacln revyweather-laravel
+    cd /var/www/vhosts/revyweather.ca/httpdocs/revyweather-laravel
     chmod 777 -Rf storage
-    ls -la;
+    ls -la
 @endtask
