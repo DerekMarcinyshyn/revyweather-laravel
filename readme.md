@@ -52,6 +52,8 @@ MAIL_PASSWORD=password
 MAIL_ENCRYPTION=tls
 
 FORECAST_IO_KEY=forecast_io_key
+DARK_SKY_SECRET_KEY=dark_sky_secret_key
+
 LOCAL_URL=http://example.com/current
 LOCAL_IMAGE=http://example.com/latest-image
 ```
