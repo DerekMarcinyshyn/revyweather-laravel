@@ -24,7 +24,8 @@ class Kernel extends ConsoleKernel
         Commands\DailyReportCommand::class,
         Commands\LocalCommand::class,
         Commands\LocalSaveCommand::class,
-        Commands\LocalSaveImageCommand::class
+        Commands\LocalSaveImageCommand::class,
+        Commands\DarkSkyCommand::class
     ];
 
     /**
@@ -38,7 +39,7 @@ class Kernel extends ConsoleKernel
         $schedule->command('revyweather:environment-canada')
             ->everyTenMinutes();
         
-        $schedule->command('revyweather:forecast-io')
+        $schedule->command('revyweather:dark-sky')
             ->everyTenMinutes();
         
         $schedule->command('revyweather:daily-report')
