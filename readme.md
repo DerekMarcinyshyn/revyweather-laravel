@@ -4,7 +4,7 @@
 
 This is one of my side projects.
 
-More on info: [http://revyweather.com/about](http://revyweather.com/about)
+More on info: [https://revyweather.ca/about](https://revyweather.ca/about)
 
 ## Hardware
 
