@@ -1,4 +1,4 @@
-@servers(['web' => 'plesk-root'])
+@servers(['web' => 'plesk'])
 
 @macro('deploy', ['on' => 'web'])
     update
