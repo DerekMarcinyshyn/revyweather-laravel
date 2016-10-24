@@ -63,21 +63,21 @@
             <md-card ng-show="showDowntown" flex="100" flex-gt-md="66">
                 <md-card-title class="md-headline">Downtown Revelstoke</md-card-title>
                 <md-card-content>
-                    <p class="text-summary">{{ forecastio.currently.time * 1000 | date:'medium' }}</p>
+                    <p class="text-summary">{{ darkSky.currently.time * 1000 | date:'medium' }}</p>
                     <div class="conditions" layout-padding layout="column" layout-gt-xs="row">
                         <div flex-gt-xs="25" layout="row" layout-gt-xs="column">
                             <div flex="50" layout="column">
                                 <skycon icon="currentWeather.forecast.icon" color="black" size="currentWeather.forecast.iconSize"></skycon>
                             </div>
                             <div flex="50" layout="column" class="container-temperature">
-                                <span class="text-temperature">{{ forecastio.currently.temperature | number:1 }}&deg;C</span>
+                                <span class="text-temperature">{{ darkSky.currently.temperature | number:1 }}&deg;C</span>
                             </div>
                         </div>
                         <div flex-gt-xs="25" layout="column" class="text-conditions">
-                            <p><span class="text-summary">Condition:</span> {{ forecastio.currently.summary }}</p>
-                            <p><span class="text-summary">Pressure:</span> {{ forecastio.currently.pressure / 10 | number:1 }}kPa</p>
-                            <p><span class="text-summary">Humidity:</span> {{ forecastio.currently.humidity * 100 | number:0 }}%</p>
-                            <p><span class="text-summary">Wind:</span> {{ forecastio.currently.windBearing | windDirection }} &nbsp; {{ forecastio.currently.windSpeed | number:1 }} km/h</p>
+                            <p><span class="text-summary">Condition:</span> {{ darkSky.currently.summary }}</p>
+                            <p><span class="text-summary">Pressure:</span> {{ darkSky.currently.pressure / 10 | number:1 }}kPa</p>
+                            <p><span class="text-summary">Humidity:</span> {{ darkSky.currently.humidity * 100 | number:0 }}%</p>
+                            <p><span class="text-summary">Wind:</span> {{ darkSky.currently.windBearing | windDirection }} &nbsp; {{ darkSky.currently.windSpeed | number:1 }} km/h</p>
                         </div>
                         <div flex-gt-xs="50" layout="row">
                             <div flex="50">
@@ -100,30 +100,30 @@
                         </div>
                     </div>
                     <h2 layout="row" class="forecast" layout-padding>Forecast</h2>
-                    <p layout="row" layout-padding>{{ forecastio.daily.summary }}</p>
+                    <p layout="row" layout-padding>{{ darkSky.daily.summary }}</p>
                     <div class="forecast" layout="column" layout-gt-xs="row">
-                        <md-whiteframe ng-repeat="forecastio in forecastio.daily.data | limitTo:5"
+                        <md-whiteframe ng-repeat="darkSky in darkSky.daily.data | limitTo:5"
                                        class="md-whiteframe-4dp layout-padding layout-margin"
                                        flex-gt-xs="20"
                                        layout-gt-xs="column">
-                            <h3>{{ forecastio.time * 1000 | date:'EEEE' }}</h3>
+                            <h3>{{ darkSky.time * 1000 | date:'EEEE' }}</h3>
                             <div layout-gt-xs="column" layout="row">
                                 <div flex="50">
-                                    <div class="climacon {{ forecastio.icon | climacons }}"></div>
+                                    <div class="climacon {{ darkSky.icon | climacons }}"></div>
                                 </div>
                                 <div flex="50">
                                     <p>
-                                        <span class="label-high">HIGH</span> &nbsp; <span class="text-temperature">{{ forecastio.temperatureMax | number:0 }}&deg;C</span>
+                                        <span class="label-high">HIGH</span> &nbsp; <span class="text-temperature">{{ darkSky.temperatureMax | number:0 }}&deg;C</span>
                                     </p>
                                     <p>
-                                        <span class="label-low">LOW</span> &nbsp; <span class="text-temperature">{{ forecastio.temperatureMin | number:0 }}&deg;C</span>
+                                        <span class="label-low">LOW</span> &nbsp; <span class="text-temperature">{{ darkSky.temperatureMin | number:0 }}&deg;C</span>
                                     </p>
                                 </div>
                             </div>
-                            <p>{{ forecastio.summary }}</p>
+                            <p>{{ darkSky.summary }}</p>
                         </md-whiteframe>
                     </div>
-                    <p class="powered-by">Powered by <a href="" target="_blank">Forecast.io</a> updated every hour.</p>
+                    <p class="powered-by">Powered by <a href="https://darksky.net" target="_blank">Dark Sky</a> updated every hour.</p>
                 </md-card-content>
             </md-card>
         </div>

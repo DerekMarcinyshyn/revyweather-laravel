@@ -87,8 +87,8 @@ revyWeatherApp.controller('HomeController', ['$scope', '$http', function($scope,
             label: 'km/h'
         });
 
-        $http.get('api/v1/forecastio-revelstoke.json').success(function(data) {
-            $scope.forecastio = data;
+        $http.get('api/v1/dark-sky-revelstoke.json').success(function(data) {
+            $scope.darkSky = data;
             $scope.showDowntown = true;
             $scope.currentWeather = {
                 forecast: {
