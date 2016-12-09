@@ -30,7 +30,7 @@
                             </div>
                         </div>
                         <div flex-gt-xs="25" layout="column" class="text-conditions">
-                            <p><span class="text-summary">Condition:</span> {{ forecastio.currently.summary }}</p>
+                            <p><span class="text-summary">Condition:</span> {{ darkSky.currently.summary }}</p>
                             <p><span class="text-summary">Pressure:</span> {{ courthouse.barometer }}kPa</p>
                             <p><span class="text-summary">Humidity:</span> {{ courthouse.relativehumidity | number:0 }}%</p>
                             <p><span class="text-summary">Wind:</span> {{ courthouse.direction }} &nbsp; {{ windSpeed }} km/h</p>
