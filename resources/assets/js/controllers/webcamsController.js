@@ -82,9 +82,9 @@ revyWeatherApp.controller('WebcamsController', ['$scope', '$mdDialog', function(
         }
     ];
 
-    $scope.expand = function($event, url) {
+    $scope.expand = function(event, url) {
         $mdDialog.show({
-            targetEvent: $event,
+            targetEvent: event,
             parent: angular.element(document.body),
             fullscreen: true,
             clickOutsideToClose: true,
@@ -100,6 +100,8 @@ revyWeatherApp.controller('WebcamsController', ['$scope', '$mdDialog', function(
                     '</md-dialog-content>' +
                 '</md-dialog>',
             controller: DialogController
+        }).catch(function(e) {
+            console.log(e);
         });
     };
 

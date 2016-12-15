@@ -123,7 +123,7 @@
                             <p>{{ darkSky.summary }}</p>
                         </md-whiteframe>
                     </div>
-                    <p class="powered-by">Powered by <a href="https://darksky.net" target="_blank">Dark Sky</a> updated every hour.</p>
+                    <p class="powered-by">Powered by <a href="https://darksky.net" target="_blank">Dark Sky</a> updated every 10 minutes.</p>
                 </md-card-content>
             </md-card>
         </div>
