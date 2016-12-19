@@ -50,6 +50,6 @@ class Kernel extends ConsoleKernel
             ->everyThirtyMinutes();
 
         $schedule->command('revyweather:local-save-image')
-            ->everyFiveMinutes();
+            ->everyMinute();
     }
 }
