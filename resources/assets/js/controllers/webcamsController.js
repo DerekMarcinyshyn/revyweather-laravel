@@ -9,7 +9,7 @@ revyWeatherApp.controller('WebcamsController', ['$scope', '$mdDialog', function(
             url: 'http://www.revelstokemountainresort.com/uploads/webcams/stoke.jpg?'+time
         },{
             title: 'Gnorm',
-            url: 'http://www.revelstokemountainresort.com/uploads/webcams/gnome.jpg?'+time
+            url: 'http://www.revelstokemountainresort.com/uploads/webcams/gnorm.jpg?'+time
         },{
             title: 'Top of RMR Gondola',
             url: 'http://www.revelstokemountainresort.com/uploads/webcams/gondola.jpg?'+time
