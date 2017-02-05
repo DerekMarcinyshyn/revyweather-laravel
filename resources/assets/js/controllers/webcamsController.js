@@ -12,7 +12,10 @@ revyWeatherApp.controller('WebcamsController', ['$scope', '$mdDialog', function(
             url: 'http://www.revelstokemountainresort.com/uploads/webcams/gnorm.jpg?'+time
         },{
             title: 'Top of RMR Gondola',
-            url: 'http://www.revelstokemountainresort.com/uploads/webcams/gondola.jpg?'+time
+            url: 'http://www.revelstokemountainresort.com/uploads/webcams/outpost.jpg?'+time
+        },{
+            title: 'Top of RMR Ripper',
+            url: 'http://www.revelstokemountainresort.com/uploads/webcams/ripper.jpg?'+time
         },{
             title: 'Rogers Pass',
             url: 'http://www.pc.gc.ca/images/remotecamera/landscape.jpg?'+time
