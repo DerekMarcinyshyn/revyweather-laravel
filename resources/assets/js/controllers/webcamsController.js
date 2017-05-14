@@ -8,14 +8,8 @@ revyWeatherApp.controller('WebcamsController', ['$scope', '$mdDialog', function(
             title: 'Monashee Mountains',
             url: 'http://www.revelstokemountainresort.com/uploads/webcams/stoke.jpg?'+time
         },{
-            title: 'Gnorm',
-            url: 'http://www.revelstokemountainresort.com/uploads/webcams/gnorm.jpg?'+time
-        },{
             title: 'Top of RMR Gondola',
             url: 'http://www.revelstokemountainresort.com/uploads/webcams/outpost.jpg?'+time
-        },{
-            title: 'Top of RMR Ripper',
-            url: 'http://www.revelstokemountainresort.com/uploads/webcams/ripper.jpg?'+time
         },{
             title: 'Rogers Pass',
             url: 'http://www.pc.gc.ca/images/remotecamera/landscape.jpg?'+time
