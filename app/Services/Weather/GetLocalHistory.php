@@ -117,7 +117,7 @@ class GetLocalHistory
             'data'      => $relativeHumidity,
             'type'      => 'spline',
             'dashStyle' => 'ShortDash',
-            'color'     => '#88E8A9',
+            'color'     => '#7c919d',
             'yAxis'     => 2,
             'tooltip'   => [
                 'valueSuffix' => ' %'

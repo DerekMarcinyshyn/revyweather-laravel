@@ -52,7 +52,6 @@ class HistoryController extends Controller
             return $this->getLocalHistory->getLocalWeatherHistory($request['from'], $request['to']);
         } catch (\Exception $e) {
             $this->daily->save($e->getMessage());
-            dd($e->getTraceAsString());
             return 'false';
         }
     }
