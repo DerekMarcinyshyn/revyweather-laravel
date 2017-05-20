@@ -66,14 +66,14 @@ revyWeatherApp.controller('HistoryController', ['$scope', '$http', '$timeout', '
                 gridLineWidth: 0,
                 labels: {
                     style: {
-                        color: '#999999'
+                        color: '#b7cfdb'
                     },
                     format: '{value}'
                 },
                 title: {
                     text: 'Wind Speed km/h',
                     style: {
-                        color: '#999999'
+                        color: '#b7cfdb'
                     }
                 },
                 opposite: true

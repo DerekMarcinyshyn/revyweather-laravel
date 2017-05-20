@@ -137,7 +137,7 @@ class GetLocalHistory
             'name'      => 'Wind Speed',
             'data'      => $speed,
             'type'      => 'column',
-            'color'     => '#aaaaaa',
+            'color'     => '#b7cfdb',
             'yAxis'     => 3,
             'tooltip'   => [
                 'valueSuffix' => ' km/h'
