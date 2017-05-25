@@ -34,6 +34,7 @@
                             <p><span class="text-summary">Pressure:</span> {{ courthouse.barometer }}kPa</p>
                             <p><span class="text-summary">Humidity:</span> {{ courthouse.relativehumidity | number:0 }}%</p>
                             <p><span class="text-summary">Wind:</span> {{ courthouse.direction }} &nbsp; {{ windSpeed }} km/h</p>
+                            <p><span class="text-summary">Hourly gust:</span> {{ gust | number:0 }} km/h</p>
                         </div>
                         <div flex-gt-xs="50" layout="row">
                             <div flex="50">

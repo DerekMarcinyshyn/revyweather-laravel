@@ -2817,6 +2817,9 @@ revyWeatherApp.controller('HomeController', ['$scope', '$http', function($scope,
                 $scope.windSpeed = Math.ceil(windSpeed * 10) / 10;
                 gc.refresh($scope.windSpeed);
 
+                var gust = data.gust * 1.60934;
+                $scope.gust = Math.ceil(gust * 10) / 10;
+
                 var degrees = 0;
                 switch (data.direction) {
                     case "N":
