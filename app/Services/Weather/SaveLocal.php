@@ -72,7 +72,7 @@ class SaveLocal
         $this->local->bmp_temperature = number_format($data->bmp_temperature);
         $this->local->barometer = number_format($data->barometer, 1);
         $this->local->direction = $data->direction;
-        $this->local->speed = number_format($data->speed, 1);
+        $this->local->speed = number_format($data->gust, 1);
         $this->local->save();
     }
 }
