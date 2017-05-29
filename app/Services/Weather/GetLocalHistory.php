@@ -43,10 +43,10 @@ class GetLocalHistory
         $speedResult = $this->speedResult($this->makeArray($data, 'speed'));
 
         $result = [];
+        array_push($result, $speedResult);
         array_push($result, $airResult);
         array_push($result, $barometerResult);
         array_push($result, $relativeHumidityResult);
-        array_push($result, $speedResult);
 
         return $result;
     }
@@ -139,7 +139,6 @@ class GetLocalHistory
             'type'      => 'column',
             'color'     => '#b7cfdb',
             'yAxis'     => 3,
-            'index'     => 10,
             'tooltip'   => [
                 'valueSuffix' => ' km/h'
             ]
