@@ -37,7 +37,7 @@ class GetLocalHistory
     {
         $data = $this->local->whereBetween('created_at', [$from, $to])->get();
 
-        $airResult = $this->airResult($this->makeArray($data, 'bmp_temperature'));
+        $airResult = $this->airResult($this->makeArray($data, 'temperature'));
         $barometerResult = $this->barometerResult($this->makeArray($data, 'barometer'));
         $relativeHumidityResult = $this->relativeHumidityResult($this->makeArray($data, 'relative_humidity'));
         $speedResult = $this->speedResult($this->makeArray($data, 'speed'));
@@ -77,6 +77,7 @@ class GetLocalHistory
             'name' => 'Air Temperature',
             'data' => $air,
             'type' => 'spline',
+            'zIndex'    => 4,
             'tooltip' => [
                 'valueSuffix' => ' °C'
             ],
@@ -98,6 +99,7 @@ class GetLocalHistory
             'color' => '#3B54FF',
             'yAxis' => 1,
             'dashStyle' => 'solid',
+            'zIndex'    => 6,
             'tooltip' => [
                 'valueSuffix' => ' kPa'
             ]
@@ -119,6 +121,7 @@ class GetLocalHistory
             'dashStyle' => 'ShortDash',
             'color'     => '#7c919d',
             'yAxis'     => 2,
+            'zIndex'    => 8,
             'tooltip'   => [
                 'valueSuffix' => ' %'
             ]
@@ -139,6 +142,7 @@ class GetLocalHistory
             'type'      => 'column',
             'color'     => '#b7cfdb',
             'yAxis'     => 3,
+            'zIndex'    => 10,
             'tooltip'   => [
                 'valueSuffix' => ' km/h'
             ]
