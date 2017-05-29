@@ -139,6 +139,7 @@ class GetLocalHistory
             'type'      => 'column',
             'color'     => '#b7cfdb',
             'yAxis'     => 3,
+            'index'     => 10,
             'tooltip'   => [
                 'valueSuffix' => ' km/h'
             ]
