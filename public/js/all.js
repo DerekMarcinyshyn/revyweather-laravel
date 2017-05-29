@@ -3020,14 +3020,14 @@ revyWeatherApp.controller('HistoryController', ['$scope', '$http', '$timeout', '
                 gridLineWidth: 0,
                 labels: {
                     style: {
-                        color: '#7c919d'
+                        color: '#7b9a8d'
                     },
                     format: '{value}%'
                 },
                 title: {
                     text: 'Relative Humidity',
                     style: {
-                        color: '#7c919d'
+                        color: '#7b9a8d'
                     }
                 },
                 opposite: true
