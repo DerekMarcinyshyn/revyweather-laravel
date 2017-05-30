@@ -118,6 +118,8 @@ class GetLocalHistory
             'type'      => 'spline',
             'dashStyle' => 'ShortDash',
             'color'     => '#7b9a8d',
+            'min'       => 0,
+            'max'       => 100,
             'yAxis'     => 2,
             'tooltip'   => [
                 'valueSuffix' => ' %'
