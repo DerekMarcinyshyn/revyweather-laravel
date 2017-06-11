@@ -3109,10 +3109,10 @@ revyWeatherApp.controller('WebcamsController', ['$scope', '$mdDialog', function(
             title: 'Highway 23 South/TCH',
             url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/587.jpg?'+time
         },{
-            title: 'One-mile hill W',
+            title: 'One-mile Hill W',
             url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/668.jpg?'+time
         },{
-            title: 'One-mile hill E',
+            title: 'One-mile Hill E',
             url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/669.jpg?'+time
         },{
             title: 'Boulder Hill W',
