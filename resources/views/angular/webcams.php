@@ -13,8 +13,7 @@
                         <i class="fa fa-expand"></i>
                     </md-button>
                 </h2>
-                <img src="http://www.revelstokemountainresort.com/uploads/webcams/gnome.jpg"
-                     ng-src="{{ webcam.url }}" width="100%" height="auto" />
+                <img src="" ng-src="{{ webcam.url }}" width="100%" height="auto" />
             </div>
         </md-grid-tile>
     </md-grid-list>

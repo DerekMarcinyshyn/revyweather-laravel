@@ -3088,9 +3088,6 @@ revyWeatherApp.controller('WebcamsController', ['$scope', '$mdDialog', function(
             title: 'Monashee Mountains',
             url: 'http://www.revelstokemountainresort.com/uploads/webcams/stoke.jpg?'+time
         },{
-            title: 'Top of RMR Gondola',
-            url: 'http://www.revelstokemountainresort.com/uploads/webcams/outpost.jpg?'+time
-        },{
             title: 'Rogers Pass',
             url: 'http://www.pc.gc.ca/images/remotecamera/landscape.jpg?'+time
         },{
@@ -3112,14 +3109,47 @@ revyWeatherApp.controller('WebcamsController', ['$scope', '$mdDialog', function(
             title: 'Highway 23 South/TCH',
             url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/587.jpg?'+time
         },{
-            title: 'Clanwilliam Overpass - East',
-            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/296.jpg?'+time
+            title: 'One-mile hill W',
+            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/668.jpg?'+time
         },{
-            title: 'Clanwilliam Overpass - West',
+            title: 'One-mile hill E',
+            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/669.jpg?'+time
+        },{
+            title: 'Boulder Hill W',
+            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/697.jpg?'+time
+        },{
+            title: 'Boulder Hill E',
+            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/698.jpg?'+time
+        },{
+            title: 'Clanwilliam Overpass W',
             url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/517.jpg?'+time
+        },{
+            title: 'Clanwilliam Overpass E',
+            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/296.jpg?'+time
         },{
             title: '3 Valley Gap',
             url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/12.jpg?'+time
+        },{
+            title: 'Griffin Lake W',
+            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/670.jpg?'+time
+        },{
+            title: 'Griffin Lake E',
+            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/671.jpg?'+time
+        },{
+            title: 'Eagle River W',
+            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/673.jpg?'+time
+        },{
+            title: 'Eagle River E',
+            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/672.jpg?'+time
+        },{
+            title: 'Perry River W',
+            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/604.jpg?'+time
+        },{
+            title: 'Perry River E',
+            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/603.jpg?'+time
+        },{
+            title: 'Blind Bay',
+            url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/337.jpg?'+time
         },{
             title: 'Jack McDonald Snowshed',
             url: 'http://images.drivebc.ca/bchighwaycam/pub/cameras/159.jpg?'+time
