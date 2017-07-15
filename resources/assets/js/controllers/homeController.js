@@ -132,31 +132,47 @@ revyWeatherApp.controller('HomeController', ['$scope', '$http', function($scope,
             $scope.showAirport = true;
 
             if (data.warnings.event) {
-                (data.warnings.event['@attributes'].type == "") ? $scope.warnings = false : $scope.warnings = true;
+                if (data.warnings.event.constructor === Array) {
+                    (data.warnings.event[0]['@attributes'].type == "") ? $scope.warnings = false : $scope.warnings = true;
+                    $scope.warnings = [];
+                    for (var i=0; i < data.warnings.event.length; i++) {
+                        $scope.warnings[i] = {
+                            alertClass: getAlertClass(data.warnings.event[i]['@attributes'].type),
+                            description: data.warnings.event[i]['@attributes'].description,
+                            priority: data.warnings.event[i]['@attributes'].priority,
+                            textSummary: data.warnings.event[i].dateTime[1].textSummary
+                        };
+                    }
+                } else {
+                    (data.warnings.event['@attributes'].type == "") ? $scope.warnings = false : $scope.warnings = true;
+                    $scope.warnings[0] = {
+                        alertClass: getAlertClass(data.warnings.event['@attributes'].type),
+                        description: data.warnings.event['@attributes'].description,
+                        priority: data.warnings.event['@attributes'].priority,
+                        textSummary: data.warnings.event.dateTime[1].textSummary
+                    };
+                }
+            }
 
-                switch (data.warnings.event['@attributes'].type) {
+            function getAlertClass(alert) {
+                switch (alert) {
                     case 'watch':
-                        $scope.alertClass = 'alert-danger';
+                        return 'alert-danger';
                         break;
-
                     case 'advisory':
-                        $scope.alertClass = 'alert-warning';
+                        return 'alert-warning';
                         break;
-
                     case 'warning':
-                        $scope.alertClass = 'alert-warning';
+                        return 'alert-warning';
                         break;
-
                     case 'ended':
-                        $scope.alertClass = 'alert-success';
+                        return 'alert-success';
                         break;
-
                     case 'statement':
-                        $scope.alertClass = 'alert-info';
+                        return 'alert-info';
                         break;
-
                     default:
-                        $scope.alertClass = 'alert-info';
+                        return 'alert-info';
                         break;
                 }
             }

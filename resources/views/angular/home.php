@@ -1,17 +1,19 @@
 <div ng-controller="HomeController" ng-cloak>
     <md-content layout="column" layout-fill>
-        <div layout="row" layout-align="center">
-            <md-card flex="100" flex-gt-md="66"
-                     class="alert md-whiteframe-6dp"
-                     ng-class="alertClass"
-                     ng-show="warnings">
-                <md-card-title>
-                    <a href="{{ airport.warnings['@attributes'].url }}" target="_blank">
-                        {{ airport.warnings.event["@attributes"].description }} &nbsp; <i class="fa fa-external-link"></i>
-                    </a>
-                </md-card-title>
-                <md-card-content>{{ airport.warnings.event.dateTime[1].textSummary }}</md-card-content>
-            </md-card>
+        <div ng-repeat="warning in warnings track by $index">
+            <div layout="row" layout-align="center">
+                <md-card flex="100" flex-gt-md="66"
+                         class="alert md-whiteframe-6dp"
+                         ng-class="warning.alertClass"
+                         ng-show="warnings">
+                    <md-card-title>
+                        <a href="{{ airport.warnings['@attributes'].url }}" target="_blank">
+                            {{ warning.description }} &nbsp; <i class="fa fa-external-link"></i>
+                        </a>
+                    </md-card-title>
+                    <md-card-content>{{ warning.textSummary }}</md-card-content>
+                </md-card>
+            </div>
         </div>
 
         <div layout="row" layout-align="center">
