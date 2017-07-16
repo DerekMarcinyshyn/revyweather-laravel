@@ -45,7 +45,7 @@ class SaveLocal
     public function getWeather(Client $client, Daily $daily)
     {
         try {
-            $response = $client->request('GET', $this->url);
+            $response = $client->request('GET', $this->url, ['verify' => false]);
 
             if ($response->getStatusCode() == '200') {
                 $body = (string) $response->getBody();
