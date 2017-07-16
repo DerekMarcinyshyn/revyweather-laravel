@@ -39,7 +39,7 @@ class GetLocal
     public function getWeather(Client $client, Daily $daily)
     {
         try {
-            $response = $client->get($this->url);
+            $response = $client->get((string) $this->url);
             
             if ($response->getStatusCode() == '200') {
                 $body = (string) $response->getBody();
