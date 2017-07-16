@@ -40,6 +40,7 @@ class GetLocal
     {
         try {
             $response = $client->request('GET', $this->url);
+            echo $this->url."\n";
             
             if ($response->getStatusCode() == '200') {
                 $body = (string) $response->getBody();
