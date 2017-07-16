@@ -39,13 +39,12 @@ class GetLocal
     public function getWeather(Client $client, Daily $daily)
     {
         try {
-            $response = $client->get((string) $this->url);
+            $response = $client->request('GET', $this->url);
             
             if ($response->getStatusCode() == '200') {
                 $body = (string) $response->getBody();
                 Storage::disk('local')->put(self::FILENAME, $body);
             }
-            
         } catch (\Exception $e) {
             $daily->save('Exception saving local json to disk. '.$e->getMessage());
         }

@@ -40,7 +40,7 @@ class SaveLocalImage
     public function getWeather(Client $client, Daily $daily)
     {
         try {
-            $response = $client->get($this->url);
+            $response = $client->request('GET', $this->url);
 
             if ($response->getStatusCode() == '200') {
                 Storage::disk('local')->put(self::FILENAME, $response->getBody());
