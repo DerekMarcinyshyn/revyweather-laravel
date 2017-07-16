@@ -31,9 +31,4 @@
     cd /var/www/vhosts/revyweather.ca/httpdocs/revyweather-laravel
     chmod 777 -Rf storage
     ls -la
-
-    echo "------------------"
-    echo "optimize app"
-    echo "------------------"
-    php artisan config:cache
 @endtask
