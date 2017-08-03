@@ -144,7 +144,6 @@ revyWeatherApp.controller('HomeController', ['$scope', '$http', function($scope,
                         };
                     }
                 } else {
-                    console.log(data);
                     (data.warnings.event['@attributes'].type == "") ? $scope.showWarnings = false : $scope.showWarnings = true;
                     $scope.warnings[0] = {
                         alertClass: getAlertClass(data.warnings.event['@attributes'].type),
