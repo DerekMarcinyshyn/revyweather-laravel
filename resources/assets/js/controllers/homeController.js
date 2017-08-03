@@ -130,11 +130,11 @@ revyWeatherApp.controller('HomeController', ['$scope', '$http', function($scope,
         $http.get('api/v1/ec-revelstoke.json').success(function(data) {
             $scope.airport = data;
             $scope.showAirport = true;
+            $scope.warnings = [];
 
             if (data.warnings.event) {
                 if (data.warnings.event.constructor === Array) {
-                    (data.warnings.event[0]['@attributes'].type == "") ? $scope.warnings = false : $scope.warnings = true;
-                    $scope.warnings = [];
+                    (data.warnings.event[0]['@attributes'].type == "") ? $scope.showWarnings = false : $scope.showWarnings = true;
                     for (var i=0; i < data.warnings.event.length; i++) {
                         $scope.warnings[i] = {
                             alertClass: getAlertClass(data.warnings.event[i]['@attributes'].type),
@@ -144,13 +144,15 @@ revyWeatherApp.controller('HomeController', ['$scope', '$http', function($scope,
                         };
                     }
                 } else {
-                    (data.warnings.event['@attributes'].type == "") ? $scope.warnings = false : $scope.warnings = true;
+                    console.log(data);
+                    (data.warnings.event['@attributes'].type == "") ? $scope.showWarnings = false : $scope.showWarnings = true;
                     $scope.warnings[0] = {
                         alertClass: getAlertClass(data.warnings.event['@attributes'].type),
                         description: data.warnings.event['@attributes'].description,
                         priority: data.warnings.event['@attributes'].priority,
                         textSummary: data.warnings.event.dateTime[1].textSummary
                     };
+                    console.log($scope.warnings);
                 }
             }
 

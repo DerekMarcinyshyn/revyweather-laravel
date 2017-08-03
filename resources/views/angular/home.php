@@ -5,7 +5,7 @@
                 <md-card flex="100" flex-gt-md="66"
                          class="alert md-whiteframe-6dp"
                          ng-class="warning.alertClass"
-                         ng-show="warnings">
+                         ng-show="showWarnings">
                     <md-card-title>
                         <a href="{{ airport.warnings['@attributes'].url }}" target="_blank">
                             {{ warning.description }} &nbsp; <i class="fa fa-external-link"></i>
