@@ -2942,7 +2942,6 @@ revyWeatherApp.controller('HomeController', ['$scope', '$http', function($scope,
                         priority: data.warnings.event['@attributes'].priority,
                         textSummary: data.warnings.event.dateTime[1].textSummary
                     };
-                    console.log($scope.warnings);
                 }
             }
 
